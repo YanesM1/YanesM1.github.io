@@ -1,11 +1,57 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro";
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import HeaderTitleAstroComponent from "../components/Header-title.astro";
+import PresentacionIntroComponent from "../components/Presentation-intro.astro";
+import NavBarAstroComponent from "../components/NavBar.astro";
+import EvidenciasComponent from "../components/Evidencias.astro";
+import AvatarComponent from "../components/Avatar.astro";
+import BannerAstroComponent from "../components/Banner.astro";
+import VideoAstroComponent from"../components/Video.astro";
+import FooterEndAstroComponent from "../components/Footer-end.astro";
 ---
 
-<Layout>
-	<Welcome />
+<Layout title="Digital Portfolio">
+ 
+    <div class="hero">
+        <div class="hero__banner">
+              <BannerAstroComponent/>
+        </div>
+
+        <div class="hero__title">
+                <HeaderTitleAstroComponent />
+        </div>
+    
+    </div>
+
+    <div class="nav-bar">
+        <NavBarAstroComponent />
+    </div>
+
+    <div class="border"></div>
+
+    <div class="card-presentation">
+            <h2>Presentación</h2>
+     
+        <div class="card-presentacion__video">
+            <VideoAstroComponent/>
+        </div>
+           
+            
+
+        <div class="card-presentacion__avatar">
+            <PresentacionIntroComponent />
+            <AvatarComponent/>
+        </div>
+    </div>
+    
+	<div class="evidencias-options">
+		<EvidenciasComponent/>
+	</div>
+
+    <div class="footer-end">
+        <FooterEndAstroComponent/>
+    </div>
 </Layout>
+
+
