@@ -11,7 +11,7 @@
   --color-accent: #35fd03; 
   --color-accent-orange: #d0eec7; 
   --color-blue-dark: #cee3f5; 
-  --color-mid:#1e1b4b,; 
+  --color-mid:#1e1b4b; 
   --color-purple: #312e81; 
   --color-blue: #f8f1fa; 
   --color-superface:#06b6d4; 
@@ -36,7 +36,7 @@
   --space-md: 2rem; 
   --space-lg: 4.31rem; 
   --space-lgm:5.0rem; 
-  --space-xll:15rem; 
+  --space-xxl:15rem; 
   --space-lgg: 6rem; 
   --space-xl: 8rem; 
   --space-2xl: 10rem; 
