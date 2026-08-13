@@ -208,3 +208,79 @@
     }
 
 }
+
+/********************BANNER******************** */
+
+.hero {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.hero__banner {
+    width: 100%;
+    overflow: hidden;
+}
+
+.hero__title {
+    width: 100%;
+}
+
+
+/********************BANNER TABLET******************** */
+
+@media (max-width: 1024px) {
+
+    .hero {
+        width: 100%;
+    }
+
+    .hero__banner {
+        width: 100%;
+    }
+
+    .hero__title {
+        width: 100%;
+    }
+
+}
+
+
+/********************BANNER TABLET PEQUEÑA******************** */
+
+@media (max-width: 768px) {
+
+    .hero {
+        width: 100%;
+    }
+
+    .hero__banner {
+        width: 100%;
+        overflow: hidden;
+    }
+
+    .hero__title {
+        width: 100%;
+    }
+
+}
+
+
+/********************BANNER CELULAR******************** */
+
+@media (max-width: 480px) {
+
+    .hero {
+        width: 100%;
+        margin: 0;
+    }
+
+    .hero__banner {
+        width: 100%;
+        overflow: hidden;
+    }
+
+    .hero__title {
+        width: 100%;
+    }
+
+}
