@@ -21,7 +21,7 @@
 }
 
 
-/*******************EVIDENCIA******************/
+/*******************EVIDENCIA****************** */
 
 .evidencia {
     width: 100%;
@@ -55,7 +55,7 @@
 }
 
 
-/* ************ENLACE PARA ABRIR PDF*********** */
+/*************ENLACE PARA ABRIR PDF************ */
 
 .evidencia a {
     display: inline-block;
@@ -82,7 +82,7 @@
 }
 
 
-/* ****TABLET************* */
+/********************TABLET******************** */
 
 @media (max-width: 1024px) {
 
@@ -102,7 +102,7 @@
 }
 
 
-/*****TABLET****************/
+/********************TABLET PEQUEÑA******************** */
 
 @media (max-width: 768px) {
 
@@ -125,14 +125,34 @@
         padding: 1rem;
     }
 
+
+    /*************OCULTAR PDF EN TABLET*************/
+
     .evidencia iframe {
-        height: 600px;
+        display: none !important;
+    }
+
+
+    /*************BOTON PARA ABRIR PDF*************/
+
+    .evidencia a {
+        display: block;
+        width: 100%;
+        padding: 0.8rem 1rem;
+        margin-top: 1rem;
+
+        border-radius: 10px;
+
+        text-align: center;
+        font-size: 1rem;
+
+        box-sizing: border-box;
     }
 
 }
 
 
-/****** CELULAR****/
+/********************CELULAR******************** */
 
 @media (max-width: 480px) {
 
@@ -160,11 +180,8 @@
         margin: 0.5rem;
     }
 
-    
-    .evidencia iframe {
-        display: none;
-    }
 
+    /*************BOTON EN CELULAR*************/
 
     .evidencia a {
         display: block;
@@ -182,6 +199,9 @@
 
         box-sizing: border-box;
     }
+
+
+    /**************HOVER EN CELULAR**************/
 
     .evidencia a:hover {
         transform: none;
