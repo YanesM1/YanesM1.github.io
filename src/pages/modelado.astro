@@ -1,0 +1,44 @@
+---
+import Layout from "../layouts/Layout.astro";
+import BannerAstroComponent from "../components/Banner.astro";
+import HeaderTitleAstroComponent from "../components/Header-title.astro";
+import "../styles/modelado.css";
+---
+
+<Layout title="Digital Portfolio">
+
+    <div class="hero">
+        <div class="hero__banner">
+            <BannerAstroComponent />
+        </div>
+
+        <div class="hero__title">
+            <HeaderTitleAstroComponent />
+        </div>
+    </div>
+
+    <section class="modelado">
+
+        <h1>Modelado</h1>
+
+        <div class="evidencia">
+
+            <h2>Ejercicio 1</h2>
+
+            <iframe
+                src="/evidencias/modelado/ejercicio-1.pdf"
+                title="Evidencia de Modelado - Ejercicio 1">
+            </iframe>
+
+            <a
+                href="/evidencias/modelado/ejercicio-1.pdf"
+                target="_blank"
+            >
+                Abrir PDF en otra pestaña
+            </a>
+
+        </div>
+
+    </section>
+
+</Layout>

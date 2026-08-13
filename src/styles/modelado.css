@@ -1,0 +1,188 @@
+/* =====================================================
+   MODELADO
+   ===================================================== */
+
+.modelado {
+    width: 90%;
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 2rem;
+    text-align: center;
+}
+
+
+/* =====================================================
+   TÍTULO
+   ===================================================== */
+
+.modelado h1 {
+    color: var(--color-dark);
+    margin: var(--space-xs);
+    padding: var(--space-md);
+    text-align: center;
+    font-family: var(--h1-font);
+    font-size: var(--h1-size);
+}
+
+
+/* =====================================================
+   EVIDENCIA
+   ===================================================== */
+
+.evidencia {
+    width: 100%;
+    padding: 2rem;
+    background: rgba(203, 220, 255, 0.15);
+    border: 2px solid rgba(168, 85, 247, 0.3);
+    border-radius: 16px;
+}
+
+
+/* =====================================================
+   TÍTULO DEL EJERCICIO
+   ===================================================== */
+
+.evidencia h2 {
+    color: var(--color-dark);
+    margin: var(--space-xs);
+    padding: var(--space-md);
+    text-align: center;
+    font-family: var(--h2-font);
+    font-size: var(--h2-size);
+}
+
+
+/* =====================================================
+   PDF
+   ===================================================== */
+
+.evidencia iframe {
+    display: block;
+    width: 100%;
+    height: 800px;
+    border: none;
+    border-radius: 10px;
+}
+
+
+/* =====================================================
+   ENLACE PARA ABRIR EL PDF
+   ===================================================== */
+
+.evidencia a {
+    display: inline-block;
+    margin-top: 1.5rem;
+    padding: 0.75rem 1.5rem;
+
+    border-radius: 10px;
+
+    color: var(--color-secondary);
+    background: var(--color-purple);
+
+    font-family: var(--text-font);
+    text-decoration: none;
+
+    transition: all 0.3s ease;
+}
+
+
+/* =====================================================
+   HOVER DEL ENLACE
+   ===================================================== */
+
+.evidencia a:hover {
+    background: var(--color-hover);
+    transform: translateY(-3px);
+}
+
+
+/* =====================================================
+   TABLET
+   ===================================================== */
+
+@media (max-width: 1024px) {
+
+    .modelado {
+        width: 92%;
+        padding: 1.5rem;
+    }
+
+    .evidencia {
+        padding: 1.5rem;
+    }
+
+    .evidencia iframe {
+        height: 700px;
+    }
+
+}
+
+
+/* =====================================================
+   TABLET PEQUEÑA
+   ===================================================== */
+
+@media (max-width: 768px) {
+
+    .modelado {
+        width: 95%;
+        padding: 1rem;
+    }
+
+    .modelado h1 {
+        font-size: 1.8rem;
+        padding: 1rem;
+    }
+
+    .evidencia {
+        padding: 1rem;
+    }
+
+    .evidencia h2 {
+        font-size: 1.5rem;
+        padding: 1rem;
+    }
+
+    .evidencia iframe {
+        height: 600px;
+    }
+
+}
+
+
+/* =====================================================
+   CELULAR
+   ===================================================== */
+
+@media (max-width: 480px) {
+
+    .modelado {
+        width: 100%;
+        padding: 0.5rem;
+    }
+
+    .modelado h1 {
+        font-size: 1.5rem;
+        padding: 0.75rem;
+    }
+
+    .evidencia {
+        padding: 0.75rem;
+        border-radius: 12px;
+    }
+
+    .evidencia h2 {
+        font-size: 1.3rem;
+        padding: 0.75rem;
+    }
+
+    .evidencia iframe {
+        height: 500px;
+    }
+
+    .evidencia a {
+        width: 100%;
+        padding: 0.7rem;
+    }
+
+}
