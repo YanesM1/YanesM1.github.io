@@ -283,6 +283,7 @@
 
     line-height: 1.7;
 
+    /* TEXTO JUSTIFICADO */
     text-align: justify;
 
     box-sizing: border-box;
@@ -564,12 +565,16 @@
     }
 
 
+    /************* ENUNCIADOS JUSTIFICADOS *************/
+
     .modelo__ejercicios {
         padding: var(--space-sm);
 
         font-size: var(--h6-size);
 
-        text-align: left;
+        line-height: 1.7;
+
+        text-align: justify;
     }
 
 
@@ -749,12 +754,16 @@
     }
 
 
+    /************* ENUNCIADOS JUSTIFICADOS *************/
+
     .modelo__ejercicios {
         padding: var(--space-sm);
 
         font-size: var(--h6-size);
 
         line-height: 1.6;
+
+        text-align: justify;
     }
 
 
@@ -762,6 +771,8 @@
         font-size: var(--h5-size);
     }
 
+
+    /************* LISTAS *************/
 
     .modelo__ejercicios ul,
     .modelo__ejercicios ol {
