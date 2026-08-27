@@ -1,64 +1,86 @@
-/********************MODELADO************** */
+/******************** MODELADO ********************/
 
 .modelado {
     width: 90%;
     max-width: 1200px;
     margin: 2rem auto;
     padding: 2rem;
+
     text-align: center;
+
+    box-sizing: border-box;
 }
 
 
-/*******************TITULO******************* */
+/******************* TITULO ******************* */
 
 .modelado h1 {
     color: var(--color-dark);
+
     margin: var(--space-xs);
     padding: var(--space-md);
+
     text-align: center;
+
     font-family: var(--h1-font);
     font-size: var(--h1-size);
 }
 
 
-/*******************EVIDENCIA****************** */
+/******************* EVIDENCIA ****************** */
 
 .evidencia {
     width: 100%;
+
     padding: 2rem;
+
     background: rgba(203, 220, 255, 0.15);
+
     border: 2px solid rgba(168, 85, 247, 0.3);
     border-radius: 16px;
+
+    box-sizing: border-box;
 }
 
 
-/****************TITULO*************** */
+/**************** TITULO EVIDENCIA **************** */
 
 .evidencia h2 {
     color: var(--color-dark);
+
     margin: var(--space-xs);
     padding: var(--space-md);
+
     text-align: center;
+
     font-family: var(--h2-font);
     font-size: var(--h2-size);
 }
 
 
-/*************PDF************ */
+/************* PDF EVIDENCIA ************ */
 
 .evidencia iframe {
     display: block;
+
     width: 100%;
-    height: 800px;
+    max-width: 850px;
+    height: 650px;
+
+    margin: 0 auto;
+
     border: none;
     border-radius: 10px;
+
+    background: white;
 }
 
 
-/*************ENLACE PARA ABRIR PDF************ */
+/************* ENLACE EVIDENCIA ************ */
 
 .evidencia a {
     display: inline-block;
+
     margin-top: 1.5rem;
     padding: 0.75rem 1.5rem;
 
@@ -74,15 +96,262 @@
 }
 
 
-/**************HOVER************* */
+/************** HOVER EVIDENCIA ************* */
 
 .evidencia a:hover {
     background: var(--color-hover);
+
     transform: translateY(-3px);
 }
 
 
-/********************TABLET******************** */
+/************************************************************
+ *                         SOLUCIÓN
+ ************************************************************/
+
+.solution {
+    width: 90%;
+    max-width: 1200px;
+
+    margin: 2rem auto;
+    padding: 2rem;
+
+    box-sizing: border-box;
+
+    text-align: center;
+}
+
+
+/******************* TITULOS DE LOS PUNTOS ******************* */
+
+.solution h2 {
+    color: var(--color-dark);
+
+    margin: 2rem 0 1rem;
+    padding: var(--space-md);
+
+    text-align: center;
+
+    font-family: var(--h2-font);
+    font-size: var(--h2-size);
+}
+
+
+/******************* PDF SOLUCIÓN ******************* */
+
+.solution iframe {
+    display: block;
+
+    width: 100%;
+    max-width: 850px;
+    height: 650px;
+
+    margin: 0 auto;
+
+    border: none;
+    border-radius: 10px;
+
+    background: white;
+}
+
+
+/************************************************************
+ *                         PUNTO 1
+ ************************************************************/
+
+.solution h2:nth-of-type(1) + iframe {
+    max-width: 550px;
+    height: 400px;
+}
+
+
+/************************************************************
+ *                         MODELO 1
+ ************************************************************/
+
+.modelado1__contenido {
+    width: 100%;
+
+    margin: 2rem auto;
+}
+
+
+/************************************************************
+ *                         PUNTO 2
+ ************************************************************/
+
+.solution h2:nth-of-type(2) + iframe {
+    max-width: 550px;
+    height: 400px;
+}
+
+
+/************************************************************
+ *                         MODELO 2
+ ************************************************************/
+
+.modelado2__contenido {
+    width: 100%;
+
+    margin: 2rem auto;
+}
+
+
+/************************************************************
+ *                         PUNTO 3
+ ************************************************************/
+
+.solution h2:nth-of-type(3) + iframe {
+    max-width: 850px;
+    height: 650px;
+}
+
+
+/************************************************************
+ *                         MODELO 3
+ ************************************************************/
+
+.modelado3__contenido {
+    width: 100%;
+
+    margin: 2rem auto;
+}
+
+
+/******************* ENLACES SOLUCIÓN ******************* */
+
+.solution a {
+    display: inline-block;
+
+    margin-top: 1.5rem;
+    margin-bottom: 3rem;
+
+    padding: 0.75rem 1.5rem;
+
+    border-radius: 10px;
+
+    color: var(--color-secondary);
+    background: var(--color-purple);
+
+    font-family: var(--text-font);
+    text-decoration: none;
+
+    transition: all 0.3s ease;
+}
+
+
+/******************* HOVER SOLUCIÓN ******************* */
+
+.solution a:hover {
+    background: var(--color-hover);
+
+    transform: translateY(-3px);
+}
+
+
+/************************************************************
+ *                         MODELO
+ ************************************************************/
+
+.modelo {
+    width: 90%;
+    max-width: var(--space-4xl);
+
+    margin: var(--space-md) auto;
+    padding: var(--space-md);
+
+    box-sizing: border-box;
+}
+
+
+/******************** EJERCICIOS ********************/
+
+.modelo__ejercicios {
+    background: rgba(203, 220, 255, 0.15);
+
+    border: var(--space-xxs) solid rgba(168, 85, 247, 0.3);
+
+    border-radius: var(--space-radius-xs);
+
+    padding: var(--space-md);
+    margin-bottom: var(--space-md);
+
+    color: var(--color-secondary);
+
+    font-family: var(--text-font);
+    font-size: var(--body-size);
+
+    line-height: 1.7;
+
+    text-align: justify;
+
+    box-sizing: border-box;
+}
+
+
+/******************** TITULOS PRINCIPALES ********************/
+
+.modelo > h2 {
+    color: var(--color-dark);
+
+    font-family: var(--h2-font);
+    font-size: var(--h2-size);
+
+    text-align: center;
+
+    margin: var(--space-sm);
+    padding: var(--space-sm);
+}
+
+
+/******************** SUBTITULOS ********************/
+
+.modelo__ejercicios h2 {
+    color: var(--color-superface);
+
+    font-family: var(--h3-font);
+    font-size: var(--h3-size);
+
+    text-align: left;
+
+    margin: var(--space-md) 0 var(--space-sm);
+    padding: var(--space-xs);
+
+    border-bottom: var(--space-xxs) dashed var(--color-dark);
+}
+
+
+/******************** LISTAS ********************/
+
+/* Lista con viñetas */
+
+.modelo__ejercicios ul {
+    list-style: disc;
+
+    padding-left: var(--space-md);
+    margin-bottom: var(--space-sm);
+}
+
+
+/* Lista numerada */
+
+.modelo__ejercicios ol {
+    padding-left: var(--space-md);
+
+    margin-bottom: var(--space-sm);
+}
+
+
+/* Elementos de las listas */
+
+.modelo__ejercicios li {
+    margin-bottom: var(--space-xs);
+}
+
+
+/************************************************************
+ *                         TABLET
+ ************************************************************/
 
 @media (max-width: 1024px) {
 
@@ -91,107 +360,287 @@
         padding: 1.5rem;
     }
 
+
+    /************* EVIDENCIA *************/
+
     .evidencia {
         padding: 1.5rem;
     }
 
+
     .evidencia iframe {
-        height: 700px;
+        max-width: 800px;
+        height: 600px;
+    }
+
+
+    /************* SOLUCIÓN *************/
+
+    .solution {
+        width: 92%;
+        padding: 1.5rem;
+    }
+
+
+    .solution iframe {
+        height: 600px;
+    }
+
+
+    /************* PUNTO 1 *************/
+
+    .solution h2:nth-of-type(1) + iframe {
+        max-width: 500px;
+        height: 360px;
+    }
+
+
+    /************* PUNTO 2 *************/
+
+    .solution h2:nth-of-type(2) + iframe {
+        max-width: 500px;
+        height: 360px;
+    }
+
+
+    /************* PUNTO 3 *************/
+
+    .solution h2:nth-of-type(3) + iframe {
+        max-width: 800px;
+        height: 600px;
+    }
+
+
+    /************* MODELOS *************/
+
+    .modelado1__contenido,
+    .modelado2__contenido,
+    .modelado3__contenido {
+        margin: 1.5rem auto;
     }
 
 }
 
 
-/********************TABLET PEQUEÑA******************** */
+/************************************************************
+ *                    TABLET PEQUEÑA
+ ************************************************************/
 
 @media (max-width: 768px) {
 
     .modelado {
         width: 95%;
+
         padding: 1rem;
     }
 
+
+    /************* TITULO *************/
+
     .modelado h1 {
-        font-size: 1.8rem;
+        font-size: var(--body-size);
+
         padding: 1rem;
     }
+
+
+    /************* EVIDENCIA *************/
 
     .evidencia {
         padding: 1rem;
     }
 
+
     .evidencia h2 {
-        font-size: 1.5rem;
+        font-size: var(--body-size);
+
         padding: 1rem;
     }
 
 
-    /*************OCULTAR PDF EN TABLET*************/
+    /************* OCULTAR PDF EVIDENCIA *************/
 
     .evidencia iframe {
         display: none !important;
     }
 
 
-    /*************BOTON PARA ABRIR PDF*************/
+    /************* BOTON EVIDENCIA *************/
 
     .evidencia a {
         display: block;
+
         width: 100%;
+
         padding: 0.8rem 1rem;
+
         margin-top: 1rem;
 
         border-radius: 10px;
 
         text-align: center;
+
         font-size: 1rem;
 
         box-sizing: border-box;
     }
 
+
+    /********************************************************
+     *                         SOLUCIÓN
+     ********************************************************/
+
+    .solution {
+        width: 95%;
+
+        padding: 1rem;
+    }
+
+
+    /************* TITULOS PUNTOS *************/
+
+    .solution h2 {
+        font-size: var(--body-size);
+
+        padding: 1rem;
+
+        margin: 1.5rem 0 1rem;
+    }
+
+
+    /************* OCULTAR PDF SOLUCIÓN *************/
+
+    .solution iframe {
+        display: none !important;
+    }
+
+
+    /************* BOTONES SOLUCIÓN *************/
+
+    .solution a {
+        display: block;
+
+        width: 100%;
+
+        padding: 0.8rem 1rem;
+
+        margin-top: 1rem;
+        margin-bottom: 2rem;
+
+        border-radius: 10px;
+
+        text-align: center;
+
+        font-size: 1rem;
+
+        box-sizing: border-box;
+    }
+
+
+    /************* MODELOS *************/
+
+    .modelado1__contenido,
+    .modelado2__contenido,
+    .modelado3__contenido {
+        width: 100%;
+
+        margin: 1rem auto;
+    }
+
+
+    /******************** MODELO ********************/
+
+    .modelo {
+        width: 95%;
+
+        padding: var(--space-sm);
+    }
+
+
+    .modelo > h2 {
+        font-size: var(--h3-size);
+
+        padding: var(--space-sm);
+    }
+
+
+    .modelo__ejercicios {
+        padding: var(--space-sm);
+
+        font-size: var(--h6-size);
+
+        text-align: left;
+    }
+
+
+    .modelo__ejercicios h2 {
+        font-size: var(--h4-size);
+    }
+
 }
 
 
-/********************CELULAR******************** */
+/************************************************************
+ *                         CELULAR
+ ************************************************************/
 
 @media (max-width: 480px) {
 
     .modelado {
         width: 100%;
+
         padding: 0.5rem;
+
         margin: 1rem auto;
     }
 
+
+    /************* TITULO *************/
+
     .modelado h1 {
         font-size: 1.5rem;
+
         padding: 0.75rem;
+
         margin: 0.5rem;
     }
+
+
+    /************* EVIDENCIA *************/
 
     .evidencia {
         width: 100%;
+
         padding: 1rem;
+
         border-radius: 12px;
     }
 
+
     .evidencia h2 {
         font-size: 1.3rem;
+
         padding: 0.5rem;
+
         margin: 0.5rem;
     }
 
 
-    /*************BOTON EN CELULAR*************/
+    /************* BOTON EVIDENCIA *************/
 
     .evidencia a {
         display: block;
+
         width: 100%;
+
         padding: 0.8rem 1rem;
+
         margin-top: 1rem;
 
         border-radius: 10px;
 
         text-align: center;
+
         font-size: 1rem;
 
         color: var(--color-secondary);
@@ -201,11 +650,122 @@
     }
 
 
-    /**************HOVER EN CELULAR**************/
+    /************** HOVER EVIDENCIA **************/
 
     .evidencia a:hover {
         transform: none;
     }
 
-}
 
+    /********************************************************
+     *                         SOLUCIÓN
+     ********************************************************/
+
+    .solution {
+        width: 100%;
+
+        padding: 0.5rem;
+
+        margin: 1rem auto;
+    }
+
+
+    /************* TITULOS PUNTOS *************/
+
+    .solution h2 {
+        font-size: 1.3rem;
+
+        padding: 0.5rem;
+
+        margin: 1rem 0;
+    }
+
+
+    /************* OCULTAR PDF *************/
+
+    .solution iframe {
+        display: none !important;
+    }
+
+
+    /************* BOTONES PDF *************/
+
+    .solution a {
+        display: block;
+
+        width: 100%;
+
+        padding: 0.8rem 1rem;
+
+        margin-top: 1rem;
+        margin-bottom: 2rem;
+
+        border-radius: 10px;
+
+        text-align: center;
+
+        font-size: 1rem;
+
+        color: var(--color-secondary);
+        background: var(--color-purple);
+
+        box-sizing: border-box;
+    }
+
+
+    /************** HOVER SOLUCIÓN **************/
+
+    .solution a:hover {
+        transform: none;
+    }
+
+
+    /************* MODELOS *************/
+
+    .modelado1__contenido,
+    .modelado2__contenido,
+    .modelado3__contenido {
+        width: 100%;
+
+        margin: 1rem auto;
+    }
+
+
+    /******************** MODELO ********************/
+
+    .modelo {
+        width: 100%;
+
+        padding: var(--space-xs);
+    }
+
+
+    .modelo > h2 {
+        font-size: var(--h5-size);
+
+        padding: var(--space-xs);
+
+        margin: var(--space-xs);
+    }
+
+
+    .modelo__ejercicios {
+        padding: var(--space-sm);
+
+        font-size: var(--h6-size);
+
+        line-height: 1.6;
+    }
+
+
+    .modelo__ejercicios h2 {
+        font-size: var(--h5-size);
+    }
+
+
+    .modelo__ejercicios ul,
+    .modelo__ejercicios ol {
+        padding-left: var(--space-md);
+    }
+
+}

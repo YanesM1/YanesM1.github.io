@@ -1,0 +1,62 @@
+<div class="modelo">
+
+    
+
+    <h2>EJERCICIO 1 — Interpretación y corrección de un modelo</h2>
+
+    <div class="modelo__ejercicios">
+
+        <p>
+            Una clínica veterinaria contrató a un estudiante para modelar su base de datos relacional.
+            El modelo entregado se describe a continuación:
+        </p>
+
+        <p>
+            DUEÑO (cedula, nombre, apellido, telefono1, telefono2, direccion)<br>
+            MASCOTA (id_mascota, nombre, fecha_nacimiento, edad, fecha_última_consulta)<br>
+            VETERINARIO (tarjeta_profesional, nombre, especialidad)
+        </p>
+
+        <h3>Relaciones</h3>
+
+        <p>
+            DUEÑO --- (1:1) --- TIENE --- (1:1) --- MASCOTA<br>
+            Participación: DUEÑO parcial, MASCOTA total<br>
+            MASCOTA --- (1:N) --- ATIENDE --- (1:1) --- VETERINARIO<br>
+            Sin atributos
+        </p>
+
+        <h3>Reglas del negocio</h3>
+
+        <ul>
+            <li>
+                Un dueño puede registrar varias mascotas; toda mascota tiene exactamente un dueño.
+            </li>
+
+            <li>
+                Un dueño puede tener uno o varios números de contacto.
+            </li>
+
+            <li>
+                Una mascota puede ser atendida muchas veces, por veterinarios distintos,
+                y de cada atención se registra la fecha y el motivo.
+            </li>
+
+            <li>
+                La edad de la mascota se calcula a partir de su fecha de nacimiento.
+            </li>
+        </ul>
+
+        <p>
+            Se pide: identifique cuatro errores del modelo. Para cada uno indique,
+            en una o dos líneas, qué está mal y cómo debe corregirse.
+            Genere el modelo completo.
+        </p>
+
+    </div>
+
+
+    
+    </div>
+
+</div>
