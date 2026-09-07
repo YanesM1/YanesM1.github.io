@@ -780,3 +780,62 @@
     }
 
 }
+
+/************************************************************
+ *                         MODELO 4
+ ************************************************************/
+
+.modelado4__contenido {
+    width: 100%;
+    margin: 2rem auto;
+}
+
+
+/************************************************************
+ *                         TABLET
+ ************************************************************/
+
+@media (max-width: 1024px) {
+
+    .modelado1__contenido,
+    .modelado2__contenido,
+    .modelado3__contenido,
+    .modelado4__contenido {
+        margin: 1.5rem auto;
+    }
+
+}
+
+
+/************************************************************
+ *                    TABLET PEQUEÑA
+ ************************************************************/
+
+@media (max-width: 768px) {
+
+    .modelado1__contenido,
+    .modelado2__contenido,
+    .modelado3__contenido,
+    .modelado4__contenido {
+        width: 100%;
+        margin: 1rem auto;
+    }
+
+}
+
+
+/************************************************************
+ *                         CELULAR
+ ************************************************************/
+
+@media (max-width: 480px) {
+
+    .modelado1__contenido,
+    .modelado2__contenido,
+    .modelado3__contenido,
+    .modelado4__contenido {
+        width: 100%;
+        margin: 1rem auto;
+    }
+
+}
