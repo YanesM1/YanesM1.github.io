@@ -1,0 +1,188 @@
+<div class="modelo">
+
+    <div class="modelo__ejercicios">
+        <h2>Modelo Entidad Relación, Reducción a tablas y Modelo Relacional</h2>
+
+        <section>
+
+            <h3>
+                PUNTO 1 — Diseño del modelo entidad-relación extendido
+            </h3>
+
+            <p>
+                La cadena de salas de cine <strong> CineAndes </strong> necesita
+                un modelo conceptual que cumpla las siguientes reglas de negocio:<br><br>
+            </p>
+
+            <ol>
+
+                <li>
+                    De cada <strong> SEDE </strong> se registra un código,
+                    un nombre, la dirección —compuesta por ciudad y calle—
+                    y uno o varios teléfonos de contacto.<br><br>
+                </li>
+
+
+                <li>
+                    Cada sede tiene varias <strong> SALAS </strong>. Dentro de una
+                    sede las salas se numeran 1, 2, 3 y así sucesivamente, y ese
+                    número solo tiene sentido dentro de su propia sede: la sala 3
+                    de Bogotá y la sala 3 de Medellín son salas distintas.
+                    De cada sala se registra el formato de proyección y el aforo.<br><br>
+                </li>
+
+
+                <li>
+                    Cada sala está compuesta por <strong> SILLAS </strong>.
+                    Una silla se identifica por su fila y su número, que solo
+                    tienen sentido dentro de su sala. De cada silla se registra
+                    si está habilitada o fuera de servicio.<br><br>
+                </li>
+
+
+                <li>
+                    De cada <strong> PELÍCULA </strong> se registra un código,
+                    el título, el año de estreno, la duración en minutos y la
+                    clasificación. Una película puede estar disponible en uno
+                    o varios idiomas. La antigüedad de la película se obtiene
+                    a partir de su año de estreno. Además, una película puede
+                    ser como máximo la precuela de otra ya registrada en el
+                    catálogo. <br><br>
+                </li>
+
+
+                <li>
+                    Una <strong> FUNCIÓN </strong> es la proyección de una
+                    película en una sala determinada, en una fecha y una hora.
+                    La fecha y la hora identifican una función dentro de la
+                    sala. Toda función proyecta exactamente una película;
+                    una película puede no haberse programado nunca.
+                    De cada función se registra el precio base de la boleta.<br><br>
+                </li>
+
+
+                <li>
+                    De cada <strong> CLIENTE </strong> se registra el documento,
+                    el nombre completo —nombres y apellidos por separado—,
+                    el correo y la fecha de nacimiento. La edad del cliente
+                    se obtiene de su fecha de nacimiento.<br><br>
+                </li>
+
+
+                <li>
+                    Un cliente puede comprar boletas para muchas funciones y
+                    una función puede tener muchos clientes. De cada
+                    <strong> COMPRA </strong> se registra la cantidad de boletas
+                    y el canal por el que se hizo. Un cliente puede no haber
+                    comprado nunca.<br><br>
+                </li>
+
+
+                <li>
+                    De cada <strong> EMPLEADO </strong> se registra un
+                    identificador, el nombre y la fecha de ingreso. Todo
+                    empleado es <strong> PROYECCIONISTA </strong>, del que se
+                    registra su certificación técnica, o
+                    <strong> TAQUILLERO </strong>, del que se registra la caja
+                    asignada. Ningún empleado puede ser las dos cosas al mismo
+                    tiempo, y no existen empleados que no sean ni lo uno ni lo otro.<br><br>
+                </li>
+
+
+                <li>
+                    Un empleado supervisa a otros empleados. Un empleado tiene
+                    a lo sumo un supervisor, y de esa supervisión se registra
+                    la fecha desde la cual se ejerce.<br><br>
+                </li>
+
+
+                <li>
+                    Para la confitería, un <strong> PROVEEDOR </strong> entrega
+                    un <strong> PRODUCTO </strong> a una <strong> SEDE </strong>.
+                    Un mismo producto puede ser entregado por proveedores
+                    distintos a la misma sede, cada proveedor atiende muchas
+                    sedes y muchos productos, y de cada entrega se registran
+                    la cantidad y la fecha.<br><br>
+                </li>
+
+
+                <li>
+                    Cada compra que un cliente hace para una función determinada
+                    se paga con un único <strong> MEDIO DE PAGO </strong>. Un mismo
+                    medio de pago se usa en muchas compras. El medio de pago
+                    corresponde a esa compra concreta, no al cliente ni a la
+                    función por separado.<br><br>
+                </li>
+
+            </ol>
+
+
+            <h3>Se pide:</h3>
+
+            <ol>
+
+                <li>
+                    <strong>
+                        Dibuje el modelo entidad-relación completo en notación
+                        de Peter Chen. <br><br>
+                    </strong>
+                </li>
+
+
+                <li>
+                    <strong>
+                        Subraye los atributos clave y marque explícitamente
+                        los atributos compuestos, multivaluados y derivados.<br><br>
+                    </strong>
+                </li>
+
+
+                <li>
+                    <strong>
+                        Indique la cardinalidad y la participación de todas
+                        las relaciones. <br><br>
+                    </strong>
+                </li>
+
+
+                <li>
+                    <strong>
+                        Identifique todas las entidades débiles del modelo,
+                        señale de qué entidad depende cada una en identificación
+                        y cuál es su clave parcial.<br><br>
+                    </strong>
+
+                    <p>
+                        Explique en dos líneas qué ocurre con la identificación
+                        de <strong> SILLA </strong>, cuya entidad propietaria es
+                        a su vez débil. <br><br>
+                    </p>
+                </li>
+
+
+                <li>
+                    <strong>
+                        Indique los nombres de rol de las dos relaciones
+                        recursivas del modelo. <br><br>
+                    </strong>
+                </li>
+
+
+                <li>
+                    <strong>
+                        Justifique en dos líneas por qué la regla
+                        <strong> PAGA_CON </strong> exige una agregación y no
+                        una relación ternaria entre CLIENTE, FUNCIÓN y
+                        MEDIO DE PAGO. 
+                    </strong>
+                </li>
+
+            </ol>
+
+        </section>
+
+           
+    </div>
+
+</div>
+

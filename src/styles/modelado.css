@@ -542,7 +542,11 @@
 
     .modelado1__contenido,
     .modelado2__contenido,
-    .modelado3__contenido {
+    .modelado3__contenido,
+    .modelado4__contenido,
+    .modelado5__contenido,
+    .modelado6__contenido,
+    .modelado7__contenido{
         width: 100%;
 
         margin: 1rem auto;

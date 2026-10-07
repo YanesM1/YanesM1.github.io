@@ -1,0 +1,272 @@
+<div class="modelo"> 
+ 
+<section class="modelo__ejercicios"> 
+ 
+    <h2> 
+        PUNTO 3 — Modelo relacional 
+    </h2>
+
+
+    <!-- ================================================= 
+         PUNTO 3a
+    ================================================== -->
+
+    <h3>
+        a. Conceptos aplicados 
+    </h3>
+
+    <p>
+        Responda de forma breve, refiriéndose siempre al esquema que obtuvo 
+        en el punto 2.<br><br>
+    </p>
+
+    <ol>
+
+        <li>
+
+            <p>
+                ¿Cuál es el grado de la tabla que obtuvo al transformar la 
+                relación <strong> COMPRA </strong>? ¿Y su cardinalidad, si la 
+                cadena ha vendido boletas a doscientos clientes distintos en 
+                quinientas funciones, con mil cuatrocientas compras registradas?<br><br>
+            </p>
+
+        </li>
+
+        <li>
+
+            <p>
+                En la tabla <strong> CLIENTE </strong>, además del documento, 
+                ¿podría el correo ser clave candidata? Justifique en una línea 
+                y diga qué restricción del negocio haría falta para que lo fuera.<br><br>
+            </p>
+
+        </li>
+
+        <li>
+
+            <p>
+                ¿Puede una clave foránea tomar valor nulo? Dé un ejemplo concreto 
+                tomado de este modelo donde tenga sentido que lo tome, y otro 
+                donde no pueda tomarlo nunca.<br><br>
+            </p>
+
+        </li>
+
+    </ol>
+
+
+    <!-- ================================================= 
+         PUNTO 3b
+    ================================================== -->
+
+    <h3>
+        b. Análisis crítico de un esquema relacional (4 puntos)
+    </h3>
+
+    <p>
+        Un estudiante entrega el siguiente esquema como resultado de transformar 
+        el modelo del punto 2. Bajo cada tabla se indica la clave primaria que 
+        él declaró; la clave foránea lleva asterisco.<br><br>
+    </p>
+
+    <p>
+        <strong> SEDE </strong> 
+        (codigo_sede, nombre, ciudad, calle, telefono1, telefono2) 
+        PK: codigo_sede<br><br>
+    </p>
+
+    <p>
+        <strong> SALA </strong> 
+        (numero_sala, formato, aforo, codigo_sede*) 
+        PK: numero_sala<br><br>
+    </p>
+
+    <p>
+        <strong> SILLA </strong> 
+        (fila, numero, estado, numero_sala*) 
+        PK: fila, numero<br><br>
+    </p>
+
+    <p>
+        <strong> FUNCION </strong> 
+        (fecha, hora, precio_base, codigo_pelicula*) 
+        PK: fecha, hora<br><br>
+    </p>
+
+    <p>
+        <strong> CLIENTE </strong> 
+        (documento, nombres, apellidos, correo, fecha_nacimiento, edad, 
+        cantidad_boletas, canal) 
+        PK: documento<br><br>
+    </p>
+
+    <p>
+        <strong> EMPLEADO </strong> 
+        (id_empleado, nombre, fecha_ingreso, supervisor) 
+        PK: id_empleado<br><br>
+    </p>
+
+    <p>
+        Identifique cuatro errores. Para cada uno indique qué regla de 
+        transformación se violó, qué consecuencia concreta tiene sobre los 
+        datos que el sistema podría almacenar o perder, y cómo debe corregirse.<br><br>
+    </p>
+
+
+</section> 
+
+<section class="modelo__ejercicios">
+
+    <h2>Errores del modelo relacional</h2>
+
+        <p>
+            Al transformar la relación <strong> COMPRA </strong> que corresponde 
+            a CLIENTE M--N FUNCION, queda transformada en 3 relaciones 
+            CLIENTE, COMPRA y FUNCION, donde COMPRA es la relación entre ambas 
+            y tiene como atributos clave únicos el identificador del cliente 
+            documento, la fecha y la hora de la FUNCION. Por tanto, la tabla 
+            COMPRA solo tendrá 3 columnas. Como el grado de la relación 
+            corresponde al número de columnas, su grado es 3.<br><br>
+        </p>
+
+        <p>
+            La cardinalidad corresponde al número de registros de cada compra, 
+            en este caso son 1400, por lo que la cardinalidad es 1400.<br><br>
+        </p>
+
+        <p>
+            Para que el correo sea clave candidata se debe tener un correo único 
+            para cada cliente, y no podrían haber valores nulos.<br><br>
+        </p>
+
+        <p>
+            La clave foránea puede tomar valores nulos cuando no hay relación 
+            entre las dos entidades, o cuando el sistema permite valores nulos.<br><br>
+        </p>
+
+        <p>
+            La clave foránea es nula cuando la participación de la entidad es 
+            parcial, por ejemplo, en <strong> codigo_pelicula </strong> en 
+            FUNCION, dado que una función puede no tener película asignada aún. 
+            Un ejemplo de un caso contrario se encuentra en 
+            <strong> codigo_sede </strong> en la tabla SALA, donde no puede 
+            tomar valores nulos porque no existe una sala sin que pertenezca 
+            a una sede.<br><br>
+        </p>
+
+
+        <h3>
+            Error 1 — Clave primaria de SALA mal declarada
+        </h3>
+
+        <p>
+            <strong> Regla violada: </strong>
+            Como SALA es una entidad débil que depende de SEDE, debe heredar 
+            la clave de su entidad propietaria.<br><br>
+        </p>
+
+        <p>
+            <strong> Consecuencia: </strong>
+            Utilizar solo <strong> numero_sala </strong> como PK es inadecuado, 
+            puesto que la clave debe ser un identificador único. No pueden 
+            tenerse dos salas con el mismo número en sedes distintas, puesto 
+            que el sistema no podrá distinguirlas ni referenciarlas desde 
+            SILLA y FUNCION.<br><br>
+        </p>
+
+        <p>
+            <strong> Corrección: </strong>
+            La PK debe ser 
+            <strong> (codigo_sede, numero_sala) </strong>, incluyendo la 
+            clave de SEDE.<br><br>
+        </p>
+
+
+        <h3>
+            Error 2 — Clave primaria de SILLA incompleta
+        </h3>
+
+        <p>
+            <strong> Regla violada: </strong>
+            Como SILLA es una entidad débil de SALA y SALA es débil de SEDE, 
+            su clave primaria debe heredar la clave completa de la entidad 
+            propietaria, que ya incluye <strong> codigo_sede </strong>.<br><br>
+        </p>
+
+        <p>
+            <strong> Consecuencia: </strong>
+            Con PK <strong> (fila, numero) </strong>, la misma fila y número 
+            podrían existir en salas de sedes distintas, perdiéndose la 
+            identificación única de cada silla.<br><br>
+        </p>
+
+        <p>
+            <strong> Corrección: </strong>
+            La PK debe ser 
+            <strong> (codigo_sede, numero_sala, fila, numero) </strong>, 
+            y la FK hacia SALA debe ser 
+            <strong> (codigo_sede, numero_sala) </strong>.<br><br>
+        </p>
+
+
+        <h3>
+            Error 3 — Clave primaria de FUNCION mal declarada
+        </h3>
+
+        <p>
+            <strong> Regla violada: </strong>
+            FUNCION es una entidad débil que depende de SALA, por lo que debe 
+            heredar la clave.<br><br>
+        </p>
+
+        <p>
+            <strong> Consecuencia: </strong>
+            Con PK <strong> (fecha, hora) </strong>, dos funciones de salas 
+            distintas en la misma fecha y hora serían indistinguibles, lo que 
+            puede causar anomalías en la información.<br><br>
+        </p>
+
+        <p>
+            <strong> Corrección: </strong>
+            La PK debe ser 
+            <strong> (codigo_sede, numero_sala, fecha, hora) </strong> 
+            e incluir la FK hacia SALA.<br><br>
+        </p>
+
+
+        <h3>
+            Error 4 — CLIENTE incluye atributos que no le pertenecen
+        </h3>
+
+        <p>
+            <strong> Regla violada: </strong>
+            <strong> cantidad_boletas </strong> y <strong> canal </strong> 
+            son atributos de la relación COMPRA (M:N), no de la entidad 
+            CLIENTE. Además, <strong> edad </strong> es un atributo derivado 
+            de <strong> fecha_nacimiento </strong> y no debe generar columna, 
+            puesto que en el modelo transformado debe eliminarse para evitar 
+            duplicados en la información.<br><br>
+        </p>
+
+        <p>
+            <strong> Consecuencia: </strong>
+            Si se guardan <strong> cantidad_boletas </strong> y 
+            <strong> canal </strong> en CLIENTE, un cliente que realice 
+            distintas compras tendría que repetir sus datos, o se perderían 
+            compras, ya que son atributos de la relación.<br><br>
+        </p>
+
+        <p>
+            <strong> Corrección: </strong>
+            Quitar <strong> cantidad_boletas </strong>, 
+            <strong> canal </strong> y <strong> edad </strong> de CLIENTE. 
+            Los dos primeros van en la tabla intermedia COMPRA, y 
+            <strong> edad </strong> se calcula a partir de 
+            <strong> fecha_nacimiento </strong>.<br><br>
+        </p>
+
+   
+
+</section>
+</div>

@@ -1,0 +1,276 @@
+<div class="modelo"> 
+ 
+<section class="modelo__ejercicios"> 
+ 
+    <h2> 
+        PUNTO 2 — Reducción a tablas 
+    </h2> 
+
+    <p>
+        Independientemente de lo que haya dibujado en el punto anterior, para este punto utilice el modelo que se describe a continuación. 
+        Este modelo es correcto y está validado: su tarea no es rediseñarlo ni corregirlo, sino transformarlo aplicando las reglas de reducción a tablas.
+    </p>
+
+    <h3>Modelo de partida</h3>
+
+    <p>
+        <strong> SEDE </strong> (codigo_sede, nombre, direccion, telefono)
+    </p>
+
+    <ul>
+        <li>direccion es compuesto: ciudad, calle.</li>
+        <li>telefono es multivaluado.<br><br></li>
+    </ul>
+
+    <p>
+        <strong> SALA </strong> (numero_sala, formato, aforo)
+    </p>
+
+    <ul>
+        <li>entidad débil dependiente en identificación de SEDE. <br><br></li>
+    </ul>
+
+    <p>
+        <strong> SILLA </strong> (fila, numero, estado)
+    </p>
+
+    <ul>
+        <li>entidad débil dependiente en identificación de SALA. <br><br></li>
+    </ul>
+
+    <p>
+        <strong> CLIENTE </strong> (documento, nombre_completo, correo, fecha_nacimiento)
+    </p>
+
+    <ul>
+        <li>nombre_completo es compuesto: nombres, apellidos.</li>
+        <li>edad es derivado de fecha_nacimiento. <br><br></li>
+    </ul>
+
+    <p>
+        <strong> FUNCION </strong> (fecha, hora, precio_base)
+    </p>
+
+    <ul>
+        <li>entidad débil dependiente en identificación de SALA.<br><br></li>
+    </ul>
+
+    <p>
+        <strong> PELICULA </strong> (codigo_pelicula, titulo, anio_estreno, duracion, clasificacion)<br><br>
+    </p>
+
+    <p>
+        <strong> EMPLEADO </strong> (id_empleado, nombre, fecha_ingreso) <br><br>
+    </p>
+
+    <p>
+        <strong> PROVEEDOR </strong> (nit, razon_social)<br><br>
+    </p>
+
+    <p>
+        <strong> PRODUCTO </strong> (codigo_producto, descripcion, unidad)<br><br>
+    </p>
+
+    <p>
+        <strong> MEDIO_PAGO </strong> (codigo_medio, tipo, franquicia)<br><br>
+    </p>
+
+
+    <h3>Relaciones</h3>
+
+    <ol>
+
+        <li>
+            <strong> CONTIENE </strong> SEDE (1) — (N) SALA · identificadora · SALA total<br>
+        </li>
+
+        <li>
+            <strong> UBICA </strong> SALA (1) — (N) SILLA · identificadora · SILLA total<br>
+        </li>
+
+        <li>
+            <strong> PROGRAMA </strong> SALA (1) — (N) FUNCION · identificadora · FUNCION total<br>
+        </li>
+
+        <li>
+            <strong> PROYECTA </strong> PELICULA (1) — (N) FUNCION · FUNCION total · PELICULA parcial<br>
+        </li>
+
+        <li>
+            <strong> COMPRA </strong> CLIENTE (M) — (N) FUNCION<br>
+            <ul>
+                <li>atributos: cantidad_boletas, canal</li>
+            </ul>
+        </li>
+
+        <li>
+            <strong> SUPERVISA </strong> EMPLEADO (1) — (N) EMPLEADO · recursiva<br>
+            <ul>
+                <li>roles: supervisor / supervisado · atributo: fecha_desde</li>
+            </ul>
+        </li>
+
+        <li>
+            <strong> ENTREGA </strong> ternaria PROVEEDOR — SEDE — PRODUCTO (M : N : N)<br>
+            <ul>
+                <li>atributos: cantidad, fecha_entrega</li>
+            </ul>
+        </li>
+
+        <li>
+            <strong> PAGA_CON </strong> agregación: la participación de un CLIENTE en una FUNCION (relación COMPRA) se paga con un único MEDIO_PAGO; un medio de pago se usa en muchas compras. (N) — (1)<br>
+        </li>
+
+        <li>
+            <strong> ESPECIALIZACIÓN </strong> EMPLEADO -> PROYECCIONISTA (certificacion_tecnica) EMPLEADO -> TAQUILLERO (caja_asignada) <br>
+            <ul>
+                <li>jerarquía TOTAL y DISJUNTA</li>
+            </ul>
+        </li>
+
+    </ol>
+
+
+    <h3>Se pide:</h3>
+
+    <ol>
+
+        <!-- ================================================= 
+             PUNTO 2a 
+        ================================================== -->
+
+        <li>
+
+            <strong>
+                a. Transformación de los atributos de SEDE y CLIENTE.
+            </strong>
+
+            <p>
+                Transforme los atributos de <strong> SEDE </strong> y de 
+                <strong> CLIENTE </strong>. Escriba las tablas resultantes 
+                con su clave primaria y sus claves foráneas, y explique en 
+                una línea por qué el atributo derivado no genera columna.<br><br>
+            </p>
+
+        </li>
+
+
+        <!-- ================================================= 
+             PUNTO 2b 
+        ================================================== -->
+
+        <li>
+
+            <strong>
+                b. Transformación de las entidades débiles SALA, SILLA y FUNCION.
+            </strong>
+
+            <p>
+                Transforme las entidades débiles <strong> SALA </strong>, 
+                <strong> SILLA </strong> y <strong> FUNCION </strong>. Escriba 
+                las tres tablas indicando con precisión la clave primaria 
+                de cada una.<br><br>
+            </p>
+
+            <p>
+                Explique en dos líneas cómo se construye la clave primaria 
+                de <strong> SILLA </strong>, dado que su entidad propietaria 
+                es a su vez débil.<br><br>
+            </p>
+
+        </li>
+
+
+        <!-- ================================================= 
+             PUNTO 2c 
+        ================================================== -->
+
+        <li>
+
+            <strong>
+                c. Transformación de la relación COMPRA.
+            </strong>
+
+            <p>
+                Transforme la relación <strong> COMPRA </strong>. Escriba la 
+                tabla resultante, señale su clave primaria y sus claves 
+                foráneas, e indique dónde quedan los atributos 
+                <strong> cantidad_boletas </strong> y 
+                <strong> canal </strong>.<br><br>
+            </p>
+
+        </li>
+
+
+        <!-- ================================================= 
+             PUNTO 2d 
+        ================================================== -->
+
+        <li>
+
+            <strong>
+                d. Transformación de la relación ternaria ENTREGA.
+            </strong>
+
+            <p>
+                Transforme la relación ternaria <strong> ENTREGA </strong>. 
+                Escriba la tabla resultante y justifique por qué, siendo la 
+                cardinalidad <strong> M:N:N </strong>, la clave primaria debe 
+                incluir los identificadores de las tres entidades.<br><br>
+            </p>
+
+            <p>
+                Indique qué cambiaría en esa clave si la cadena exigiera 
+                que para una <strong> SEDE </strong> y un 
+                <strong> PRODUCTO </strong> dados hubiera un único 
+                <strong> PROVEEDOR </strong>.<br><br>
+            </p>
+
+        </li>
+
+
+        <!-- ================================================= 
+             PUNTO 2e 
+        ================================================== -->
+
+        <li>
+
+            <strong>
+                e. Transformación de la agregación PAGA_CON.
+            </strong>
+
+            <p>
+                Transforme la agregación <strong> PAGA_CON </strong>. 
+                Indique sobre qué tabla del esquema ya transformado queda 
+                apoyada la clave foránea hacia <strong> MEDIO_PAGO </strong> 
+                y explique en una línea por qué no puede apoyarse ni en 
+                <strong> CLIENTE </strong> ni en <strong> FUNCION </strong>.<br><br>
+            </p>
+
+        </li>
+
+
+        <!-- ================================================= 
+             PUNTO 2f 
+        ================================================== -->
+
+        <li>
+
+            <strong>
+                f. Transformación de la especialización de EMPLEADO.
+            </strong>
+
+            <p>
+                Transforme la especialización de <strong> EMPLEADO </strong>. 
+                Proponga dos estrategias distintas, escriba las tablas de 
+                la que elija y justifique en dos líneas por qué la elige, 
+                teniendo en cuenta que la jerarquía es 
+                <strong> TOTAL y DISJUNTA </strong>.<br><br>
+            </p>
+
+        </li>
+
+    </ol>
+
+</section> 
+</div>
