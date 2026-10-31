@@ -1,0 +1,565 @@
+---
+import Layout from "../layouts/Layout.astro";
+import BannerAstroComponent from "../components/Banner.astro";
+import HeaderTitleAstroComponent from "../components/Header-title.astro";
+
+import Modelo1AstroComponent from "../components/Modelo1.astro";
+import Modelo2AstroComponent from "../components/Modelo2.astro";
+import Modelo3AstroComponent from "../components/Modelo3.astro";
+import Modelo4AstroComponent from "../components/Modelo4.astro";
+import Modelo5AstroComponent from "../components/Modelo5.astro";
+import Modelo6AstroComponent from "../components/Modelo6.astro";
+import Modelo7AstroComponent from "../components/Modelo7.astro";
+import Ejercicio1AstroComponent from "../components/Ejercicio1.astro";
+
+import "../styles/modelado.css";
+import "../styles/style.css";
+---
+
+<Layout title="Digital Portfolio">
+  <div class="hero">
+    <div class="hero__banner">
+      <BannerAstroComponent />
+    </div>
+
+    <div class="hero__title">
+      <HeaderTitleAstroComponent />
+    </div>
+  </div>
+
+  <div class="modelo">
+    <section class="modelo__ejercicios">
+      <h2>PROYECTO BASES DE DATOS I — Café &amp; Ludoteca</h2>
+
+      <h3>1. Problemática</h3>
+      <p>
+        Una tienda llamada <strong>“Café &amp; Ludoteca”</strong> ubicada en el centro
+        de la ciudad de Bogotá abrió un nuevo local dedicado a los juegos de mesa.
+        Su impacto en la comunidad fue tan grande que necesita un sistema integral
+        de gestión, diseñado para automatizar el inventario físico de juegos y expansiones,
+        la administración de membresía de socios, las reservas de mesas temáticas
+        y el control riguroso de préstamos locales y alquileres.
+      </p>
+      <p>
+        Este problema está causando un caos en el funcionamiento del negocio en
+        su operación híbrida, dado que debe manejar un inventario físico costoso
+        (fichas, tableros, mesas y solicitudes de préstamo), un servicio de
+        préstamos que se encontraba implementado para una demanda más pequeña a
+        la que se está presentando. Fuera de estos problemas se tiene una hora
+        pico en las reservas de mesas de alta demanda, surgiendo una necesidad
+        de ofrecer una plataforma en línea donde los socios puedan consultar
+        catálogos en tiempo real sin saturar al personal del negocio.
+      </p>
+
+      <h4>Necesidades fundamentales del negocio</h4>
+
+      <h5>Control híbrido de inventario</h5>
+      <p>
+        Que el sistema tenga un stock claro entre los productos digitales
+        visibles en la web y los productos físicos disponibles en la estantería
+        local. Cada producto cuenta con un identificador único correspondiente
+        al número de serie del juego, que establece su estado en tiempo real
+        (como disponible, en uso en mesa, prestado a domicilio, en
+        mantenimiento, reportado con componentes faltantes), evitando la
+        discrepancia entre los clientes y los productos ocupados en el
+        establecimiento.
+      </p>
+
+      <h5>Gestión de préstamos y trazabilidad de componentes</h5>
+      <p>
+        Un juego de mesa requiere condiciones controladas de integridad, puesto
+        que a diferencia de una librería se tiene que verificar en detalle sus
+        componentes. La base de datos debe registrar cada transacción de
+        alquiler (interno para los préstamos en la ludoteca y externos a
+        domicilio), asociando fechas de salida, devolución estipulada, cliente,
+        empleado responsable y un campo de observaciones sobre el estado, que
+        permita auditar si está completo, si hay pérdidas o daños.
+      </p>
+
+      <h5>Sistema de reservas de mesas y espacios</h5>
+      <p>
+        Los usuarios deben poder apartar mesas asociadas a un tema mediante la
+        aplicación, según su capacidad máxima y ubicación, permitiendo la
+        optimización del espacio. Lo que debe vincularse con el catálogo de
+        juegos para que los jugadores en su mesa puedan preseleccionar qué
+        títulos desean tener listos al llegar, lo que agiliza la atención del
+        personal.
+      </p>
+
+      <h5>Membresía, tarifas y asociaciones</h5>
+      <p>
+        Los socios podrán tener una categoría en su asociación que determinará
+        los beneficios a los que tendrán acceso, entre ellos se encuentran
+        descuentos, una mayor cantidad de préstamos simultáneos y tener una
+        prioridad en las reservas. Un socio debe tener una membresía, la cual
+        puede tener como categoría prémium, Alta, Media, Básica y Baja. El
+        sistema deberá registrar el plan de membresía, su estado (Activa,
+        Suspendida o Vencida), su tarifa, vigencia y la asociación de cada socio
+        con su respectiva suscripción.
+      </p>
+    </section>
+
+    <section class="modelo__ejercicios">
+      <h3>2. Objetivos</h3>
+      <p>
+        Diseñar e implementar una base de datos relacional para el sistema de
+        gestión integral de "Café &amp; Ludoteca", que permita automatizar el
+        control híbrido de inventario (físico y digital), la administración de
+        membresías, la gestión de reservas de mesas temáticas y la trazabilidad
+        de préstamos y alquileres, con el fin de optimizar la operación del
+        negocio y mejorar la experiencia del socio.
+      </p>
+
+      <h4>2.1. Objetivos específicos</h4>
+      <ul>
+        <li>
+          Modelar el inventario de juegos y expansiones, identificando cada
+          unidad y su estado en tiempo real (disponible, en uso, prestado, en
+          mantenimiento).
+        </li>
+        <li>
+          Diseñar el módulo de préstamos y alquileres (internos y externos),
+          registrando cliente, empleado, fechas y estado de devolución para
+          garantizar trazabilidad.
+        </li>
+        <li>
+          Estructurar el sistema de reservas de mesas temáticas, vinculado al
+          catálogo de juegos para preselección de títulos.
+        </li>
+        <li>
+          Diseñar el módulo de membresías y tarifas de socios, integrado con
+          préstamos y reservas.
+        </li>
+        <li>
+          Establecer restricciones de integridad (llaves primarias/foráneas) que
+          eviten inconsistencias entre el inventario físico y el catálogo web.
+        </li>
+        <li>
+          Normalizar el modelo de datos hasta (3FN) para eliminar redundancias.
+        </li>
+      </ul>
+    </section>
+
+    <section class="modelo__ejercicios">
+      <h3>3. Alcance del proyecto</h3>
+
+      <h4>Incluye</h4>
+      <ul>
+        <li>
+          <strong>Inventario:</strong> registro de juegos y expansiones con identificador
+          único y estado en tiempo real (disponible, en uso, prestado, en mantenimiento,
+          con faltantes), diferenciando catálogo web vs. stock físico.
+        </li>
+        <li>
+          <strong>Préstamos y alquileres:</strong> registro de transacciones internas
+          y externas, con cliente, empleado, fechas de salida/devolución y observaciones
+          de estado.
+        </li>
+        <li>
+          <strong>Reservas de mesas:</strong> registro de mesas (capacidad, ubicación,
+          temática) y reservas con preselección de juegos.
+        </li>
+        <li>
+          <strong>Membresías:</strong> registro de socios, tipos de membresía, tarifas
+          y vigencia.
+        </li>
+        <li>
+          <strong>Consultas en tiempo real:</strong> diseño de consultas/vistas que
+          soporten la disponibilidad del catálogo.
+        </li>
+      </ul>
+
+      <h4>No incluye</h4>
+      <ul>
+        <li>
+          Pasarela de pagos en línea ni procesamiento de transacciones
+          financieras.
+        </li>
+        <li>Facturación electrónica o integración con sistemas contables.</li>
+        <li>
+          Sistema de nómina o gestión de recursos humanos de los empleados (más
+          allá de identificarlos como responsables de préstamos).
+        </li>
+        <li>
+          Sistema de notificaciones automáticas (correos, SMS) para
+          recordatorios de devolución.
+        </li>
+      </ul>
+
+      <h4>Requerimientos funcionales</h4>
+      <table>
+        <caption>Requerimientos funcionales del sistema</caption>
+        <thead>
+          <tr>
+            <th>Código</th>
+            <th>Descripción</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr
+            ><td>RF-01</td><td
+              >El sistema deberá registrar los juegos de mesa y sus expansiones.</td
+            ></tr
+          >
+          <tr
+            ><td>RF-02</td><td
+              >El sistema deberá identificar cada unidad física de un juego
+              mediante un identificador único.</td
+            ></tr
+          >
+          <tr
+            ><td>RF-03</td><td
+              >El sistema deberá registrar el estado de cada unidad física en
+              tiempo real.</td
+            ></tr
+          >
+          <tr
+            ><td>RF-04</td><td
+              >El sistema deberá registrar préstamos internos y alquileres
+              externos de juegos de mesa.</td
+            ></tr
+          >
+          <tr
+            ><td>RF-05</td><td
+              >El sistema deberá registrar la fecha de salida y fecha de
+              devolución de cada préstamo.</td
+            ></tr
+          >
+          <tr
+            ><td>RF-06</td><td
+              >El sistema deberá registrar observaciones del estado de los
+              componentes en la devolución del préstamo.</td
+            ></tr
+          >
+          <tr
+            ><td>RF-07</td><td
+              >El sistema deberá registrar el empleado responsable de cada
+              préstamo.</td
+            ></tr
+          >
+          <tr
+            ><td>RF-08</td><td
+              >El sistema deberá registrar las mesas temáticas del negocio.</td
+            ></tr
+          >
+          <tr
+            ><td>RF-09</td><td
+              >El sistema deberá registrar reservas de mesas según su
+              disponibilidad.</td
+            ></tr
+          >
+          <tr
+            ><td>RF-10</td><td
+              >El sistema deberá permitir asociar juegos preseleccionados a una
+              reserva.</td
+            ></tr
+          >
+          <tr
+            ><td>RF-11</td><td
+              >El sistema deberá gestionar reservas según fecha y el horario
+              asociado a cada reserva.</td
+            ></tr
+          >
+          <tr
+            ><td>RF-12</td><td
+              >El sistema deberá registrar la información de un socio.</td
+            ></tr
+          >
+          <tr
+            ><td>RF-13</td><td
+              >El sistema deberá gestionar los planes de membresía para cada
+              socio.</td
+            ></tr
+          >
+          <tr
+            ><td>RF-14</td><td
+              >El sistema deberá permitir gestionar la tarifa, vigencia y estado
+              de cada membresía.</td
+            ></tr
+          >
+          <tr
+            ><td>RF-15</td><td
+              >El sistema deberá permitir consultar la disponibilidad de los
+              juegos de mesa en tiempo real.</td
+            ></tr
+          >
+          <tr
+            ><td>RF-16</td><td
+              >El sistema deberá permitir consultar la disponibilidad de las
+              mesas para reservas.</td
+            ></tr
+          >
+        </tbody>
+      </table>
+
+      <h4>Requerimientos no funcionales</h4>
+      <table>
+        <caption>Requerimientos no funcionales del sistema</caption>
+        <thead>
+          <tr>
+            <th>Código</th>
+            <th>Descripción</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr
+            ><td>RNF-01</td><td
+              >El sistema debe responder las consultas en un tiempo no superior
+              a 5 segundos.</td
+            ></tr
+          >
+          <tr
+            ><td>RNF-02</td><td
+              >El sistema deberá garantizar la integridad y consistencia de los
+              datos almacenados.</td
+            ></tr
+          >
+          <tr
+            ><td>RNF-03</td><td
+              >El sistema deberá estar implementado sobre un sistema gestor de
+              bases de datos relacional.</td
+            ></tr
+          >
+          <tr
+            ><td>RNF-04</td><td
+              >La base de datos deberá estar normalizada hasta la Tercera Forma
+              Normal (3FN).</td
+            ></tr
+          >
+          <tr
+            ><td>RNF-05</td><td
+              >El sistema deberá garantizar la integridad referencial mediante
+              el uso de llaves primarias y foráneas.</td
+            ></tr
+          >
+          <tr
+            ><td>RNF-06</td><td
+              >El sistema deberá poder soportar la ejecución de consultas
+              complejas que involucren operaciones de selección, proyección y
+              unión de datos.</td
+            ></tr
+          >
+          <tr
+            ><td>RNF-07</td><td
+              >La aplicación deberá estar implementada en una máquina virtual
+              con Oracle Linux y la base de datos debe ser accesible desde una
+              aplicación web de demostración.</td
+            ></tr
+          >
+          <tr
+            ><td>RNF-08</td><td
+              >El sistema deberá tener un repositorio virtual en GitHub para la
+              gestión del código fuente, la documentación y el control de
+              versiones.</td
+            ></tr
+          >
+        </tbody>
+      </table>
+    </section>
+
+    <section class="modelo__ejercicios">
+      <h3>4. Supuestos del sistema</h3>
+
+      <h4>Supuesto 1: Identificación única de juegos físicos</h4>
+      <p>
+        Cada unidad física de un juego contará con un código único que permitirá
+        conocer su ubicación y estado actual dentro del establecimiento. Esto
+        permite diferenciar entre el catálogo general de juegos y las copias
+        físicas disponibles, evitando inconsistencias de inventario.
+      </p>
+
+      <h4>Supuesto 2: Relación entre clientes y socios</h4>
+      <p>
+        El sistema manejará clientes, clientes frecuentes y socios registrados.
+        Los clientes frecuentes tendrán beneficios debidos a su fidelización, y
+        los socios beneficios asociados a una membresía activa.
+      </p>
+
+      <h4>Supuesto 3: Gestión de préstamos</h4>
+      <p>
+        Un préstamo podrá contener uno o varios juegos físicos, siempre que
+        exista disponibilidad. En caso de los socios, estos deben cumplir las
+        condiciones establecidas por su membresía.
+      </p>
+
+      <h4>Supuesto 4: Estados de disponibilidad</h4>
+      <p>
+        Cada unidad física podrá tener únicamente un estado activo: Disponible,
+        En mesa, Prestado, Mantenimiento o Reportado con faltantes.
+      </p>
+
+      <h4>Supuesto 5: Reservas de mesas</h4>
+      <p>
+        Una mesa no podrá tener dos reservas simultáneas para la misma fecha y
+        horario.
+      </p>
+
+      <h4>Supuesto 6: Gestión de expansiones</h4>
+      <p>
+        Las expansiones serán manejadas como elementos independientes
+        relacionados con un juego principal.
+      </p>
+    </section>
+
+    <section class="modelo__ejercicios">
+      <h3>5. Reglas de negocio</h3>
+      <table>
+        <caption>Reglas de negocio del sistema</caption>
+        <thead>
+          <tr>
+            <th>Código</th>
+            <th>Descripción</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr
+            ><td>RN-01</td><td
+              >Un juego solamente puede ser prestado si al menos una unidad
+              física se encuentra disponible.</td
+            ></tr
+          >
+          <tr
+            ><td>RN-02</td><td
+              >Un socio solo podrá realizar préstamos si su membresía está
+              activa.</td
+            ></tr
+          >
+          <tr
+            ><td>RN-03</td><td
+              >Cada devolución debe registrar el estado del juego recibido.</td
+            ></tr
+          >
+          <tr
+            ><td>RN-04</td><td
+              >Una reserva debe estar asociada obligatoriamente a un cliente y
+              una mesa.</td
+            ></tr
+          >
+          <tr
+            ><td>RN-05</td><td
+              >Una reserva puede incluir varios juegos preseleccionados.</td
+            ></tr
+          >
+          <tr
+            ><td>RN-06</td><td
+              >Una unidad física no puede estar simultáneamente en préstamo y
+              disponible.</td
+            ></tr
+          >
+          <tr
+            ><td>RN-07</td><td
+              >Los clientes podrán realizar préstamos internos y reservas para
+              usar los juegos dentro de la ludoteca. Los clientes frecuentes
+              podrán tener acceso a beneficios debidos a su fidelización y
+              asistencia habitual. Los socios con membresía activa podrán
+              realizar préstamos internos y externos (alquileres), además, tener
+              acceso a beneficios por su membresía.</td
+            ></tr
+          >
+        </tbody>
+      </table>
+    </section>
+
+    <section class="modelo__ejercicios">
+      <h3>6. Actores del sistema</h3>
+      <table>
+        <caption>Actores y sus funciones</caption>
+        <thead>
+          <tr>
+            <th>Actor</th>
+            <th>Función</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr
+            ><td>Administrador</td><td
+              >Gestiona juegos, inventario y usuarios.</td
+            ></tr
+          >
+          <tr
+            ><td>Empleado</td><td
+              >Registra préstamos, devoluciones y reservas.</td
+            ></tr
+          >
+          <tr
+            ><td>Cliente</td><td
+              >Consulta catálogo, reserva mesas y solicita préstamo interno.</td
+            ></tr
+          >
+          <tr
+            ><td>Socio</td><td
+              >Consulta catálogo, reserva mesas y solicita préstamos internos y
+              externos.</td
+            ></tr
+          >
+          <tr
+            ><td>Cliente_Frecuente</td><td
+              >Consulta juegos disponibles, reserva mesas, solicita préstamos
+              internos y accede a beneficios por fidelización.</td
+            ></tr
+          >
+        </tbody>
+      </table>
+    </section>
+
+    <section class="modelo__ejercicios">
+      <h3>7. Procesos principales del sistema</h3>
+      <ul>
+        <li>
+          <strong>Gestión de inventario:</strong> permite registrar juegos, expansiones,
+          unidades físicas y controlar estados.
+        </li>
+        <li>
+          <strong>Gestión de préstamos:</strong> permite crear préstamos, asignar
+          juegos, registrar devoluciones y observaciones.
+        </li>
+        <li>
+          <strong>Gestión de reservas:</strong> permite consultar mesas disponibles,
+          reservar espacios y seleccionar juegos.
+        </li>
+        <li>
+          <strong>Gestión de membresías:</strong> permite registrar socios, asignar
+          planes y controlar vigencia.
+        </li>
+      </ul>
+
+      <div class="modelado">
+        <h2>Modelado.Modelo Entidad Relación (MER)</h2>
+        <div class="solution">
+          <a
+            href="https://viewer.diagrams.net/?tags=%7B%7D&lightbox=1&highlight=0000ff&edit=_blank&layers=1&nav=1&title=PROYECTO%20FINAL.drawio&dark=auto#Uhttps%3A%2F%2Fdrive.google.com%2Fuc%3Fid%3D1hFeRHfClpH0v2C7uZzADVFpEs85DmZQR%26export%3Ddownload"
+            target="_blank"
+          >
+            Abrir modelado
+          </a>
+
+          <h2>Transformación del modelo</h2>
+           <a
+            href="https://viewer.diagrams.net/?tags=%7B%7D&lightbox=1&highlight=0000ff&edit=_blank&layers=1&nav=1&title=Transformacion&dark=auto#Uhttps%3A%2F%2Fdrive.google.com%2Fuc%3Fid%3D1YEdp_4iuGkx4sTSG6zd0sfN5fLEpaVXf%26export%3Ddownload"
+            target="_blank"
+          >
+            Abrir modelado
+          </a>
+
+          <h2>Normalización</h2>
+          El modelo se lleva la a la tercera forma normal (3FN).<br><br>
+           <a
+            href="https://unbosqueeduco-my.sharepoint.com/:x:/g/personal/maortizg_unbosque_edu_co/IQACc9WM4MZETJ4GI1-Uug6IAWqB8AGgDSRCbiqp45DtRdc?e=1SXjpP"
+            target="_blank"
+          >
+            Abrir normalización
+          </a>
+
+          <h2>Modelo Relacional. Realizado en datamodeler versión 24.3.1</h2>
+          <a
+            href="https://drive.google.com/file/d/1ZZCPkG45hrw0rGF6LB78yPNAjpEBBt5_/view?usp=sharing"
+            target="_blank"
+          >
+            Abrir normalización
+          </a>
+        </div>
+
+      </div>
+    </section>
+  </div>
+</Layout>

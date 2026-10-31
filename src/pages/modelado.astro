@@ -10,6 +10,7 @@ import Modelo4AstroComponent from "../components/Modelo4.astro";
 import Modelo5AstroComponent from "../components/Modelo5.astro";
 import Modelo6AstroComponent from "../components/Modelo6.astro";
 import Modelo7AstroComponent from "../components/Modelo7.astro";
+import Ejercicio1AstroComponent from "../components/Ejercicio1.astro";
 
 import "../styles/modelado.css";
 import "../styles/style.css";
@@ -31,17 +32,13 @@ import "../styles/style.css";
 
     <!-- EJERCICIO 1 -->
 
-    <div class="evidencia">
-      <h2>Ejercicio 1</h2>
-
-      <iframe
-        src="/evidencias/modelado/ejercicio-1.pdf"
-        title="Evidencia de Modelado - Ejercicio 1"
+    <Ejercicio1AstroComponent />
+    <div class="solution">
+      <a
+        href="https://viewer.diagrams.net/?tags=%7B%7D&lightbox=1&highlight=0000ff&edit=_blank&layers=1&nav=1&title=ModeloEntidadRelacion.drawio&dark=auto#Uhttps%3A%2F%2Fdrive.google.com%2Fuc%3Fid%3D1qm4-GUfyYv89VY7E_hEoreEo2-UA7rfY%26export%3Ddownload"
+        target="_blank"
       >
-      </iframe>
-
-      <a href="/evidencias/modelado/ejercicio-1.pdf" target="_blank">
-        Abrir PDF en otra pestaña
+        Abrir modelado
       </a>
     </div>
   </section>
@@ -55,102 +52,71 @@ import "../styles/style.css";
       <Modelo1AstroComponent />
     </div>
 
-    <iframe src="/evidencias/modelado/1.pdf" title="Solución Punto 1"> </iframe>
-
-    <a href="/evidencias/modelado/1.pdf" target="_blank">
-      Abrir PDF en otra pestaña
+    <a
+      href="https://viewer.diagrams.net/?tags=%7B%7D&lightbox=1&highlight=0000ff&edit=_blank&layers=1&nav=1&title=Modelado_veterinaria.drawio&dark=auto#Uhttps%3A%2F%2Fdrive.google.com%2Fuc%3Fid%3D1y-DTLHPaAIkb7mQcnP_dEDhQYorP4Aor%26export%3Ddownload"
+      target="_blank"
+    >
+      Abrir modelo en otra pestaña
     </a>
 
     <div class="modelado2__contenido">
       <Modelo2AstroComponent />
     </div>
 
-    <iframe src="/evidencias/modelado/2.pdf" title="Solución Punto 2"> </iframe>
-
-    <a href="/evidencias/modelado/2.pdf" target="_blank">
-      Abrir PDF en otra pestaña
+    <a
+      href="https://viewer.diagrams.net/?tags=%7B%7D&lightbox=1&highlight=0000ff&edit=_blank&layers=1&nav=1&title=Modelo_biblioteca.drawio&dark=auto#R%3Cmxfile%3E%3Cdiagram%20name%3D%22P%C3%A1gina-1%22%20id%3D%221duvYvynas4vaIsiGO7z%22%3E7Vxbc5s4FP41fswOSIDxY%2By6TXedaaZOZ7dPHgUUW11ADIjG3l%2B%2FwhbmYpoQLCG36ZPR0QV8zvnOTYIRnIXbDwmKN7fUx8EIGP52BN%2BNAACONeE%2FOWV3oJhjQ1DWCfEFrSQsyX9YEA1BzYiP09pARmnASFwnejSKsMdqNJQk9Kk%2B7JEG9bvGaI1PCEsPBafUv4nPNoLq2FbZcYPJelPc2nTEHwxRMVr8lXSDfPpUIcH5CM4SStnhKtzOcJCzr2DMYd77H%2FQenyzBEesyARrGzUd0%2B%2Blqnc1uFvDKunHuryzndBmxcsp2BRcSmkU%2BztcxRnD6tCEML2Pk5b1PXPCctmFhwFsmvzzM%2Fo6CTMwWBJwwvK3cQTzlB0xDzJIdH7KpMNIyBNueSrZPJoImloG2aAvtuoKijYTU18e1S77wC8GaV7DJFELF%2Fom6PMe3fPhSNGnCNnRNIxTMS%2Bq0ztlyzILSWPDzG2ZsJ5CBMkbr3OZ3T3b%2FiPn7xte88YddNN9tq53vdseWf53jgzcjGuED5T3J2bLvb5dQggPEyPc6D9q4LabeUcK5cxSYaYCawIDREFhKs8TDYlZVl5sLjV9YiKFkjdnJQnvhH%2F%2FPGfrQRfov4AQFZB3xa48vgRNOeOTcn9GAJvvp0EfYffQ4PWUJ%2FRdXehzPxQ%2BPbVC7%2F3j%2FZfGpJ%2BBO8GYadXyZrip8gS785AY0zi%2Fxlg%2BZhlzCJOcf5A2fZg%2F7YebL9kkF3%2Bd%2Fzm%2FvFtefpXNerGJZg0niNZZuj9ZnFoN6LWJpBL9W%2B86wiDz62BuW5xjonGk6zxIfvFDD9GX55frzR%2FmWSazi2oPhw%2FgdCUiIBMBEUiRgWXojAauL9AvPlWxo%2BJDxB5vGOCH81jm8CupdSTrbhdnY9a02hLrgATpOG0LjHJQ8h%2BLr9QGp0wJSUAcpT%2F7qIB2rAqkj0YfZvxqWO%2FiwH8h7GBc2%2FumFtyWsEn%2Fw1tdKTym5vLGrilFf0KJV4PZFmFANBvEKNBMsZRbRtCWiyr0gk%2FgG8OF2CjCDgMQp7hM70IgVsrPagEDSh6gXBDoE7legmdk24zd5EJDpWCZ6IVB3Em8BBBO1IDhRekZYFlBlam%2BajdI1UKb2rkS1L55am96P35ziFywfTPPRaAZHU5Ou4uwhIB7yyJ4AlfkAU53ud6ors0NBucKkNh7WU2mhTtW8W5BOGJwzjLMxuBYdIfH9FlycyGHukwrrDeSxDAW9ZABPZeA27NGk4YUdW5VIOlUofxKR5MsR2i8%2FaBHKiZdoSAWoA4rMiolpaXYS4O05iU5lyNJJFNn0Yd9sfqTXNtXO9yRcSP3A0SeEslSBA4BXgEOPzps1hb%2FMkr%2FzUqW%2Ba8nf1lzyB1CisdSlOFJsHtRp87qh8GfYekkpj7MJ53YvW9mh0Og0iyzK6oxFVCMHG5oCCTnnALRi45XxwNmuHqcM%2BcrKJc3jL8pcPTRlqq%2BmrcNfQH07bQkpLHlHWbjC33AYBz2Ncg%2Blhsoq36DTIV%2BJ1mAEnCDP3zN%2Bsc4vPOqTNV2RKM3rqh7JNboYxP%2FScZw0XsM6r11oN3ititUyq61grMeAaN2K1htTjgdGSpzQdYJCtEIe8nFIvH4%2BtK2Y9AIEwESZE5WJAQj0YkB%2BYt0FA7ZOENgygyDN8lNQGLl0G1ZwfDAbFvEcOsGqwiTTgI3kVdnZXktm8go1HX5%2FXoGPZ9NG5cm08pxa%2B9m0M5V5P5U%2FFNpVBsR5cS6trNx8wce0W1O%2BUryHFTvOHrpECDvtckmNI0iIk5ViKDbPqynbj4JS30K52DKS9Bq7fsUfuvCU4jUXFB1a89UdU4OKax8%2FMh0oztdUV8M7ZaE6Py41gHV%2BW4%2FBrMfQharCegyu%2FEDZDowtM%2Fu2LzKIHXXLwqxz38RsR4nVyEdg044pBok9dGz5iL0NWvEFGPKRKoTYDdNjK3OwtszY0tZ91klHifZsYJ0nP8Uhpo%2FSzV44rR8z8QlKVyFNlAFhbAwFhOLggBwgaH5P8i0CYehM4eAIzjiI3OVNfmsw9ZeZJdhvcatOs%2FoPvVd3UP%2BUD1QXBk1cBer%2F12JFgwmbTkJ%2FsVxMZ5%2BcW9DtE0YXeg7%2F7vN8eX992%2B9zIh0O3rtOXQp93s7izfLbbofYv%2FxGHpz%2FDw%3D%3D%3C%2Fdiagram%3E%3C%2Fmxfile%3E"
+      target="_blank"
+    >
+      Abrir modelo en otra pestaña
     </a>
 
     <div class="modelado3__contenido">
       <Modelo3AstroComponent />
     </div>
 
-    <iframe src="/evidencias/modelado/3.pdf" title="Solución Punto 3"> </iframe>
-
-    <a href="/evidencias/modelado/3.pdf" target="_blank">
-      Abrir PDF en otra pestaña
+    <a
+      href="https://viewer.diagrams.net/?tags=%7B%7D&lightbox=1&highlight=0000ff&edit=_blank&layers=1&nav=1&title=Agregaci%C3%B3n.drawio&dark=auto#R%3Cmxfile%3E%3Cdiagram%20name%3D%22P%C3%A1gina-1%22%20id%3D%228YCn4FbDXnx-w5FWYrrm%22%3E7Vxbd9o4EP41PJZjWb4%2BEqBtzkmbbElOm6c9Clawdw3iCNHA%2FvqVY%2FkmO8EBCUOTp6CxLJvvmxnNjIb04HC%2B%2BULRMvxGAhz3TCPY9OCoZ5rAdlz%2BJ5FsU4lnG6lgRqNATCoEk%2Bg%2FLITZtHUU4FVlIiMkZtGyKpySxQJPWUWGKCVP1WmPJK4%2BdYlmuCaYTFFcl%2F6MAhYKqWNbxYWvOJqF2aOB46dX5iibLb7KKkQBeSqJ4LgHh5QQln6ab4Y4TtDLgEnv%2B%2FzC1fzNKF6wNjcMbRp%2BnQ0MbMQQGfDnr%2FAWfwJ%2BfRmx8optMxQYjdBilowunsKI4ckSTZNLT5x0LgvZPOYjwD9SwhCLyIIPfYOPH6M4HpKY0OeFIAaBjV0uXzFK%2FsWlK77jQuTwK%2BnDf6N4LR4uBJgyvCm9oPiSXzCZY0a3fEpY4sEVoD8VpFlCJBbJpwjNtBwxRkJlZvnKBaj8g8D1DRibdiuM8YZVsWyCuorbgiywBLIQoTiaJSRM%2BRMxl18k%2BEVcrwfiwjwKgmdCKVkvApy8v9GE%2FuV4shcBsE6AIxHgSAS4uggQOo6Dmq3XCSFrOsWvGUyNuGTZiRgSykIyIwsUjwupBHEx54qQpeD6H8zYVrg%2FtGakqgn8Len2V3J%2F386G92K558FoUxlt81EwSJxgoRdc8jlK0CuxzRCdYfbKd3aa6aY45rb%2Bu4qpcvJe4argYIdXqlmD5JYChL3HaZNbcqYefnhsMoxv49Hl8Hov27DqtgGMqnHYkm1o800niu7NYHg5%2Fn471oWvJXt%2FXQADoND5wG6cjxInYnfpROCJqvnw%2Bvvk7ur2%2BselNk%2BSzxGansejykF2FWq6dcaa%2FgJvx9F074OEYmPrigTrZcwLLHk%2BuEw%2B0pDMH9b8FS6WmEb8BRLnkklvCtGu1GuXf9on90KMg88X28c3OQ2%2ByXw9BYDadmFToVnY3ZhFcwqQX9ObAnRqTq3y5w9zKkoY2VYPtNmTodCenDPeZmCXduF82EU7uziaWbTKM0600jfo74X%2FK4U%2B9fi%2BJbo9qjs50A2IW29IxL9FrrdQqgJB1%2B%2Fb1UVS5yruM0vFf2kpud7RsFTq62pLPROVf6cDuGsVFHeQg99N7gZHzL%2BhPutwFG7KoKMoV00GbnW5LYNW8SpfKFqu8B4bbk2Do%2BDv9WqNaES0KfHRdNg94x10sl4mdy73o2H3iZnlyTTYmmgwVcb32Rnzu0qYu3VBJjx%2F%2FjYRK9HHR%2FelKwV5yUB1sePQCu7zrfxN0LY0YZlEVquXoz3TqFq35duSHqQrKo3KTOsPVRRjh6J0eqBuHlpO20vBoHzmeRQFO9Xz%2B%2FHk9m50OdB4xgyk9M3W12FknijIo%2BuhzlN8aB4N4Va1tixwvEIPOL4hq0i0wj0Qxsi8IbJkRCIhq9bNN7OkobL%2FgFbRtI9oijuibJD24SWOy3csz3ZNw7egZxuecE%2F5dd8Alu1aABjQdO1epTfvk98YwO7FU54clIgygZuVF7KFXNh3YTV8BU7fdHURds6JxIXyUlx%2BwKbNQLwzxnuoHG%2BxiKOvcatV4%2B4f1xfnSCmwNnwzbk8OX92dcQDIeYg2iMUOoaY17qQac49UZICH5hGH8Xeqof0Ruup8yUjyhl31KKss5UCzUysBZRspmYzmbNvv1EpUVli64k%2BNtzI65aFVjvzRLWF6%2FpGa8qDK3%2BVAr9v9%2F%2F3t%2Fq0SPoWnnI94GiJd%2B7kr7edAW9RrtUosTjRRHmlLlKVKnulrw7%2FVPlDFYYfu1mDaCyTQoKa2L6mpXM%2FRp6an%2BpMZzSVlVz5j16eIbwkM31O8bh3aVNt8%2FOVLcY0lt4G%2B0Eun6iTM%2Bmhj77UKQGWioKfNBFud6nRR5PtxfT8e3morX4BaR5c%2BN6f0Z4En%2B1sB5e4KALDDX2lu2M0qWmqI6zg966Q8a3WaoFmtErRz2G8onkV8OtK449gVU8uzEfU%2FZTMVGpXdUXSoxji8Lo3DbhVrd9GW9Nfd5Y2%2Bfd8wqpru7hFb8WHxX6vS3ab4519w%2FD8%3D%3C%2Fdiagram%3E%3C%2Fmxfile%3E"
+      target="_blank"
+    >
+      Abrir modelo en otra pestaña
     </a>
 
     <div class="modelado4__contenido">
       <Modelo4AstroComponent />
     </div>
 
-    <iframe
-      src="/evidencias/modelado/5.pdf"
-      title="Solución transformación a tablas"
+    <a href="/evidencias/modelado/5.pdf" target="_blank"> Abrir PDF taller </a>
+
+    <a
+      href="https://viewer.diagrams.net/?tags=%7B%7D&lightbox=1&highlight=0000ff&edit=_blank&layers=1&nav=1&title=ejercicioP2&dark=auto#Uhttps%3A%2F%2Fdrive.google.com%2Fuc%3Fid%3D1kvbm-M55i4HDJcDmiOo0ukN9yd7DS7ak%26export%3Ddownload"
+      target="_blank"
     >
-    </iframe>
-
-    <a href="/evidencias/modelado/5.pdf" target="_blank">
-      Abrir PDF en otra pestaña
-    </a>
-
-    <iframe
-      src="/evidencias/modelado/4.pdf"
-      title="Solución transformación a tablas"
-    >
-    </iframe>
-
-    <a href="/evidencias/modelado/4.pdf" target="_blank">
-      Abrir PDF en otra pestaña
+      Abrir modelo en otra pestaña
     </a>
   </div>
-
-
-
-
-
+ 
   <div class="modelado5__contenido">
     <Modelo5AstroComponent />
   </div>
 
   <div class="solution">
-    <iframe
-      src="/evidencias/modelado/6-1.pdf"
-      title="Modelo entidad relación extendido."
-    >
-    </iframe>
-
-    <a href="/evidencias/modelado/6-1.pdf" target="_blank">
+    <a href="https://viewer.diagrams.net/?tags=%7B%7D&lightbox=1&highlight=0000ff&edit=_blank&layers=1&nav=1&title=Modelo_P.drawio&dark=auto#R%3Cmxfile%3E%3Cdiagram%20name%3D%22P%C3%A1gina-1%22%20id%3D%22wDW8jF1p01-vI4PZU-Jh%22%3E7R3bdqLI9muyVs%2BDWRR3Hk1i%2BmTaXCbp9OnpFxcBoqSV8gAmcb7%2BFHJRClTE2lWaTL%2B0FFiSfb%2FV3ifK%2BeT9a2hPR9fY9cYnsuS%2BnygXJzL5pxjkv2Rlnq4gS1HTlWHou9nacuHB%2F8fLFqVsdea7XlR6MMZ4HPvT8qKDg8Bz4tKaHYb4rfzYMx6Xf3VqD73KwoNjj6ur%2F%2FXdeJSumrKxXP%2BP5w9H%2BS8j3UrvTOz84ewviUa2i99WlpTeiXIeYhynnybv5944gV4Ol%2FR7l2vuFi8WekHc5AuvyHm5n%2Fya3F50bkaX4dvb3VW%2Fg0yjuk%2B2dRTPcyiEeBa4XrKRdKKcvY382HuY2k5y940gnqyN4smYXCHyMf32qz2eZd%2FOFrww9t5XfiF7za8ennhxOCePjFYgaZkZ3N6WYEeKrKWL2T4dpGcLGX0VdGNneB8Wuy9BQz5k0NkBUgcLKEWpAsqSpDKcdKkEJkWFAlMNWVahRPYh%2FOtth5A99ocB%2BeyQzbywHmT6mPzO2Yx8GCYfHOz6Q5wvk7%2BhuNMKumoNFdLAtcrA7SgSA%2BjqN1H3z0FH9eaP0d11%2Fw1rr1EHZdTuuRWpVYU3noWOtwFVchUvZNuH7BKH8QgPcWCPe8vVszJ9L5%2FpYzzNcPbixfE8E%2BT2LMZljJK3DOc%2Fs%2B8vLv5OLk61%2FPLiffXmxby4cruJOCeXAQ68dOXST8C3uJ%2BpBjscehkYHkffjMuvP749Pv4e%2Fvp2ORi%2BaHedNRgPvbEd%2B69lmNZhb%2FFV8iL2fOWBKfaDOFrZ%2BS5ZWBIIMqRTqSynOrpinVoaRRDpxkvyKN6wPT%2FKTfhxby586F30oNjLpCCn6GCyS2bIXYpY7jqVtVUGQ8zZaz217cFee6FP4ax6Ajx5Cj1uWkXWwOheYkj3mmC6L5G99AnIXuNM9q4feo7jn5wrJ2dKAEb%2BJkX%2BKguxX2tUsZT6egXyR2QxrScvUbStc6Ztx5%2B5tgtG04V3ypSo62W6wpCqTcEy3WAq1L13P%2F6Z%2Fwj5vMJO5Gq5aXKR78lJEdT7DwpNNRZFNSkCs29RhMPAhzB348JoZE%2BTRRfPnsZer1ifEOj5Cf8pLFg19sbeMw7wwPUcHMS2Q%2BiHEd8WbFpEmQwKAxpYmAkhhnxbgyVRHv4Hc0Ci%2Fs9f1oN8IY%2Bfz36%2F3JvhP9F1R2WJOlUM7o4fCyxDZEeNBWXfYNd%2BgkxtojVyXRGOiDM9I%2B9wNvVCn7xBIvTz1bvlEgMTjygLLyD32igLvcbIk8vKwqDCVUiBUhVyo9ge%2BfPiMozqQBjFIf7tneMxDpdU90xIjlqqwDcBoO%2FY4252Y%2BK7bg0XhDgmNIeTJyypDi15wP4pXIbr0xXXf82XvpDX7978UXNn%2FdcJaGueo1db0EJN2kUvk4JMk0IevmdPCryDAM84nNjsLC6TMriodJVqgQHOYKgt5Kr3%2FwlivnurmTVJEypjoinUFumLgTk9Mu%2FYg014qh1D1SaANzKUpkIxlKmzZCjroBiKUzRZrN2Ww1xcBj%2BYTbwQDyJ7bDNL4zdgEY3SOTKU3aawDDgrYn18VOIPXjFpWWhQ2mTpYYrCHxtJJRQPygawVz3M1A0qxSDTAOXJeq9otxqIbr%2FbSjbtXgMBZw%2BbLNMGymfMBSumUJ5o5Ajyj7q0D7loNdxBxeepVDEqFtiDt1EqhJ%2FIuer3uw%2BchA5SwSJZ%2Bct8lEiWPUneJHiKpo3iWFyCUQqFTZlOIrLDJss8iHqQ9lHrmMtRKBG1kWEF6QISfmXn%2BzUQdXSoFmlgBfIqS%2B9BlYVaWGK8P8HMIYtmjjQ%2BIpQ9AE0BlvFDVVAR9kcgc97V1F4U2y6zhNJ2CgYzf0yLJQUbQig4q5DLrZusSC6%2FVV8iJ1grqGLZpdHpwL2Z5K7Xvzp%2FhIszFUFv8ECTumNR4YHbmDX%2Bl0H5X1Ttrw6WX9BZlhCqnzIFl7KzMGHCOwUX%2B%2FFszCz3TBM%2BJVMUOM3LkvDzuKMwwtc1qxRZOJWQvCf1L55eieseD0tojSKELKsxFuebEB4QuzTXEtHUDko%2FqP9vhtMz54vQYjcBx%2FDJ%2FkJelvyZEvXfH4vfkZ5xEHee7Yk%2FnqdfmeAAR%2BmrFvejBYEkd6Xpe7qehD872Yt3F69hh6m%2BkhZ%2FbSfbI7kX4OxvXr7jUr1pdL8OjSAiWV30oiiucsRoC9SQlYvkc8LMWgIsjeBz27OoeDZHXKtt5PXbrPxCipbiTk4LZGGVGpL7C9gk6wuKSFbQ4jIFbnKd0UWyuPyBlDqKH8iFZnE7FZzVVyv%2BuCXXaIUQLR5XlxDJhOlyJ2nl3sov6CtQlObLdXNlmXBisT5c%2BX0a9IvLAv6ri2WqyJ6rkE9hR6VMktIawRUzrUKVCGpU0kcDy%2FnoLP05TfCRjFPKOZP29c6OWKXwjnK7s9B2kswRHzsLLkanyyw5QlAI%2BwP4CTno%2BB2PHduR%2F%2Bw7TMnY2uwnK2BtD7RGJ1R4n2v0XR9P7IiT2oSLQmjARxJcOxotJEBtJy07iP3hzGt7mHt3QMKVi%2Bos0%2Bm6mIxIEU9eDScXEeTN4WTWx7%2BPQrSbLFWsIKSvQ%2BDWcym11LIt%2BfABkK43yrnxL96LGJbuUQkHg1vCwWAaHBR0Lri%2BspXTQS%2BxzGE0yrAdRo1gDQc5My9JN7GxRajSPo1qFaYaYEzUKGt3oEiYhrBYoOpl4UrIjEb5ocPAwkq5bC1SFqWw6A8gnOj0uUcWnVnrDbZj5ozLx5vzq9sbICQoVO2NAtY8x2Kp43OheiBWMye3xxSq5HOYQwUNktxajkC1wgYjHLZTDts7GlhUDy8mLaLrQQgcFNwMwmfPGdnVExAgMDWlMkxlMIVrsSxKzREksLBA3U2w1GR4Ch99NZ6zpYfeh5BQhQPLhhbEdlYUU6kpWMXwLjxM3A4fD57sqF2v6O0pE0uljweDdSdk2i8HScdcn4%2FEdiEogAdccnzev%2BrdfAfr7q9RA1wsuC7nTFviIkl0CFCIe5BRnTii3zFny75s3MXObEIe53oAy6CyjRaY%2B4AQ0y6mktgWEGIMHNFMgswPgMIWTbqXwlEQ2vU90b746q7ThSyqYMbK6sIumz5fnht3AjKGqKAiztNZBg6eTMceu06VFclMtQYHtF8k3h0Jp4nPHw5g59wgSeam22S2FqCYs5lNW1PsqvtaRHQaC8Z9PSUmgrGgtMaS0dggGSvfNmkbzaDoGLhhaUGPvOWDPU32hDu7XZEQ5AE4ESEzFRGC4nv%2FioiGIkLa0Xba%2FPwWCbHO8uInIXjHPiNvSGgZczch4Iwwma17LPZ0NWP3%2BAPKh4oJYZRmtu5nQrDja94HxnO%2Bhlf9FQRoULVtiOlw5aJH5YHEhznViAoPffE%2BJ%2B7gMPT4RRfAyqMRYlnjgFAN0D98gbRw4ud9onVR7TMIbMef%2BGlKhA8bgGoBphnufKT4gbTP%2BSyMIMMywuazh61PHbbhBAQ3iVJmqhFksZlAQfaQ4GK1ZnPBRAzhm0xDO2zFJQ1m8GlauajEACyIOqK6%2F62ty7%2FcnCjda7jDGGWsmBKYEs9HgzASXYJ74JWiNJw0uODiNu5TqJykYwBR3IMzPPbilv0XGihwhToIYNAxYIZMILNkAkVwPEOEGSuYCRTuwQyb4AaM8qkgvanDUX6j0tjDUMpVJUzAch5AKWGNOhGp01lqhlhoVKv5SbFAVT3DaYGcMxlpAcFeXMkU4lbYp1hC9QDTgTrHhsKiGYzBvRsMUvYt6NwP7xrLzpPC8b7jNL76EQQSF7xrvGYJPI6%2BGZdff3x7fPw9%2FPXtcjB80e46bM12odXbrRp%2BgRft10J9jV7nZeo3CtTtbeD3ru%2F6ve7FLZSNjxDVBKWj6HBBHt710JWzQL478JLy8sXgGn6ngZBCNfzpKID2I9OqCEVQzfSaLACvaJrYQckF1DkfvgCkf0rKqHBeLNOBZEg5qAP%2FMjcHSjD98657TQsj%2FGAYehFccVyFDRSwxm9IZeuLiMmotGos2tJ%2FYcQ5qthKCo1t9OiA0M7HkxQ7la4A%2BJYQbOjbwXDcQPItKgWugsh3vWylwTjsFtKvpnOsQgk%2FmUondGRAG4BPq427%2B9u%2Fe%2BdJJ76rh%2B%2FsZvxRxRFIon00BNY4C2lMq%2BkETcP8GKK82YhKltnEJPWST4sYxJ4TkM%2FMqDr3SwuqNuRTasYrHFUzPUesivUJBBk26fCSPbgh%2Byp1AAepMi3deJ%2ByazbadG%2F2%2Bt796%2FGq3%2B%2Fdw0XzZIOjppB5iyf7xR7YEXnMduHEkqxVxBKYj6Y1CojmGfG%2B%2FeSN73DkZ%2BbbE45jPDmppsxjXGcFks%2BT92EyBu70iUDRObVDJ7mXTCXsptYkES0KQpasG6qh65qJdCsTIMV9Q5YQ0g3NlEzDTKr6AS1ImTaEEC0qAE1InakjpYlWGTseKxA30UN06ElrpAwEzPSYkV949SO4ImzToJMUcKmgZpNTDrTUKEcFboeK7dVGSKIFHdy0KqQ3ymQeOCrslkeam%2BBCoeMWYJNLkd7IIDgMXGw%2FnJBMiriBqsizaFMXbu4g0pn259MFp1SFOI9iw6o671BK1lYfxs0zNUoiqXCV2XqjgDSLSOrF4%2Fl3MM%2BYHlLa0eCCTQbTYFNulB1GAppX%2FtnYt7qrPtik0rpcoeMj0LGmHJ3w%2FPSj17u4vYdiKK0CSTgZZDAtpzZqBP%2Fx5CR0sZXtBtPiMlGoECrbZKEINNkqp4PqGsPLmDXFlh4bGzAmMkKVANsbwsWnFIlWOXDR36MeXvrlOnG8IZ1v2aQ9EDhz2uTdJCk%2FWQ5lOlV8ERkucmEyNZ3yIeeHoK8bpzBWEhicBp7t773siXSZM8eARjtUOtoBN4oRHfVQ2PPb67v7dlVo2yW%2BqpaxgOCC4BZbmSW4F4yYxoaWYAnEJ2p43bu4uh1c9AZ33a%2FsQoc6VRFCCyDADgzWgZr2UxvQrkdqpRJQhTsXYR1RurNZ%2Fy%2BwYexIoyoCAOdUWkeU%2BayigbzpORwaENUCBrAYwDpqvxdBtoBBGnWAQWeBhvVH2w9PC8Sh%2FWS%2FwCkCnc4pMNG03l%2F%2FU95%2FOmc%2Frn6fDZ6crul5TqdlFLR2r%2BMKYotzixVeNukmLB0aT01DPPecuCVT5V0oNrjPMq08LOOUgXFVC2P5w3CVtCNXseEQlVfz4VqIH3X3NwRpCNPhbibdC2pxcETOSRUHEqQVrFC%2BiMbiWEYtDlj2j8j7Wgs6QM1Qya9EtHTdLItHSdK3CkhytaI4uUrF%2BlogJU8srXNu2ZUC1ZLZv57WWk%2BLarYJx%2Br5ABY2FovYSj1BkWaTV0HSRpgLbSk28VwfD6b2kG9TMdWkw6Ymi8xYPZxb5mTqN1PEMAojghdqpKNGB6cgCf7udoBD1wsG6UwQUJKv9BChspA6iyykfhN1%2Fxx0VG%2F%2BGN1d99%2Bw9hq1DRDV7lXFz8FK%2FTatdxoyDq9jnZtQwLGGaDwGa6fXoauvmBzUrIVby3Lf2r1UoeaRqE56qdsqiu4bxXQgtUXgxzyNIr1yhplFqKYWtC0bJdXupX9K1uB2lmETzLmzRmw%2FJaoh54Ns8Qm788piWFlx6ZXE9Q%2BG9CoByNob1T2SxcpPJYt1L5Ws1%2F0FBWs72PWHxB0KsTtzYq4ukUorxiJly96gkHdg%2Fw%2BTw2AehKtY9B1FpmyZVHhWwnANtpLpI2nsInpR%2F%2Bcv60G%2BkMfPZ79f7s3wn%2Bi6bfqrnr4E%2Bcix2Dm03KJJG4H%2B0VpaUUaRAeYutA0Tba6GPBSzyNjGBIXzrBrGqvt8KsnWRhe6iVtOZ0%2F2SansH8RafJW8sz1feWCaSNZog7TXZOvUKNGiqqNTi6K7dNu1W1C5WFrIN9YXRYPNfCe4s%2BD1zHLkJY%2Bgk2fpSjAWKaBapd3IbDtQJFxdAMEfSeXEAmLS86gW%2FsfcCIwb%2FJejRZnD%2F5iF0FXvAQoBMo2BijPRAAPkMsQ4XlUbSf%2FNa%2Bx6yRP%2FBw%3D%3D%3C%2Fdiagram%3E%3C%2Fmxfile%3E" target="_blank">
       Abrir PDF en otra pestaña
     </a>
   </div>
 
-
-
-
-  <div class="modelado6__contenido">
+ <div class="modelado6__contenido">
     <Modelo6AstroComponent />
   </div>
 
   <div class="solution">
-    <iframe
-      src="/evidencias/modelado/6-2.pdf"
-      title="Modelo reducido a tablas."
-    >
-    </iframe>
-
-    <a href="/evidencias/modelado/6-2.pdf" target="_blank">
+    <a href="https://viewer.diagrams.net/?tags=%7B%7D&lightbox=1&highlight=0000ff&edit=_blank&layers=1&nav=1&title=Modelo_PII.drawio&dark=auto#R%3Cmxfile%3E%3Cdiagram%20name%3D%22P%C3%A1gina-1%22%20id%3D%22aCjBg7G9xfci9utCJkLA%22%3E7V1bc6JIFP41Vs0%2BTAq6ocFHY0w2VblMVWZ3ZvYlRaCjzKJttTjR%2FfXbxEa5mIQ4fbpV8hT6cAmc%2B3fOATu4P15c8GA6umYRTTrIihYdfNZByO4iLP5klKWkWI6kDHkcSdqGcBf%2FR%2FMDJXUeR3RWOjBlLEnjaZkYssmEhmmJFnDOnsqHPbKk%2FF%2BnwZDWCHdhkNSp3%2BIoHUkqcZ3Njj9pPBzl%2F9om3dWecZAfLR9lNgoi9lQg4UEH9zlj6WprvOjTJGNfzpjVeecv7F3fGaeTtMkJ3ildsr8vvt0RNsU%2F%2F6H8AgWfUf0q8sKzdJkz4WkUp%2FRuGoTZ%2BklIuoNPR%2Bk4EStbbAZJPJyI7VBcgnJBeIyTpM8Sxp9Px1FA%2FcdQ0GcpZ%2F%2FSwh4S%2BvThUexZ%2FctfQTKX%2F%2FJucDaQRMpTuijcmny6C8rGNOVLccioIABHcvupIC1L0hblQ6RO%2BnIZSFUZri%2B8YabYkPx8B2%2BlitCopmJ1ZrM5D%2Bkr18I1oWSXvZNLxtMRG7JJkAw21FPO5pOIZndoidXmmCvGplJ0P2maLqXVBfOUlQUr7pIvvxcXP7KLnbj58mwhL75aLderqJfZnlhO2ISuKOdxxr3n%2FdKOAz6k6Vu6WZc2p0mQxr%2FKPFUuPO9ohGcZEZ5rUni4iVcT1xFRJHvA9%2Fq3mreKYk7DMGYTKJeFLE0%2By9XMORFpxVWBuIZJmWsIimtdhc6CmHEWrxs9XcTp98J2wZWI1caTZIvckfymA3g%2BVdxUsCwcMGXxJJ0VrvwlIxQkjssSt0klJ3rreMuqKMPqDl4429p%2B9vp2V15SnlXRsTVPdlc7ottY43kURLqs1XagzDUHF68zTjxeWubQNgaWc1ppPMUEWJJq3M0YGAv315M7xnEUbTHmmhA6iCTZfT2IjWG20TvJSYIZa%2BpOUsJ1KZGykOyqxkOJ6BUP2hZgguAMACsMWDYyE7Hy9HaT0f4o7oNNb%2B0XJK4nv7XdI5CfGjk4RuXQqHwyGwXTbJOP2PhhLu7hdEp5LO4g80k59cuG9O5AXXFr1I5c6m1za13i4YBsjypqXJrvlj2ad%2BKWfBoGQy6200QWBiLG18HV4Pz25lZT1HDBUI7tq%2FQ6hnDOOmp4pbBhtSJsaAcMkOge4Sq6B1N8lfje9vZK8duRL3m6FR8UKdeAAlhQRUeFlE91ImVSKw5ByUild9pmFubAnKaojIw2K14Tl9lSR%2B%2BqB%2BXCqtYB58Ea9YJyiLZyZGOhMHHGTSwWEZs%2FPB%2F2kl%2BDlsLlFZwYukiXGBqhsz0Ww%2FlfN%2F3L2xtd9oDBUFweudSEC9dMuFDj9o3WjlCjVmuLa0fEqhaP7C6Ye1I57oEMlzZKGZS2YR1s1JhUlqYMy8%2FQsJVRgI4aVaZa7Aw9T9fQosr0ABtCk0dgEbgRKlRYsspLI%2FO8LjKZjyln97MgCQplk%2FlvlU0aZMIe0lQ3wUpHPFEbY4bRBDpn%2BXFZyJbCYs1CPK9kITiHEupZrDKtwns0w66p62HYQHSPQdcM5JGGI1DT6FYswy%2FHDgesJYhVFt2xY9QyDLUEDRtHo4KkQuOYchrGTJni41dDggOGDzBRqfgf5cOd5aD7TY0R4wGQ2yZWuc4HN8LkIIXa67SyV2q0zucYR8WPsV44XO3QQaX6jkq%2F7uxRqm%2BdoFaUwB3j2f4KDus0DtuutE09sMChsljkmMn3d3iHzzhGMGtSujECnaVBtBtG2MVa4N6wc1QWjhxDKMHoC0aGNV83uqgHE%2B2Nh7p5gI0bON0m7N3Tsdr%2ByU4SeHtitjLVTMA6P26jqebjGzKrVEcJmPt3G8G0PdXvT%2BJOetd%2FACm556PKVJMLJgX0IYWXhvO7VSnYXShk7TYCZga8Tf%2FqcnDzFe5tdn3uRuXr0K6hZoyary5Z20WnJ2t0VdaQTMnB6BSlazTrd981pL%2FPU3ghG095wKFcGyLaXNshI4VP1yKG30DF8Fo6C9bsJyrjS%2F4UrfJrxOgsJfnAe8%2B8IWAGojLwEzNtVVkdz7ffVx03Y1RGkwXSCOMfQrIAliV42uzvoJE%2BbJbQrQgBbLaEqOx5kDZ%2BM5gYnagi%2B1qnEVnC5%2F7VJZSbqtZpAN2U0u%2FkHnKdhnhGNf1ocD6UTRB9obvRp4mOrzrsVyaW4TjsNUJ%2F%2B5wc2XBtEF3JkafyxzC8Q36t1Cxq8xqhNoWDHREL52OxV92bD9XspdzH64JVAT2VVUAPmVFhs%2BN8hnW%2FEUpWqPvy9TcQvSfVLzfBxU%2BVxT3PMK4tDIO3R%2B91T4YDviqEq9%2FBgFP7Ron5nqaNZ1AzeiKN19X69PwmAigz4g3VrfFpJy7Z7jY2VflU7U7CKeoht4i%2F9C569%2F0dW2AN1LX6ozIEQ4nBbwQzjw%2FI23YlE%2FHA5nZ9pDAT8Q8ZRPpG57z8RiCyzfVDGzvajEJlZcXfqxc3NbWdfKPDKf6%2Btp2g44abjxvCm4hKBOu38W20VS5uzEQ%2BPpX7Zryp%2FBiKD%2FYBGF%2FlmINv%2BsdQTBiTb%2FTnBnyQhmNN068HZ5e39wLegf3uVU3nuzvovFhyxtLCvgvxsKNrFtHsiP8B%3C%2Fdiagram%3E%3C%2Fmxfile%3E" target="_blank">
       Abrir PDF en otra pestaña
     </a>
   </div>
 
-  
   <div class="modelado7__contenido">
     <Modelo7AstroComponent />
   </div>
 
-
-
-
-</Layout>
+ </Layout>

@@ -843,3 +843,436 @@
     }
 
 }
+
+
+
+
+/******************** CONTENEDOR GENERAL ********************/
+
+.models {
+    width: 100%;
+    padding: var(--space-sm);
+    box-sizing: border-box;
+}
+
+.modelo {
+    width: 100%;
+    max-width: 1500px;
+
+    margin: var(--space-md) auto;
+    padding: var(--space-md);
+
+    box-sizing: border-box;
+}
+
+
+/******************** ENUNCIADO ********************/
+
+.modelo__ejercicios {
+    width: 100%;
+    max-width: 1500px;
+
+    margin: 0 auto;
+    padding: var(--space-md);
+
+    background: rgba(203, 220, 255, 0.15);
+
+    border: var(--space-xxs) solid rgba(168, 85, 247, 0.3);
+    border-radius: var(--space-radius-xs);
+
+    color: var(--color-secondary);
+
+    font-family: var(--text-font);
+    font-size: var(--body-size);
+
+    line-height: 1.7;
+    text-align: justify;
+
+    box-sizing: border-box;
+}
+
+
+/******************** TITULO PRINCIPAL ********************/
+
+.modelo__ejercicios h2 {
+    color: var(--color-dark);
+
+    font-family: var(--h2-font);
+    font-size: var(--h2-size);
+
+    text-align: center;
+
+    margin: var(--space-md) 0;
+    padding: var(--space-md);
+
+    border-bottom: var(--space-xxs) dashed var(--color-dark);
+}
+
+
+/******************** SUBTITULOS ********************/
+
+.modelo__ejercicios h3 {
+    color: var(--color-superface);
+
+    font-family: var(--h3-font);
+    font-size: var(--h3-size);
+
+    text-align: left;
+
+    margin: var(--space-md) 0 var(--space-sm);
+    padding: var(--space-xs);
+
+    border-bottom: var(--space-xxs) dashed var(--color-dark);
+}
+
+
+/******************** PARRAFOS ********************/
+
+.modelo__ejercicios p {
+    margin: var(--space-sm) 0 var(--space-md);
+
+    color: var(--color-secondary);
+
+    font-family: var(--text-font);
+    font-size: var(--body-size);
+
+    line-height: 1.8;
+    text-align: justify;
+}
+
+.modelo__ejercicios strong {
+    color: var(--color-dark);
+    font-weight: bold;
+}
+
+
+/************************************************************
+ *                    TABLA DE ATRIBUTOS
+ ************************************************************/
+
+/******************** TABLA GENERAL ********************/
+
+.modelo__ejercicios table {
+    width: 80%;
+    max-width: 1000px;
+
+    margin: var(--space-md) auto;
+
+    border-collapse: collapse;
+
+    background: var(--color-blue);
+
+    font-family: var(--text-font);
+    font-size: var(--h6-size);
+
+    text-align: center;
+}
+
+
+/******************** TITULO TABLA ********************/
+
+.modelo__ejercicios caption {
+    padding: var(--space-sm);
+
+    color: var(--color-secondary);
+    background: var(--color-purple);
+
+    font-family: var(--h4-font);
+    font-size: var(--h5-size);
+
+    text-align: center;
+
+    border: var(--space-xxs) solid var(--color-dark);
+}
+
+
+/******************** ENCABEZADOS ********************/
+
+.modelo__ejercicios th {
+    padding: var(--space-sm);
+
+    color: var(--color-secondary);
+    background: var(--color-purple);
+
+    font-family: var(--h4-font);
+    font-size: var(--h6-size);
+
+    border: var(--space-xxs) solid var(--color-dark);
+}
+
+
+/******************** CELDAS ********************/
+
+.modelo__ejercicios td {
+    padding: var(--space-xs);
+
+    color: var(--color-tertiary);
+    background: var(--color-blue);
+
+    font-family: var(--text-font);
+    font-size: var(--h6-size);
+
+    border: var(--space-xxs) solid rgba(168, 85, 247, 0.3);
+}
+
+
+/******************** FILAS ALTERNAS ********************/
+
+.modelo__ejercicios tbody tr:nth-child(even) td {
+    background: var(--color-blue-dark);
+}
+
+
+/******************** EFECTO HOVER ********************/
+
+.modelo__ejercicios tbody tr:hover td {
+    background: var(--color-accent-orange);
+
+    transition: all 0.3s ease;
+}
+
+
+/************************************************************
+ *                    TABLET
+ ************************************************************/
+
+@media (max-width: 1024px) {
+
+    .models {
+        padding: var(--space-xs);
+    }
+
+    .modelo {
+        width: 100%;
+        padding: var(--space-sm);
+    }
+
+    .modelo__ejercicios {
+        padding: var(--space-sm);
+    }
+
+    .modelo__ejercicios table {
+        width: 90%;
+    }
+
+    .modelo__ejercicios p {
+        font-size: var(--h6-size);
+    }
+}
+
+
+/************************************************************
+ *                 TABLET PEQUEÑA
+ ************************************************************/
+
+@media (max-width: 768px) {
+
+    .models {
+        padding: var(--space-xs);
+    }
+
+    .modelo {
+        width: 100%;
+        padding: var(--space-xs);
+    }
+
+    .modelo__ejercicios {
+        width: 100%;
+        padding: var(--space-sm);
+
+        font-size: var(--h6-size);
+    }
+
+    .modelo__ejercicios h2 {
+        font-size: var(--h4-size);
+        padding: var(--space-xs);
+    }
+
+    .modelo__ejercicios h3 {
+        font-size: var(--h5-size);
+    }
+
+    .modelo__ejercicios p {
+        font-size: var(--h6-size);
+    }
+
+    .modelo__ejercicios table {
+        width: 100%;
+        font-size: var(--h6-size);
+    }
+
+    .modelo__ejercicios th,
+    .modelo__ejercicios td {
+        padding: var(--space-xs);
+    }
+}
+
+
+/************************************************************
+ *                    CELULAR
+ ************************************************************/
+
+@media (max-width: 480px) {
+
+    .models {
+        width: 100%;
+        padding: var(--space-xxs);
+    }
+
+    .modelo {
+        width: 100%;
+        padding: var(--space-xs);
+        margin: var(--space-sm) auto;
+    }
+
+    .modelo__ejercicios {
+        width: 100%;
+        padding: var(--space-sm);
+
+        font-size: var(--h6-size);
+        line-height: 1.6;
+    }
+
+    .modelo__ejercicios h2 {
+        font-size: var(--h5-size);
+        padding: var(--space-xs);
+        margin: var(--space-xs) 0 var(--space-sm);
+    }
+
+    .modelo__ejercicios h3 {
+        font-size: var(--h5-size);
+        margin: var(--space-sm) 0;
+    }
+
+    .modelo__ejercicios p {
+        font-size: var(--h6-size);
+        text-align: left;
+    }
+
+    .modelo__ejercicios table {
+        width: 100%;
+        font-size: var(--h6-size);
+    }
+
+    .modelo__ejercicios th,
+    .modelo__ejercicios td {
+        padding: var(--space-xs);
+    }
+
+    .modelo__ejercicios caption {
+        font-size: var(--h6-size);
+    }
+}
+
+/************************************************************
+ *                  BOTÓN VER SOLUCIÓN
+ ************************************************************/
+
+.btn-solucion {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-xs);
+
+    margin: var(--space-md) auto;
+    padding: var(--space-sm) var(--space-md);
+
+    min-width: 200px;
+
+    color: var(--color-secondary);
+    background: var(--color-purple);
+
+    border: 2px solid var(--color-dark);
+    border-radius: var(--space-radius-xs);
+
+    font-family: var(--h5-font);
+    font-size: var(--h5-size);
+
+    cursor: pointer;
+
+    box-shadow: 0 4px 12px rgba(168, 85, 247, 0.2);
+
+    transition: all 0.3s ease;
+}
+
+
+/******************** ICONO ********************/
+
+.btn-solucion__icono {
+    color: var(--color-dark);
+
+    font-size: var(--h3-size);
+
+    transition: transform 0.3s ease;
+}
+
+
+/******************** TEXTO ********************/
+
+.btn-solucion__texto {
+    font-family: var(--h5-font);
+}
+
+
+/******************** HOVER ********************/
+
+.btn-solucion:hover {
+    background: var(--color-hover);
+
+    border-color: var(--color-hover);
+
+    transform: translateY(-3px);
+
+    box-shadow: 0 6px 18px rgba(250, 75, 0, 0.3);
+}
+
+
+/******************** ICONO HOVER ********************/
+
+.btn-solucion:hover .btn-solucion__icono {
+    transform: translateX(4px);
+}
+
+
+/******************** SOLUCIÓN ABIERTA ********************/
+
+.btn-solucion[aria-expanded="true"] {
+    background: var(--color-superface);
+    border-color: var(--color-superface);
+    color: var(--color-primary);
+}
+
+.btn-solucion[aria-expanded="true"] .btn-solucion__icono {
+    transform: rotate(90deg);
+}
+
+
+/******************** EFECTO CLICK ********************/
+
+.btn-solucion:active {
+    transform: scale(0.97);
+}
+
+
+/******************** ACCESIBILIDAD ********************/
+
+.btn-solucion:focus-visible {
+    outline: 3px solid var(--color-accent);
+    outline-offset: 4px;
+}
+
+
+/******************** CELULAR ********************/
+
+@media (max-width: 480px) {
+
+    .btn-solucion {
+        width: 100%;
+        min-width: auto;
+
+        padding: var(--space-sm);
+
+        font-size: var(--h6-size);
+    }
+
+}

@@ -1,0 +1,689 @@
+---
+import Layout from "../layouts/Layout.astro";
+import BannerAstroComponent from "../components/Banner.astro";
+import HeaderTitleAstroComponent from "../components/Header-title.astro";
+
+import Modelo1AstroComponent from "../components/Modelo1.astro";
+import Modelo2AstroComponent from "../components/Modelo2.astro";
+import Modelo3AstroComponent from "../components/Modelo3.astro";
+import Modelo4AstroComponent from "../components/Modelo4.astro";
+import Modelo5AstroComponent from "../components/Modelo5.astro";
+import Modelo6AstroComponent from "../components/Modelo6.astro";
+import Modelo7AstroComponent from "../components/Modelo7.astro";
+import Ejercicio1AstroComponent from "../components/Ejercicio1.astro";
+import NormAstroComponent from "../components/Norm.astro";
+
+import "../styles/modelado.css";
+import "../styles/style.css";
+
+---
+
+<Layout title="Digital Portfolio">
+  <div class="hero">
+    <div class="hero__banner">
+      <BannerAstroComponent />
+    </div>
+
+    <div class="hero__title">
+      <HeaderTitleAstroComponent />
+    </div>
+  </div>
+   <div class="models">
+    
+
+    <div class="modelo">
+
+    <section class="modelo__ejercicios">
+        <h2>PUNTO 2 — Factura de compra y venta (COLOMBIAN SYSTEMS)</h2>
+
+        <p>
+            La empresa <strong>COLOMBIAN SYSTEMS</strong> lo ha contratado como el
+            "Ingeniero Encargado" para sistematizar la facturación. En la siguiente
+            <strong>FACTURA DE COMPRA VENTA</strong>, usted debe analizar toda la
+            información disponible y aplicar el proceso de normalización, hasta llegar
+            a la Tercera Forma Normal.
+        </p>
+
+        <p>
+            Se pide realizar la respectiva justificación detallada de cada uno de los
+            pasos que conduzcan al resultado final.
+        </p>
+
+        <h3>Relación inicial</h3>
+        <p>
+            <strong>Factura</strong> (NUM_FAC, FECHA_FAC, NOM_CLIENTE, DIR_CLIENTE,
+            RIF_CLIENTE, CIUDAD_CLIENTE, TELEF_CLIENTE, CATEGORIA, COD_PROD,
+            DESP_PROD, VAL_UNIT, CANT_PROD)
+        </p>
+
+        <h3>Significado de los atributos</h3>
+        <table>
+            <caption>Atributos de la relación Factura</caption>
+            <thead>
+                <tr>
+                    <th>Atributo</th>
+                    <th>Significado</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>NUM_FAC</td>
+                    <td>Número de la factura de compra venta</td>
+                </tr>
+                <tr>
+                    <td>FECHA_FAC</td>
+                    <td>Fecha de la factura de compra venta</td>
+                </tr>
+                <tr>
+                    <td>NOM_CLIENTE</td>
+                    <td>Nombre del cliente</td>
+                </tr>
+                <tr>
+                    <td>DIR_CLIENTE</td>
+                    <td>Dirección del cliente</td>
+                </tr>
+                <tr>
+                    <td>RIF_CLIENTE</td>
+                    <td>RIF del cliente</td>
+                </tr>
+                <tr>
+                    <td>CIUDAD_CLIENTE</td>
+                    <td>Ciudad del cliente</td>
+                </tr>
+                <tr>
+                    <td>TELEF_CLIENTE</td>
+                    <td>Teléfono del cliente</td>
+                </tr>
+                <tr>
+                    <td>CATEGORIA</td>
+                    <td>Categoría del producto</td>
+                </tr>
+                <tr>
+                    <td>COD_PROD</td>
+                    <td>Código del producto</td>
+                </tr>
+                <tr>
+                    <td>DESP_PROD</td>
+                    <td>Descripción del producto</td>
+                </tr>
+                <tr>
+                    <td>VAL_UNIT</td>
+                    <td>Valor unitario del producto</td>
+                </tr>
+                <tr>
+                    <td>CANT_PROD</td>
+                    <td>Cantidad de productos que compra el cliente</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p>
+            La llave primaria es el número de factura de venta: <strong>NUM_FAC</strong>.
+        </p>
+    </section>
+
+</div>
+
+   </div>
+
+
+   <div class="modelo">
+
+    <section class="modelo__ejercicios">
+        <h2>PUNTO 3 — Empresa de envío de mercancía</h2>
+
+        <p>
+            A continuación se agrupan todos los atributos que hacen parte de la base
+            de datos para aplicarle las reglas de normalización. Donde se incluyen
+            los nombres de los atributos con su significado.
+        </p>
+
+        <h3>Significado de los atributos</h3>
+        <table>
+            <caption>Atributos de la relación de guías de envío</caption>
+            <thead>
+                <tr>
+                    <th>Atributo</th>
+                    <th>Significado</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>GUIA_NO</td>
+                    <td>Número de guía</td>
+                </tr>
+                <tr>
+                    <td>GUIA_FECHA</td>
+                    <td>Fecha de la guía</td>
+                </tr>
+                <tr>
+                    <td>GUIA_HORA</td>
+                    <td>Hora de la guía</td>
+                </tr>
+                <tr>
+                    <td>ORGN_RIF</td>
+                    <td>Identificación de empresa origen</td>
+                </tr>
+                <tr>
+                    <td>ORGN_NOM</td>
+                    <td>Nombre de empresa origen</td>
+                </tr>
+                <tr>
+                    <td>ORGN_ACT</td>
+                    <td>Actividad comercial de empresa origen</td>
+                </tr>
+                <tr>
+                    <td>ORGN_CIUDAD</td>
+                    <td>Ciudad de empresa origen</td>
+                </tr>
+                <tr>
+                    <td>ORGN_DIR</td>
+                    <td>Dirección de empresa origen</td>
+                </tr>
+                <tr>
+                    <td>ORGN_TEL</td>
+                    <td>Teléfono de empresa origen</td>
+                </tr>
+                <tr>
+                    <td>ORGN_CEL</td>
+                    <td>Celular de empresa origen</td>
+                </tr>
+                <tr>
+                    <td>DEST_ID</td>
+                    <td>Identificación del destinatario</td>
+                </tr>
+                <tr>
+                    <td>DEST_NOM</td>
+                    <td>Nombre del destinatario</td>
+                </tr>
+                <tr>
+                    <td>DEST_COD_CIUDAD</td>
+                    <td>Código de la ciudad del destinatario</td>
+                </tr>
+                <tr>
+                    <td>DEST_CIUDAD</td>
+                    <td>Ciudad del destinatario</td>
+                </tr>
+                <tr>
+                    <td>DEST_DIR</td>
+                    <td>Dirección del destinatario</td>
+                </tr>
+                <tr>
+                    <td>DEST_TEL</td>
+                    <td>Teléfono del destinatario</td>
+                </tr>
+                <tr>
+                    <td>DEST_KM</td>
+                    <td>Distancia kilometraje de ciudad origen a ciudad del destinatario</td>
+                </tr>
+                <tr>
+                    <td>CODIGO</td>
+                    <td>Código del paquete</td>
+                </tr>
+                <tr>
+                    <td>TIPO</td>
+                    <td>Tipo de paquete</td>
+                </tr>
+                <tr>
+                    <td>NOMBRE</td>
+                    <td>Nombre del paquete</td>
+                </tr>
+                <tr>
+                    <td>DESCRIPCION</td>
+                    <td>Descripción del paquete</td>
+                </tr>
+                <tr>
+                    <td>VALR_FLETE</td>
+                    <td>Valor del flete</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+</div>
+
+
+<div class="modelo">
+
+    <section class="modelo__ejercicios">
+        <h2>PUNTO 4 — Videoclub</h2>
+
+        <p>
+            En una tienda de video se necesita mantener información de alrededor de
+            3000 casetes. Cada uno de los casetes tiene asignado un número. Por cada
+            película se necesita conocer un título y una categoría, por ejemplo:
+            comedia, suspenso, drama, acción, ciencia ficción, etc. Se mantienen
+            algunas copias de muchas películas. Se le da a cada película una
+            identificación y se mantiene seguimiento de lo que contiene cada casete.
+        </p>
+
+        <p>
+            Un casete puede venir en varios formatos y una película es grabada en un
+            solo casete; frecuentemente las películas son pedidas de acuerdo a un
+            actor específico. Tom Cruise y Demi Moore son los más populares, es por
+            esto que se debe mantener información de los actores que pertenecen a
+            cada película.
+        </p>
+
+        <p>
+            No en todas las películas actúan artistas famosos. A los clientes de la
+            tienda les gusta conocer datos como el nombre real del actor y su fecha
+            de nacimiento.
+        </p>
+
+        <p>
+            En la tienda se mantiene información solo de los actores que aparecen en
+            las películas y que se tienen a disposición. Solo se alquilan videos a
+            aquellos que pertenecen al club de videos. Para pertenecer al club se
+            debe tener un buen crédito. Por cada miembro del club se mantiene una
+            ficha con su nombre, teléfono y dirección, y cada miembro del club tiene
+            asignado un número de membresía. Se desea mantener información de todos
+            los casetes que un cliente alquila; cuando un cliente alquila un casete
+            se debería conocer el nombre de la película, la fecha en la que se alquila
+            y la fecha de devolución.
+        </p>
+
+        <h3>Se pide</h3>
+        <p>
+            Aplicar las reglas de normalización hasta la tercera forma normal,
+            teniendo las siguientes entidades con sus respectivos atributos:
+        </p>
+
+        <p>
+            <strong>Alquiler</strong> (cod_alquiler, num_membresia, cod_cliente,
+            nom_cliente, dir_cliente, telef_cliente, cod_cassette, fecha_alquiler,
+            fecha_dev, valor_alquiler, cantidad)
+        </p>
+
+        <p>
+            <strong>Cassette</strong> (cod_cassette, num_copias, formato, cod_pelicula,
+            titulo, categoría, cod_actor, nom_actor, fechanac_actor, cod_tipo)
+        </p>
+
+        <h3>Significado de los atributos</h3>
+        <table>
+            <caption>Atributos de las relaciones Alquiler y Cassette</caption>
+            <thead>
+                <tr>
+                    <th>Atributo</th>
+                    <th>Significado</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>cod_alquiler</td>
+                    <td>Código del alquiler</td>
+                </tr>
+                <tr>
+                    <td>num_membresia</td>
+                    <td>Número de membresía</td>
+                </tr>
+                <tr>
+                    <td>cod_cliente</td>
+                    <td>Código del cliente</td>
+                </tr>
+                <tr>
+                    <td>nom_cliente</td>
+                    <td>Nombre del cliente</td>
+                </tr>
+                <tr>
+                    <td>dir_cliente</td>
+                    <td>Dirección del cliente</td>
+                </tr>
+                <tr>
+                    <td>telef_cliente</td>
+                    <td>Teléfono del cliente</td>
+                </tr>
+                <tr>
+                    <td>cod_cassette</td>
+                    <td>Código del cassette</td>
+                </tr>
+                <tr>
+                    <td>fecha_alquiler</td>
+                    <td>Fecha del alquiler de la película</td>
+                </tr>
+                <tr>
+                    <td>fecha_dev</td>
+                    <td>Fecha de devolución de la película</td>
+                </tr>
+                <tr>
+                    <td>valor_alquiler</td>
+                    <td>Valor del alquiler de la película</td>
+                </tr>
+                <tr>
+                    <td>cantidad</td>
+                    <td>Cantidad de películas alquiladas</td>
+                </tr>
+                <tr>
+                    <td>num_copias</td>
+                    <td>Número de copias de cassette</td>
+                </tr>
+                <tr>
+                    <td>formato</td>
+                    <td>Formato del cassette</td>
+                </tr>
+                <tr>
+                    <td>cod_pelicula</td>
+                    <td>Código de la película</td>
+                </tr>
+                <tr>
+                    <td>titulo</td>
+                    <td>Nombre de la película</td>
+                </tr>
+                <tr>
+                    <td>categoría</td>
+                    <td>Categoría de la película</td>
+                </tr>
+                <tr>
+                    <td>cod_actor</td>
+                    <td>Código del actor</td>
+                </tr>
+                <tr>
+                    <td>nom_actor</td>
+                    <td>Nombre del actor</td>
+                </tr>
+                <tr>
+                    <td>fechanac_actor</td>
+                    <td>Fecha de nacimiento del actor</td>
+                </tr>
+                <tr>
+                    <td>cod_tipo</td>
+                    <td>Código del tipo de película</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+</div>
+
+<div class="modelo">
+
+    <section class="modelo__ejercicios">
+        <h2>PUNTO 5 — PRESTAMO_LIBROS</h2>
+
+        <p>
+            Dada la siguiente relación <strong>PRESTAMO_LIBROS</strong> (Colegio,
+            profesor, asignatura_habilidad, aula, curso, libro, editorial,
+            fecha_prestamo) que contiene información relativa a los préstamos que
+            realizan las editoriales a los profesores de primaria de los colegios
+            para su evaluación en alguna de las asignaturas/habilidades que imparten.
+        </p>
+
+        <h3>Se pide</h3>
+        <p>
+            Aplicar las reglas de normalización y obtener su modelo relacional,
+            indicar sus claves y atributos principales.
+        </p>
+
+        <h3>Relación inicial</h3>
+        <table>
+            <caption>PRESTAMO_LIBROS (Colegio, profesor, asignatura_habilidad, aula, curso, libro, editorial, fecha_prestamo)</caption>
+            <thead>
+                <tr>
+                    <th>Colegio</th>
+                    <th>profesor</th>
+                    <th>asignatura_habilidad</th>
+                    <th>aula</th>
+                    <th>curso</th>
+                    <th>libro</th>
+                    <th>editorial</th>
+                    <th>fecha_prestamo</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Colegio San José</td>
+                    <td>Lucía Marín</td>
+                    <td>Matemáticas</td>
+                    <td>A-12</td>
+                    <td>5°A</td>
+                    <td>Cálculo Básico</td>
+                    <td>Santillana</td>
+                    <td>2026-05-04</td>
+                </tr>
+                <tr>
+                    <td>Colegio San José</td>
+                    <td>Lucía Marín</td>
+                    <td>Matemáticas</td>
+                    <td>A-12</td>
+                    <td>5°A</td>
+                    <td>Álgebra I</td>
+                    <td>Norma</td>
+                    <td>2026-05-04</td>
+                </tr>
+                <tr>
+                    <td>Colegio San José</td>
+                    <td>Pedro Salas</td>
+                    <td>Lectura</td>
+                    <td>B-03</td>
+                    <td>3°B</td>
+                    <td>Cuentos Andinos</td>
+                    <td>SM</td>
+                    <td>2026-05-05</td>
+                </tr>
+                <tr>
+                    <td>Colegio El Prado</td>
+                    <td>Rosa Díaz</td>
+                    <td>Ciencias</td>
+                    <td>C-07</td>
+                    <td>4°A</td>
+                    <td>Biología Escolar</td>
+                    <td>Santillana</td>
+                    <td>2026-05-06</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+</div>
+
+
+<div class="modelo">
+
+    <section class="modelo__ejercicios">
+        <h2>PUNTO 6 — GASTOS_EMPLEADOS</h2>
+
+        <p>
+            Dada la relación <strong>GASTOS_EMPLEADOS</strong> (cod_empleado,
+            cod_viaje, destino, gasto_total) en la que se cumplen las siguientes
+            dependencias funcionales:
+        </p>
+
+        <p>
+            Cod_empleado → Gasto_total<br>
+            Cod_viaje → Destino
+        </p>
+
+        <h3>Se pide</h3>
+        <p>
+            ¿En qué forma normal se encuentra la relación? ¿Por qué?
+        </p>
+
+        <h3>Relación inicial</h3>
+        <table>
+            <caption>GASTOS_EMPLEADOS (cod_empleado, cod_viaje, destino, gasto_total)</caption>
+            <thead>
+                <tr>
+                    <th>cod_empleado</th>
+                    <th>cod_viaje</th>
+                    <th>destino</th>
+                    <th>gasto_total</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>E01</td>
+                    <td>V10</td>
+                    <td>Cartagena</td>
+                    <td>850000</td>
+                </tr>
+                <tr>
+                    <td>E01</td>
+                    <td>V11</td>
+                    <td>Santa Marta</td>
+                    <td>620000</td>
+                </tr>
+                <tr>
+                    <td>E02</td>
+                    <td>V10</td>
+                    <td>Cartagena</td>
+                    <td>410000</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+</div>
+<div class="modelo">
+
+    <section class="modelo__ejercicios">
+        <h2>PUNTO 7 — REPORTE_MATRICULA</h2>
+
+        <p>
+            Se tiene una relación del <strong>REPORTE_MATRICULA</strong>
+            (código_alumno, nombre_alumno, especialidad, código_curso,
+            nombre_curso, nombre_docente, oficina, sección).
+        </p>
+
+        <h3>Se pide</h3>
+        <p>
+            Aplicar las reglas de normalización llegando hasta la 3FN.
+        </p>
+
+        <h3>Relación inicial</h3>
+        <table>
+            <caption>REPORTE_MATRICULA (código_alumno, nombre_alumno, especialidad, código_curso, nombre_curso, nombre_docente, oficina, sección)</caption>
+            <thead>
+                <tr>
+                    <th>código_alumno</th>
+                    <th>nombre_alumno</th>
+                    <th>especialidad</th>
+                    <th>código_curso</th>
+                    <th>nombre_curso</th>
+                    <th>nombre_docente</th>
+                    <th>oficina</th>
+                    <th>sección</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>A001</td>
+                    <td>María López</td>
+                    <td>Sistemas</td>
+                    <td>C10</td>
+                    <td>Bases de Datos</td>
+                    <td>Ing. Rojas</td>
+                    <td>Oficina 204</td>
+                    <td>01</td>
+                </tr>
+                <tr>
+                    <td>A001</td>
+                    <td>María López</td>
+                    <td>Sistemas</td>
+                    <td>C11</td>
+                    <td>Redes</td>
+                    <td>Ing. Salas</td>
+                    <td>Oficina 310</td>
+                    <td>02</td>
+                </tr>
+                <tr>
+                    <td>A002</td>
+                    <td>Juan Pérez</td>
+                    <td>Industrial</td>
+                    <td>C10</td>
+                    <td>Bases de Datos</td>
+                    <td>Ing. Rojas</td>
+                    <td>Oficina 204</td>
+                    <td>01</td>
+                </tr>
+                <tr>
+                    <td>A003</td>
+                    <td>Laura Díaz</td>
+                    <td>Sistemas</td>
+                    <td>C11</td>
+                    <td>Redes</td>
+                    <td>Ing. Salas</td>
+                    <td>Oficina 310</td>
+                    <td>01</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+</div>
+<div class="modelo">
+
+    <section class="modelo__ejercicios">
+        <h2>PUNTO 8 — Biblioteca</h2>
+
+        <p>
+            Se presenta una base de datos de una biblioteca. Aplicar las reglas de
+            normalización simplificando hasta la tercera forma normal.
+        </p>
+
+        <h3>Se pide</h3>
+        <p>
+            Normalizar la relación <strong>Prestamos_libro</strong> hasta la 3FN.
+        </p>
+
+        <h3>Relación inicial</h3>
+        <table>
+            <caption>Prestamos_libro (codLibro, Titulo, Autor, Editorial, NombreLector, Fechadev)</caption>
+            <thead>
+                <tr>
+                    <th>codLibro</th>
+                    <th>Titulo</th>
+                    <th>Autor</th>
+                    <th>Editorial</th>
+                    <th>NombreLector</th>
+                    <th>Fechadev</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>L01</td>
+                    <td>Cien Años de Soledad</td>
+                    <td>García Márquez</td>
+                    <td>Sudamericana</td>
+                    <td>Ana Torres</td>
+                    <td>2026-06-10</td>
+                </tr>
+                <tr>
+                    <td>L01</td>
+                    <td>Cien Años de Soledad</td>
+                    <td>García Márquez</td>
+                    <td>Sudamericana</td>
+                    <td>Luis Gómez</td>
+                    <td>2026-06-12</td>
+                </tr>
+                <tr>
+                    <td>L02</td>
+                    <td>La Casa Verde</td>
+                    <td>Mario Vargas Llosa</td>
+                    <td>Seix Barral</td>
+                    <td>Ana Torres</td>
+                    <td>2026-06-15</td>
+                </tr>
+                <tr>
+                    <td>L03</td>
+                    <td>Rayuela</td>
+                    <td>Julio Cortázar</td>
+                    <td>Alfaguara</td>
+                    <td>Marta Ruiz</td>
+                    <td>2026-06-18</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+</div>
+
+<div class="solution">
+      <a
+        href="https://docs.google.com/spreadsheets/d/1JRwOQgvBHSv5eLk8vSbFJIXKw_O0qu74/edit?usp=sharing&ouid=109470542314167275276&rtpof=true&sd=true"
+        target="_blank"
+      >
+        Abrir modelado
+      </a>
+    </div>
+ </Layout>
