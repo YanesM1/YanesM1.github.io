@@ -1436,7 +1436,7 @@
 /*********************************MODELO RELACIONAL*************************/
 
 .modelo-relacional {
-  width: 110%;
+  width: 100%;
   max-width: var(--space-4xl);     
   height: var(--modelo-height);
   overflow: auto;
