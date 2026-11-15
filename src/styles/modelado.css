@@ -1,13 +1,11 @@
-/******************** MODELADO ********************/
 
+/******************** MODELADO ********************/
 .modelado {
     width: 90%;
     max-width: 1200px;
     margin: 2rem auto;
     padding: 2rem;
-
     text-align: center;
-
     box-sizing: border-box;
 }
 
@@ -16,12 +14,9 @@
 
 .modelado h1 {
     color: var(--color-dark);
-
     margin: var(--space-xs);
     padding: var(--space-md);
-
     text-align: center;
-
     font-family: var(--h1-font);
     font-size: var(--h1-size);
 }
@@ -31,14 +26,10 @@
 
 .evidencia {
     width: 100%;
-
     padding: 2rem;
-
     background: rgba(203, 220, 255, 0.15);
-
     border: 2px solid rgba(168, 85, 247, 0.3);
     border-radius: 16px;
-
     box-sizing: border-box;
 }
 
@@ -47,12 +38,9 @@
 
 .evidencia h2 {
     color: var(--color-dark);
-
     margin: var(--space-xs);
     padding: var(--space-md);
-
     text-align: center;
-
     font-family: var(--h2-font);
     font-size: var(--h2-size);
 }
@@ -62,16 +50,12 @@
 
 .evidencia iframe {
     display: block;
-
     width: 100%;
     max-width: 850px;
     height: 650px;
-
     margin: 0 auto;
-
     border: none;
     border-radius: 10px;
-
     background: white;
 }
 
@@ -80,18 +64,13 @@
 
 .evidencia a {
     display: inline-block;
-
     margin-top: 1.5rem;
     padding: 0.75rem 1.5rem;
-
     border-radius: 10px;
-
     color: var(--color-secondary);
     background: var(--color-purple);
-
     font-family: var(--text-font);
     text-decoration: none;
-
     transition: all 0.3s ease;
 }
 
@@ -100,7 +79,6 @@
 
 .evidencia a:hover {
     background: var(--color-hover);
-
     transform: translateY(-3px);
 }
 
@@ -112,12 +90,9 @@
 .solution {
     width: 90%;
     max-width: 1200px;
-
     margin: 2rem auto;
     padding: 2rem;
-
     box-sizing: border-box;
-
     text-align: center;
 }
 
@@ -126,12 +101,9 @@
 
 .solution h2 {
     color: var(--color-dark);
-
     margin: 2rem 0 1rem;
     padding: var(--space-md);
-
     text-align: center;
-
     font-family: var(--h2-font);
     font-size: var(--h2-size);
 }
@@ -141,16 +113,12 @@
 
 .solution iframe {
     display: block;
-
     width: 100%;
     max-width: 850px;
     height: 650px;
-
     margin: 0 auto;
-
     border: none;
     border-radius: 10px;
-
     background: white;
 }
 
@@ -171,7 +139,6 @@
 
 .modelado1__contenido {
     width: 100%;
-
     margin: 2rem auto;
 }
 
@@ -192,7 +159,6 @@
 
 .modelado2__contenido {
     width: 100%;
-
     margin: 2rem auto;
 }
 
@@ -213,7 +179,6 @@
 
 .modelado3__contenido {
     width: 100%;
-
     margin: 2rem auto;
 }
 
@@ -222,20 +187,14 @@
 
 .solution a {
     display: inline-block;
-
     margin-top: 1.5rem;
     margin-bottom: 3rem;
-
     padding: 0.75rem 1.5rem;
-
     border-radius: 10px;
-
     color: var(--color-secondary);
     background: var(--color-purple);
-
     font-family: var(--text-font);
     text-decoration: none;
-
     transition: all 0.3s ease;
 }
 
@@ -244,7 +203,6 @@
 
 .solution a:hover {
     background: var(--color-hover);
-
     transform: translateY(-3px);
 }
 
@@ -256,10 +214,8 @@
 .modelo {
     width: 90%;
     max-width: var(--space-4xl);
-
     margin: var(--space-md) auto;
     padding: var(--space-md);
-
     box-sizing: border-box;
 }
 
@@ -268,24 +224,15 @@
 
 .modelo__ejercicios {
     background: rgba(203, 220, 255, 0.15);
-
     border: var(--space-xxs) solid rgba(168, 85, 247, 0.3);
-
     border-radius: var(--space-radius-xs);
-
     padding: var(--space-md);
     margin-bottom: var(--space-md);
-
     color: var(--color-secondary);
-
     font-family: var(--text-font);
     font-size: var(--body-size);
-
     line-height: 1.7;
-
-    /* TEXTO JUSTIFICADO */
     text-align: justify;
-
     box-sizing: border-box;
 }
 
@@ -294,12 +241,9 @@
 
 .modelo > h2 {
     color: var(--color-dark);
-
     font-family: var(--h2-font);
     font-size: var(--h2-size);
-
     text-align: center;
-
     margin: var(--space-sm);
     padding: var(--space-sm);
 }
@@ -309,41 +253,27 @@
 
 .modelo__ejercicios h2 {
     color: var(--color-superface);
-
     font-family: var(--h3-font);
     font-size: var(--h3-size);
-
     text-align: left;
-
     margin: var(--space-md) 0 var(--space-sm);
     padding: var(--space-xs);
-
     border-bottom: var(--space-xxs) dashed var(--color-dark);
 }
 
 
 /******************** LISTAS ********************/
 
-/* Lista con viñetas */
-
 .modelo__ejercicios ul {
     list-style: disc;
-
     padding-left: var(--space-md);
     margin-bottom: var(--space-sm);
 }
-
-
-/* Lista numerada */
 
 .modelo__ejercicios ol {
     padding-left: var(--space-md);
-
     margin-bottom: var(--space-sm);
 }
-
-
-/* Elementos de las listas */
 
 .modelo__ejercicios li {
     margin-bottom: var(--space-xs);
@@ -361,65 +291,44 @@
         padding: 1.5rem;
     }
 
-
-    /************* EVIDENCIA *************/
-
     .evidencia {
         padding: 1.5rem;
     }
-
 
     .evidencia iframe {
         max-width: 800px;
         height: 600px;
     }
 
-
-    /************* SOLUCIÓN *************/
-
     .solution {
         width: 92%;
         padding: 1.5rem;
     }
 
-
     .solution iframe {
         height: 600px;
     }
-
-
-    /************* PUNTO 1 *************/
 
     .solution h2:nth-of-type(1) + iframe {
         max-width: 500px;
         height: 360px;
     }
 
-
-    /************* PUNTO 2 *************/
-
     .solution h2:nth-of-type(2) + iframe {
         max-width: 500px;
         height: 360px;
     }
-
-
-    /************* PUNTO 3 *************/
 
     .solution h2:nth-of-type(3) + iframe {
         max-width: 800px;
         height: 600px;
     }
 
-
-    /************* MODELOS *************/
-
     .modelado1__contenido,
     .modelado2__contenido,
     .modelado3__contenido {
         margin: 1.5rem auto;
     }
-
 }
 
 
@@ -431,114 +340,68 @@
 
     .modelado {
         width: 95%;
-
         padding: 1rem;
     }
-
-
-    /************* TITULO *************/
 
     .modelado h1 {
         font-size: var(--body-size);
-
         padding: 1rem;
     }
-
-
-    /************* EVIDENCIA *************/
 
     .evidencia {
         padding: 1rem;
     }
 
-
     .evidencia h2 {
         font-size: var(--body-size);
-
         padding: 1rem;
     }
-
-
-    /************* OCULTAR PDF EVIDENCIA *************/
 
     .evidencia iframe {
         display: none !important;
     }
 
-
-    /************* BOTON EVIDENCIA *************/
-
     .evidencia a {
         display: block;
-
         width: 100%;
-
         padding: 0.8rem 1rem;
-
         margin-top: 1rem;
-
         border-radius: 10px;
-
         text-align: center;
-
         font-size: 1rem;
-
         box-sizing: border-box;
     }
 
-
-    /********************************************************
-     *                         SOLUCIÓN
-     ********************************************************/
+    /******************** SOLUCIÓN ********************/
 
     .solution {
         width: 95%;
-
         padding: 1rem;
     }
-
-
-    /************* TITULOS PUNTOS *************/
 
     .solution h2 {
         font-size: var(--body-size);
-
         padding: 1rem;
-
         margin: 1.5rem 0 1rem;
     }
-
-
-    /************* OCULTAR PDF SOLUCIÓN *************/
 
     .solution iframe {
         display: none !important;
     }
 
-
-    /************* BOTONES SOLUCIÓN *************/
-
     .solution a {
         display: block;
-
         width: 100%;
-
         padding: 0.8rem 1rem;
-
         margin-top: 1rem;
         margin-bottom: 2rem;
-
         border-radius: 10px;
-
         text-align: center;
-
         font-size: 1rem;
-
         box-sizing: border-box;
     }
 
-
-    /************* MODELOS *************/
+    /******************** MODELOS ********************/
 
     .modelado1__contenido,
     .modelado2__contenido,
@@ -546,46 +409,31 @@
     .modelado4__contenido,
     .modelado5__contenido,
     .modelado6__contenido,
-    .modelado7__contenido{
+    .modelado7__contenido {
         width: 100%;
-
         margin: 1rem auto;
     }
 
-
-    /******************** MODELO ********************/
-
     .modelo {
         width: 95%;
-
         padding: var(--space-sm);
     }
-
 
     .modelo > h2 {
         font-size: var(--h3-size);
-
         padding: var(--space-sm);
     }
-
-
-    /************* ENUNCIADOS JUSTIFICADOS *************/
 
     .modelo__ejercicios {
         padding: var(--space-sm);
-
         font-size: var(--h6-size);
-
         line-height: 1.7;
-
         text-align: justify;
     }
-
 
     .modelo__ejercicios h2 {
         font-size: var(--h4-size);
     }
-
 }
 
 
@@ -597,193 +445,118 @@
 
     .modelado {
         width: 100%;
-
         padding: 0.5rem;
-
         margin: 1rem auto;
     }
 
-
-    /************* TITULO *************/
-
     .modelado h1 {
         font-size: 1.5rem;
-
         padding: 0.75rem;
-
         margin: 0.5rem;
     }
-
-
-    /************* EVIDENCIA *************/
 
     .evidencia {
         width: 100%;
-
         padding: 1rem;
-
         border-radius: 12px;
     }
 
-
     .evidencia h2 {
         font-size: 1.3rem;
-
         padding: 0.5rem;
-
         margin: 0.5rem;
     }
 
-
-    /************* BOTON EVIDENCIA *************/
-
     .evidencia a {
         display: block;
-
         width: 100%;
-
         padding: 0.8rem 1rem;
-
         margin-top: 1rem;
-
         border-radius: 10px;
-
         text-align: center;
-
         font-size: 1rem;
-
         color: var(--color-secondary);
         background: var(--color-purple);
-
         box-sizing: border-box;
     }
-
-
-    /************** HOVER EVIDENCIA **************/
 
     .evidencia a:hover {
         transform: none;
     }
 
-
-    /********************************************************
-     *                         SOLUCIÓN
-     ********************************************************/
+    /******************** SOLUCIÓN ********************/
 
     .solution {
         width: 100%;
-
         padding: 0.5rem;
-
         margin: 1rem auto;
     }
 
-
-    /************* TITULOS PUNTOS *************/
-
     .solution h2 {
         font-size: 1.3rem;
-
         padding: 0.5rem;
-
         margin: 1rem 0;
     }
-
-
-    /************* OCULTAR PDF *************/
 
     .solution iframe {
         display: none !important;
     }
 
-
-    /************* BOTONES PDF *************/
-
     .solution a {
         display: block;
-
         width: 100%;
-
         padding: 0.8rem 1rem;
-
         margin-top: 1rem;
         margin-bottom: 2rem;
-
         border-radius: 10px;
-
         text-align: center;
-
         font-size: 1rem;
-
         color: var(--color-secondary);
         background: var(--color-purple);
-
         box-sizing: border-box;
     }
-
-
-    /************** HOVER SOLUCIÓN **************/
 
     .solution a:hover {
         transform: none;
     }
 
-
-    /************* MODELOS *************/
+    /******************** MODELOS ********************/
 
     .modelado1__contenido,
     .modelado2__contenido,
     .modelado3__contenido {
         width: 100%;
-
         margin: 1rem auto;
     }
 
-
-    /******************** MODELO ********************/
-
     .modelo {
         width: 100%;
-
         padding: var(--space-xs);
     }
-
 
     .modelo > h2 {
         font-size: var(--h5-size);
-
         padding: var(--space-xs);
-
         margin: var(--space-xs);
     }
 
-
-    /************* ENUNCIADOS JUSTIFICADOS *************/
-
     .modelo__ejercicios {
         padding: var(--space-sm);
-
         font-size: var(--h6-size);
-
         line-height: 1.6;
-
         text-align: justify;
     }
-
 
     .modelo__ejercicios h2 {
         font-size: var(--h5-size);
     }
 
-
-    /************* LISTAS *************/
-
     .modelo__ejercicios ul,
     .modelo__ejercicios ol {
         padding-left: var(--space-md);
     }
-
 }
+
 
 /************************************************************
  *                         MODELO 4
@@ -807,7 +580,6 @@
     .modelado4__contenido {
         margin: 1.5rem auto;
     }
-
 }
 
 
@@ -824,7 +596,6 @@
         width: 100%;
         margin: 1rem auto;
     }
-
 }
 
 
@@ -841,10 +612,7 @@
         width: 100%;
         margin: 1rem auto;
     }
-
 }
-
-
 
 
 /******************** CONTENEDOR GENERAL ********************/
@@ -858,10 +626,8 @@
 .modelo {
     width: 100%;
     max-width: 1500px;
-
     margin: var(--space-md) auto;
     padding: var(--space-md);
-
     box-sizing: border-box;
 }
 
@@ -871,23 +637,16 @@
 .modelo__ejercicios {
     width: 100%;
     max-width: 1500px;
-
     margin: 0 auto;
     padding: var(--space-md);
-
     background: rgba(203, 220, 255, 0.15);
-
     border: var(--space-xxs) solid rgba(168, 85, 247, 0.3);
     border-radius: var(--space-radius-xs);
-
     color: var(--color-secondary);
-
     font-family: var(--text-font);
     font-size: var(--body-size);
-
     line-height: 1.7;
     text-align: justify;
-
     box-sizing: border-box;
 }
 
@@ -896,17 +655,12 @@
 
 .modelo__ejercicios h2 {
     color: var(--color-dark);
-
     font-family: var(--h2-font);
     font-size: var(--h2-size);
-
     text-align: center;
-
     margin: var(--space-md) 0;
     padding: var(--space-md);
-
     border-bottom: var(--space-xxs) dashed var(--color-dark);
-    
 }
 
 
@@ -914,20 +668,14 @@
 
 .modelo__ejercicios h3 {
     color: var(--color-superface);
-
     font-family: var(--h3-font);
     font-size: var(--h3-size);
-
     text-align: left;
-
     margin: var(--space-md) 0 var(--space-sm);
     padding: var(--space-xs);
-
     border-bottom: var(--space-xxs) dashed var(--color-dark);
 }
 
-
-/******************** PARRAFOS ********************/
 
 /******************** TEXTO JUSTIFICADO EN CELULAR ********************/
 
@@ -939,7 +687,6 @@
         text-justify: inter-word;
         line-height: 1.7;
     }
-
 }
 
 @media (max-width: 480px) {
@@ -951,8 +698,8 @@
     .modelo__ejercicios p {
         text-align: justify !important;
     }
-
 }
+
 
 .modelo__ejercicios strong {
     color: var(--color-dark);
@@ -969,16 +716,11 @@
 .modelo__ejercicios table {
     width: 80%;
     max-width: 1000px;
-
     margin: var(--space-md) auto;
-
     border-collapse: collapse;
-
     background: var(--color-blue);
-
     font-family: var(--text-font);
     font-size: var(--h6-size);
-
     text-align: center;
 }
 
@@ -987,15 +729,11 @@
 
 .modelo__ejercicios caption {
     padding: var(--space-sm);
-
     color: var(--color-secondary);
     background: var(--color-purple);
-
     font-family: var(--h4-font);
     font-size: var(--h5-size);
-
     text-align: center;
-
     border: var(--space-xxs) solid var(--color-dark);
 }
 
@@ -1004,13 +742,10 @@
 
 .modelo__ejercicios th {
     padding: var(--space-sm);
-
     color: var(--color-secondary);
     background: var(--color-purple);
-
     font-family: var(--h4-font);
     font-size: var(--h6-size);
-
     border: var(--space-xxs) solid var(--color-dark);
 }
 
@@ -1019,13 +754,10 @@
 
 .modelo__ejercicios td {
     padding: var(--space-xs);
-
     color: var(--color-tertiary);
     background: var(--color-blue);
-
     font-family: var(--text-font);
     font-size: var(--h6-size);
-
     border: var(--space-xxs) solid rgba(168, 85, 247, 0.3);
 }
 
@@ -1041,7 +773,6 @@
 
 .modelo__ejercicios tbody tr:hover td {
     background: var(--color-accent-orange);
-
     transition: all 0.3s ease;
 }
 
@@ -1065,14 +796,10 @@
         padding: var(--space-sm);
     }
 
-    .modelo__ejercicios table {
-        width: 90%;
-    }
-
     .modelo__ejercicios p {
         font-size: var(--h6-size);
         text-align: justify !important;
-    text-justify: inter-word;
+        text-justify: inter-word;
     }
 }
 
@@ -1095,7 +822,6 @@
     .modelo__ejercicios {
         width: 100%;
         padding: var(--space-sm);
-
         font-size: var(--h6-size);
     }
 
@@ -1109,11 +835,6 @@
     }
 
     .modelo__ejercicios p {
-        font-size: var(--h6-size);
-    }
-
-    .modelo__ejercicios table {
-        width: 100%;
         font-size: var(--h6-size);
     }
 
@@ -1144,7 +865,6 @@
     .modelo__ejercicios {
         width: 100%;
         padding: var(--space-sm);
-
         font-size: var(--h6-size);
         line-height: 1.6;
     }
@@ -1160,16 +880,11 @@
         margin: var(--space-sm) 0;
     }
 
-   .modelo__ejercicios p {
-    font-size: var(--h6-size);
-    text-align: justify !important;
-    text-justify: inter-word;
-    line-height: 1.7;
-}
-
-    .modelo__ejercicios table {
-        width: 100%;
+    .modelo__ejercicios p {
         font-size: var(--h6-size);
+        text-align: justify !important;
+        text-justify: inter-word;
+        line-height: 1.7;
     }
 
     .modelo__ejercicios th,
@@ -1182,6 +897,7 @@
     }
 }
 
+
 /************************************************************
  *                  BOTÓN VER SOLUCIÓN
  ************************************************************/
@@ -1191,25 +907,17 @@
     align-items: center;
     justify-content: center;
     gap: var(--space-xs);
-
     margin: var(--space-md) auto;
     padding: var(--space-sm) var(--space-md);
-
     min-width: 200px;
-
     color: var(--color-secondary);
     background: var(--color-purple);
-
     border: 2px solid var(--color-dark);
     border-radius: var(--space-radius-xs);
-
     font-family: var(--h5-font);
     font-size: var(--h5-size);
-
     cursor: pointer;
-
     box-shadow: 0 4px 12px rgba(168, 85, 247, 0.2);
-
     transition: all 0.3s ease;
 }
 
@@ -1218,9 +926,7 @@
 
 .btn-solucion__icono {
     color: var(--color-dark);
-
     font-size: var(--h3-size);
-
     transition: transform 0.3s ease;
 }
 
@@ -1236,11 +942,8 @@
 
 .btn-solucion:hover {
     background: var(--color-hover);
-
     border-color: var(--color-hover);
-
     transform: translateY(-3px);
-
     box-shadow: 0 6px 18px rgba(250, 75, 0, 0.3);
 }
 
@@ -1287,83 +990,51 @@
     .btn-solucion {
         width: 100%;
         min-width: auto;
-
         padding: var(--space-sm);
-
         font-size: var(--h6-size);
     }
-
 }
 
 
 /************************************************************
- *       TABLAS RESPONSIVAS PARA CELULARES
+ *       TABLAS CON SCROLL HORIZONTAL
  ************************************************************/
 
-/* CONTENEDOR DE LAS TABLAS */
+/******************** CONTENEDOR DE TABLAS ********************/
 
 .tabla-responsive {
+    display: block;
     width: 100%;
     max-width: 100%;
-
+    min-width: 0;
     margin: 1.5rem auto;
 
     overflow-x: auto;
     overflow-y: hidden;
 
     -webkit-overflow-scrolling: touch;
-
     box-sizing: border-box;
 }
 
 
-/* TABLA EN ESCRITORIO */
+/******************** TABLA EN ESCRITORIO ********************/
 
 .tabla-responsive table {
-    width: 100%;
+    width: 80%;
     min-width: 600px;
+    max-width: 1000px;
+
+    margin: var(--space-md) auto;
 
     border-collapse: collapse;
-
-    margin: 0 auto;
-}
-
-
-/* CELDAS */
-
-.tabla-responsive th,
-.tabla-responsive td {
-    padding: 0.75rem;
-
-    white-space: normal;
-
-    overflow-wrap: break-word;
-
-    text-align: center;
-
+    table-layout: auto;
     box-sizing: border-box;
 }
 
 
-/* TABLET */
+/******************** TABLET Y CELULAR ********************/
 
 @media (max-width: 768px) {
-
-    .tabla-responsive {
-        width: 100%;
-        max-width: 100%;
-    }
-
-    .tabla-responsive table {
-        min-width: 550px;
-    }
-
-}
-
-
-/* CELULAR */
-
-@media (max-width: 480px) {
 
     .models,
     .modelo,
@@ -1371,52 +1042,46 @@
         width: 100%;
         max-width: 100%;
         min-width: 0;
-
         box-sizing: border-box;
     }
 
     .tabla-responsive {
         display: block;
-
         width: 100%;
         max-width: 100%;
+        min-width: 0;
+        margin: 1rem 0;
 
         overflow-x: auto;
         overflow-y: hidden;
-
-        margin: 1rem 0;
-
-        -webkit-overflow-scrolling: touch;
     }
 
     .tabla-responsive table {
-        width: 100%;
+        width: max-content;
         min-width: 600px;
+        max-width: none;
 
         margin: 0;
 
-        border-collapse: collapse;
+        table-layout: auto;
+    }
+}
+
+
+/******************** CELULAR ********************/
+
+@media (max-width: 480px) {
+
+    .tabla-responsive {
+        width: 100%;
+        max-width: 100%;
+        margin: 1rem 0;
     }
 
-    .tabla-responsive th,
-    .tabla-responsive td {
-        min-width: 110px;
-
-        padding: 0.65rem;
-
-        font-size: 0.85rem;
-
-        white-space: normal;
-
-        overflow-wrap: break-word;
-    }
-
-    .tabla-responsive caption {
+    .tabla-responsive table {
+        width: max-content;
         min-width: 600px;
-
-        box-sizing: border-box;
-
-        font-size: 0.9rem;
+        max-width: none;
+        margin: 0;
     }
-
 }
