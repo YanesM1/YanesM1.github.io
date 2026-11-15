@@ -460,6 +460,138 @@ import "../styles/style.css";
       </table>
     </section>
 
+
+    <section class="modelo__ejercicios">
+  <h3>6. Restricciones del sistema</h3>
+
+  <table>
+    <caption>Restricciones duras</caption>
+    <thead>
+      <tr>
+        <th>Código</th>
+        <th>Descripción</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr
+        ><td>RD-01</td><td
+          >Cada unidad física tiene un solo estado a la vez: Disponible, En uso
+          en mesa, Prestado a domicilio, En mantenimiento o Reportado con
+          faltantes.</td
+        ></tr
+      >
+      <tr
+        ><td>RD-02</td><td
+          >Solo se pueden prestar unidades físicas en estado Disponible.</td
+        ></tr
+      >
+      <tr
+        ><td>RD-03</td><td
+          >Los préstamos externos (a domicilio) solo los pueden solicitar socios
+          con una membresía activa y vigente.</td
+        ></tr
+      >
+      <tr
+        ><td>RD-04</td><td
+          >Un socio solo puede tener una membresía activa a la vez.</td
+        ></tr
+      >
+      <tr
+        ><td>RD-05</td><td
+          >Una mesa no puede tener dos reservas para la misma fecha y
+          horario.</td
+        ></tr
+      >
+      <tr
+        ><td>RD-06</td><td
+          >No se pueden registrar reservas en fechas u horas que ya pasaron.</td
+        ></tr
+      >
+      <tr
+        ><td>RD-07</td><td
+          >Toda reserva debe estar asociada a un cliente y a una mesa
+          existentes.</td
+        ></tr
+      >
+      <tr
+        ><td>RD-08</td><td
+          >Toda devolución debe registrar la fecha y el estado de los
+          componentes: completo, incompleto o dañado. La fecha de devolución no
+          puede ser anterior a la de salida.</td
+        ></tr
+      >
+      <tr
+        ><td>RD-09</td><td
+          >Los identificadores son únicos: documento del cliente, número de
+          serie del juego y código de cada unidad física.</td
+        ></tr
+      >
+      <tr
+        ><td>RD-10</td><td
+          >No se puede eliminar un registro del que dependen otros, por ejemplo
+          un juego con unidades o una unidad en un préstamo sin devolver.</td
+        ></tr
+      >
+      <tr
+        ><td>RD-11</td><td
+          >Los datos deben tener un formato válido. El plan de membresía debe
+          ser Premium, Alta, Media, Básica o Baja; el estado, Activa, Suspendida
+          o Vencida; el teléfono, de 7 a 15 dígitos; y la cantidad máxima de
+          jugadores no puede ser menor que la mínima.</td
+        ></tr
+      >
+    </tbody>
+  </table>
+
+  <table>
+    <caption>Restricciones blandas</caption>
+    <thead>
+      <tr>
+        <th>Código</th>
+        <th>Descripción</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr
+        ><td>RB-01</td><td
+          >Las consultas deberían responder en menos de 5 segundos.</td
+        ></tr
+      >
+      <tr
+        ><td>RB-02</td><td
+          >Se procura asignar a cada grupo una mesa cuya capacidad se ajuste al
+          número de personas, para optimizar el espacio.</td
+        ></tr
+      >
+      <tr
+        ><td>RB-03</td><td
+          >Los socios con planes superiores deberían tener prioridad en las
+          reservas de las horas pico.</td
+        ></tr
+      >
+      <tr
+        ><td>RB-04</td><td
+          >Los socios con planes superiores deberían poder tener más préstamos
+          simultáneos.</td
+        ></tr
+      >
+      <tr
+        ><td>RB-05</td><td
+          >Los juegos preseleccionados deberían ajustarse al número de jugadores
+          y a la edad mínima del grupo.</td
+        ></tr
+      >
+      <tr
+        ><td>RB-06</td><td
+          >Las unidades en mantenimiento o reportadas con faltantes deberían
+          revisarse pronto, para que vuelvan a estar disponibles.</td
+        ></tr
+      >
+    </tbody>
+  </table>
+</section>
+
+
     <section class="modelo__ejercicios">
       <h3>6. Actores del sistema</h3>
       <table>
@@ -567,7 +699,7 @@ import "../styles/style.css";
 </div>
 
 <a
-            href="evidencias/modelado/logical.webp"
+            href="evidencias/modelado/Logical.webp"
             target="_blank"
           >
             Abrir ML
