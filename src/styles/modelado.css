@@ -1220,7 +1220,8 @@
     background: var(--color-accent-orange);
 }
 
-/******************** EJERCICIOS ********************/
+
+/******************** CONTENEDOR DE EJERCICIOS ********************/
 
 .modelos__ejercicios {
     width: 90%;
@@ -1277,7 +1278,6 @@
     color: var(--color-secondary);
     font-family: var(--text-font);
     font-size: var(--h6-size);
-
     padding: var(--space-xs) var(--space-sm);
     border-radius: var(--space-radius-xs);
 }
@@ -1290,12 +1290,11 @@
 }
 
 .ejercicio-contenido h4 {
-    color: var(--color-dark);
-    font-family: var(--h4-font);
-    font-size: var(--h4-size);
-
-    margin-top: var(--space-md);
-    margin-bottom: var(--space-xs);
+     color: var(--color-dark);
+     font-family: var(--h4-font);
+     font-size: var(--h4-size);
+     margin-top: var(--space-md);
+     margin-bottom: var(--space-xs);
 }
 
 .ejercicio-contenido h4:first-child {
@@ -1308,24 +1307,22 @@
     font-size: var(--h6-size);
     line-height: 1.7;
     text-align: justify;
+    text-justify: inter-word;
     margin-bottom: var(--space-md);
 }
 
 
-/******************** BLOQUES DE CODIGO ********************/
+/******************** BLOQUES DE CÓDIGO ********************/
 
 .ejercicio-contenido pre {
     background: var(--color-primary);
     color: var(--color-secondary);
-
     padding: var(--space-sm);
     border: var(--space-xxs) solid var(--color-purple);
     border-radius: var(--space-radius-xs);
-
     overflow-x: auto;
     white-space: pre-wrap;
     overflow-wrap: break-word;
-
     margin-bottom: var(--space-md);
     line-height: 1.7;
 }
@@ -1336,7 +1333,7 @@
 }
 
 
-/******************** RESPONSIVE ********************/
+/******************** TABLET ********************/
 
 @media (max-width: 768px) {
 
@@ -1359,10 +1356,16 @@
     .ejercicio-contenido code {
         font-size: 0.9rem;
     }
-
 }
 
+
+/******************** CELULAR ********************/
+
 @media (max-width: 480px) {
+
+    .modelos__ejercicios {
+        width: 100%;
+    }
 
     .ejercicio-header {
         flex-direction: column;
@@ -1370,8 +1373,21 @@
         gap: var(--space-xs);
     }
 
+    .ejercicio-header h3 {
+        font-size: var(--h5-size);
+    }
+
+    .ejercicio-header span {
+        font-size: 0.8rem;
+    }
+
+    .ejercicio-contenido {
+        padding: var(--space-sm);
+    }
+
     .ejercicio-contenido p {
-        text-align: left;
+        text-align: justify;
+        text-justify: inter-word;
     }
 
     .ejercicio-contenido pre {
@@ -1381,10 +1397,9 @@
     .ejercicio-contenido code {
         font-size: 0.8rem;
     }
+ }
+/******************** IMAGEN DEL MODELO ********************/
 
-}
-
-/******************IMAGEN************************************************/
 .imagen-modelo {
     display: block;
     width: 80%;
@@ -1392,4 +1407,45 @@
     height: auto;
     margin: 2rem auto;
     border-radius: 10px;
+    object-fit: contain;
+    box-sizing: border-box;
+}
+
+
+/******************** TABLET ********************/
+
+@media (max-width: 1024px) {
+
+    .imagen-modelo {
+        width: 90%;
+        max-width: 800px;
+        margin: 1.5rem auto;
+    }
+}
+
+
+/******************** TABLET PEQUEÑA ********************/
+
+@media (max-width: 768px) {
+
+    .imagen-modelo {
+        width: 95%;
+        max-width: 100%;
+        margin: 1.5rem auto;
+        border-radius: 8px;
+    }
+}
+
+
+/******************** CELULAR ********************/
+
+@media (max-width: 480px) {
+
+    .imagen-modelo {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        margin: 1rem auto;
+        border-radius: 6px;
+    }
 }
