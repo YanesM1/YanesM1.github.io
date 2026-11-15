@@ -1207,9 +1207,9 @@
 }
 
 .controles button {
-    padding: var(--space-2xl) var(--space-3xl);
+    padding: var(--space-xs) var(--space-sm);
     border: none;
-    border-radius:var(--space-xl);
+    border-radius:var(--space-xxs);
     background: var(--color-purple);
     color:var(--color-blue);
     cursor: pointer;
@@ -1436,7 +1436,7 @@
 /*********************************MODELO RELACIONAL*************************/
 
 .modelo-relacional {
-  width: 100%;
+  width: 110%;
   max-width: var(--space-4xl);     
   height: var(--modelo-height);
   overflow: auto;
