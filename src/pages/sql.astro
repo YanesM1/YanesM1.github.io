@@ -1,0 +1,26 @@
+---
+import Layout from "../layouts/Layout.astro";
+import BannerAstroComponent from "../components/Banner.astro";
+import HeaderTitleAstroComponent from "../components/Header-title.astro";
+import EjSQLAstroComponent from "../components/EjSQL.astro";
+
+import "../styles/modelado.css";
+import "../styles/style.css";
+---
+<Layout title="Digital Portfolio">
+     <div class="hero">
+    <div class="hero__banner">
+      <BannerAstroComponent />
+    </div>
+
+    <div class="hero__title">
+      <HeaderTitleAstroComponent />
+    </div>
+  </div>
+  <div class="modelos__ejercicios">
+    <EjSQLAstroComponent />
+    
+  </div>
+
+
+</Layout>

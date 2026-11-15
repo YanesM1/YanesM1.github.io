@@ -1,18 +1,8 @@
-
 ---
 import Layout from "../layouts/Layout.astro";
 import BannerAstroComponent from "../components/Banner.astro";
 import HeaderTitleAstroComponent from "../components/Header-title.astro";
 
-import Modelo1AstroComponent from "../components/Modelo1.astro";
-import Modelo2AstroComponent from "../components/Modelo2.astro";
-import Modelo3AstroComponent from "../components/Modelo3.astro";
-import Modelo4AstroComponent from "../components/Modelo4.astro";
-import Modelo5AstroComponent from "../components/Modelo5.astro";
-import Modelo6AstroComponent from "../components/Modelo6.astro";
-import Modelo7AstroComponent from "../components/Modelo7.astro";
-import Ejercicio1AstroComponent from "../components/Ejercicio1.astro";
-import NormAstroComponent from "../components/Norm.astro";
 
 import "../styles/modelado.css";
 import "../styles/style.css";
@@ -796,9 +786,84 @@ import "../styles/style.css";
             href="https://docs.google.com/spreadsheets/d/1JRwOQgvBHSv5eLk8vSbFJIXKw_O0qu74/edit?usp=sharing&ouid=109470542314167275276&rtpof=true&sd=true"
             target="_blank"
         >
-            Abrir modelado
+            Abrir normalización
         </a>
 
     </div>
+    <div class="modelo__ejercicios">
+        <h2>Normalización casos </h2>
+        En el siguiente documento se desarrollaron algunos casos frente a distintas organizaciones 
+        mostrando para cada modelo relaciones, dominios, llaves primarias, y llaves foráneas. Evidenciando
+        las distintas anomalias que que pueden presentar las bases de datos en cada caso, y la necesidad de
+        llevar a la 3FN para solucionarlas.
+
+    </div>
+
+
+    <!-- ==================================================
+         CARRUSEL DE PRESENTACIÓN
+    =================================================== -->
+
+    <div class="presentacion">
+
+        <h2>Presentación caso hospital</h2>
+
+        <div class="carrusel">
+
+            <img src="/evidencias/presentacion/1.webp" class="activa" alt="Diapositiva 1">
+            <img src="/evidencias/presentacion/2.webp" alt="Diapositiva 2">
+            <img src="/evidencias/presentacion/3.webp" alt="Diapositiva 3">
+            <img src="/evidencias/presentacion/4.webp" alt="Diapositiva 4">
+            <img src="/evidencias/presentacion/5.webp" alt="Diapositiva 5">
+            <img src="/evidencias/presentacion/6.webp" alt="Diapositiva 6">
+            <img src="/evidencias/presentacion/7.webp" alt="Diapositiva 7">
+            <img src="/evidencias/presentacion/8.webp" alt="Diapositiva 8">
+            <img src="/evidencias/presentacion/9.webp" alt="Diapositiva 9">
+            <img src="/evidencias/presentacion/10.webp" alt="Diapositiva 10">
+            <img src="/evidencias/presentacion/11.webp" alt="Diapositiva 11">
+            <img src="/evidencias/presentacion/12.webp" alt="Diapositiva 12">
+            <img src="/evidencias/presentacion/13.webp" alt="Diapositiva 13">
+            <img src="/evidencias/presentacion/14.webp" alt="Diapositiva 14">
+            <img src="/evidencias/presentacion/15.webp" alt="Diapositiva 15">
+            <img src="/evidencias/presentacion/16.webp" alt="Diapositiva 16">
+
+            <div class="controles">
+
+                <button id="anterior" type="button">❮</button>
+
+                <span id="contador">1 / 16</span>
+
+                <button id="siguiente" type="button">❯</button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+
 
 </Layout>
+
+<script>
+    const imagenes = document.querySelectorAll(".carrusel img");
+    let actual = 0;
+
+    function siguienteImagen() {
+        imagenes[actual].classList.remove("activa");
+        actual = (actual + 1) % imagenes.length;
+        imagenes[actual].classList.add("activa");
+    }
+
+    document.querySelector("#siguiente")!.addEventListener("click", siguienteImagen);
+
+    document.querySelector("#anterior")!.addEventListener("click", () => {
+        imagenes[actual].classList.remove("activa");
+        actual = (actual - 1 + imagenes.length) % imagenes.length;
+        imagenes[actual].classList.add("activa");
+    });
+
+    setInterval(siguienteImagen, 4000);
+</script>

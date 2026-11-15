@@ -1,0 +1,1103 @@
+<div class="modelos__ejercicios">
+
+    <h2>Ejercicios de álgebra relacional y SQL</h2>
+
+    <!-- EJERCICIO AR-01 -->
+
+    <div class="ejercicio-card">
+
+        <div class="ejercicio-header">
+            <h3>Ejercicio AR-01</h3>
+            <span>Selección</span>
+        </div>
+
+        <div class="ejercicio-contenido">
+
+            <h4>Enunciado</h4>
+            <p>
+                Consultar los juegos de mesa cuya edad mínima sea mayor o igual a 8 años
+                y menor o igual a 15 años, y cuya duración de partida sea superior a 45 minutos.
+            </p>
+
+            <h4>Álgebra relacional</h4>
+            <pre><code><escape>
+                σ((edad_minima >= 8 ∧ edad_minima <= 15) ∧ duracion_partida > 45)
+            </escape></code></pre>
+
+            <h4>Consulta SQL equivalente</h4>
+            <pre><code><escape>USE proyecto_db1;
+                SELECT *
+                FROM JUEGO_MESA
+                WHERE (edad_minima >= 8 AND edad_minima <= 15)
+                AND duracion_partida > 45;</escape></code></pre>
+
+        </div>
+    </div>
+
+
+    <!-- EJERCICIO AR-02 -->
+
+    <div class="ejercicio-card">
+
+        <div class="ejercicio-header">
+            <h3>Ejercicio AR-02</h3>
+            <span>Equijoin (θ-join)</span>
+        </div>
+
+        <div class="ejercicio-contenido">
+
+            <h4>Enunciado</h4>
+            <p>
+                Mostrar el nombre del juego de mesa, su categoría y su reglamento.
+            </p>
+
+            <h4>Álgebra relacional</h4>
+
+            <pre><code><escape>π_</escape>{'{'}<escape>nombre, categoria, reglamento</escape>{'}'}
+            <escape> (JUEGO_MESA ⋈_</escape>{'{'}<escape>JUEGO_MESA.num_serie = CATEGORIA.num_serie</escape>{'}'}<escape> CATEGORIA)</escape></code></pre>
+
+            <h4>Consulta SQL equivalente</h4>
+            <pre><code><escape>
+                SELECT J.nombre, C.categoria AS categoria, J.reglamento
+                FROM JUEGO_MESA J
+                INNER JOIN CATEGORIA C ON J.num_serie = C.num_serie;
+            </escape></code></pre>
+
+        </div>
+    </div>
+
+
+    <!-- EJERCICIO AR-03 -->
+
+    <div class="ejercicio-card">
+
+        <div class="ejercicio-header">
+            <h3>Ejercicio AR-03</h3>
+            <span>JOIN</span>
+        </div>
+
+        <div class="ejercicio-contenido">
+
+            <h4>Enunciado</h4>
+            <p>
+                Consultar cuántas unidades de juego existen para cada juego de mesa.
+            </p>
+
+            <h4>Álgebra relacional</h4>
+            <pre><code><escape>Γ_</escape>{'{'}<escape>nombre, COUNT(codigo)</escape>{'}'}<escape> (JUEGO_MESA ⋈_</escape>{'{'}<escape>JUEGO_MESA.num_serie = UNIDAD_JUEGO.num_serie</escape>{'}'}<escape> UNIDAD_JUEGO)</escape></code></pre>
+
+            <h4>Consulta SQL equivalente</h4>
+            <pre><code><escape>SELECT J.nombre, COUNT(U.codigo) AS total_unidades
+FROM JUEGO_MESA J
+INNER JOIN UNIDAD_JUEGO U ON J.num_serie = U.num_serie
+GROUP BY J.nombre;</escape></code></pre>
+
+        </div>
+    </div>
+
+
+    <!-- EJERCICIO AR-04 -->
+
+<div class="ejercicio-card">
+
+    <div class="ejercicio-header">
+        <h3>Ejercicio AR-04</h3>
+        <span>Funciones de agregación y GROUP BY</span>
+    </div>
+
+    <div class="ejercicio-contenido">
+
+        <h4>Enunciado</h4>
+        <p>
+            Consultar cuántos préstamos ha realizado cada empleado,
+            mostrando su documento y la cantidad de préstamos.
+        </p>
+
+        <h4>Álgebra relacional</h4>
+        <pre><code><escape>Γ_</escape>{'{'}<escape>documento_emp, COUNT(id_prestamo)</escape>{'}'}<escape> (EMPLEADO ⋈_</escape>{'{'}<escape>EMPLEADO.documento_emp = PRESTAMO.documento_emp</escape>{'}'}<escape> PRESTAMO)</escape></code></pre>
+
+        <h4>Consulta SQL equivalente</h4>
+        <pre><code><escape>SELECT e.documento_emp, COUNT(p.id_prestamo) AS cantidad_prestamos
+FROM EMPLEADO e
+INNER JOIN PRESTAMO p ON e.documento_emp = p.documento_emp
+GROUP BY e.documento_emp;</escape></code></pre>
+
+    </div>
+</div>
+
+<!-- EJERCICIO AR-05 -->
+
+<div class="ejercicio-card">
+
+    <div class="ejercicio-header">
+        <h3>Ejercicio AR-05</h3>
+        <span>Funciones de agregación</span>
+    </div>
+
+    <div class="ejercicio-contenido">
+
+        <h4>Enunciado</h4>
+        <p>
+            Consultar el promedio de duración de partida de los juegos de mesa.
+        </p>
+
+        <h4>Álgebra relacional</h4>
+        <pre><code><escape>Γ(AVG(duracion_partida)) (JUEGO_MESA)</escape></code></pre>
+
+        <h4>Consulta SQL equivalente</h4>
+        <pre><code><escape>SELECT AVG(duracion_partida) AS promedio_duracion
+FROM JUEGO_MESA;</escape></code></pre>
+
+    </div>
+</div>
+
+
+
+
+
+
+<!-- EJERCICIO AR-06 -->
+
+<div class="ejercicio-card">
+
+    <div class="ejercicio-header">
+        <h3>Ejercicio AR-06</h3>
+        <span>Promedio y subconsulta</span>
+    </div>
+
+    <div class="ejercicio-contenido">
+
+        <h4>Enunciado</h4>
+        <p>
+            Consultar los juegos de mesa cuya duración de partida sea mayor que el promedio
+            de duración de partida de todos los juegos de mesa.
+            Para cada juego que cumpla la condición, mostrar el nombre del juego y su duración de partida.
+        </p>
+
+        <h4>Álgebra relacional</h4>
+        <pre><code><escape>σ_</escape>{'{'}<escape>duracion_partida > AVG(duracion_partida)</escape>{'}'}<escape> (JUEGO_MESA)</escape></code></pre>
+        <h4>Consulta SQL equivalente</h4>
+        <pre><code><escape>SELECT nombre, duracion_partida
+FROM JUEGO_MESA
+WHERE duracion_partida > (SELECT AVG(duracion_partida) FROM JUEGO_MESA);</escape></code></pre>
+
+    </div>
+</div>
+
+<!-- EJERCICIO AR-07 -->
+
+<div class="ejercicio-card">
+
+    <div class="ejercicio-header">
+        <h3>Ejercicio AR-07</h3>
+        <span>INNER JOIN</span>
+    </div>
+
+    <div class="ejercicio-contenido">
+
+        <h4>Enunciado</h4>
+        <p>
+            Mostrar el nombre y la duración de partida de los juegos de mesa que pertenezcan
+            a la categoría "Estrategia" o cuya duración sea superior al promedio de todos los juegos.
+            Ordenar el resultado de forma ascendente por duración. Luego, sobre ese conjunto,
+            mostrar solo los juegos que también hayan sido prestados al menos una vez.
+        </p>
+
+        <h4>Álgebra relacional</h4>
+        <pre><code><escape>π_</escape>{'{'}<escape>nombre, duracion_partida</escape>{'}'}<escape> (σ_</escape>{'{'}<escape>categoria = 'Estrategia' ∨ duracion_partida > AVG(duracion_partida)</escape>{'}'}<escape> (JUEGO_MESA ⋈_</escape>{'{'}<escape>JUEGO_MESA.num_serie = CATEGORIA.num_serie</escape>{'}'}<escape> CATEGORIA))</escape></code></pre>
+
+        <h4>Consulta SQL equivalente</h4>
+        <pre><code><escape>SELECT J.nombre, J.duracion_partida
+FROM JUEGO_MESA J
+INNER JOIN CATEGORIA C ON J.num_serie = C.num_serie
+WHERE C.categoria = 'Estrategia'
+OR J.duracion_partida > (SELECT AVG(duracion_partida) FROM JUEGO_MESA)
+ORDER BY J.duracion_partida ASC;</escape></code></pre>
+
+    </div>
+</div>
+
+<!-- EJERCICIO AR-08 -->
+
+<div class="ejercicio-card">
+
+    <div class="ejercicio-header">
+        <h3>Ejercicio AR-08</h3>
+        <span>Funciones de agregación</span>
+    </div>
+
+    <div class="ejercicio-contenido">
+
+        <h4>Enunciado</h4>
+        <p>
+            Para cada categoría de juego de mesa, mostrar:
+            el número de juegos que tiene (conteo),
+            la duración promedio de partida de sus juegos,
+            la desviación estándar de la duración de partida,
+            la duración máxima y la mínima.
+            Mostrar solo las categorías que tengan más de 1 juego,
+            ordenadas de forma descendente por duración promedio.
+        </p>
+
+        <h4>Álgebra relacional</h4>
+        <pre><code><escape>Γ_</escape>{'{'}<escape>categoria, COUNT(num_serie), AVG(duracion_partida), STDDEV(duracion_partida), MAX(duracion_partida), MIN(duracion_partida)</escape>{'}'}<escape> (JUEGO_MESA ⋈_</escape>{'{'}<escape>JUEGO_MESA.num_serie = CATEGORIA.num_serie</escape>{'}'}<escape> CATEGORIA)</escape></code></pre>
+
+        <h4>Consulta SQL equivalente</h4>
+        <pre><code><escape>SELECT C.categoria,
+       COUNT(J.num_serie) AS total_juegos,
+       AVG(J.duracion_partida) AS duracion_promedio,
+       STDDEV(J.duracion_partida) AS desviacion_duracion,
+       MAX(J.duracion_partida) AS duracion_max,
+       MIN(J.duracion_partida) AS duracion_min
+FROM JUEGO_MESA J
+INNER JOIN CATEGORIA C ON J.num_serie = C.num_serie
+GROUP BY C.categoria
+HAVING COUNT(J.num_serie) > 1
+ORDER BY duracion_promedio DESC;</escape></code></pre>
+
+    </div>
+</div>
+
+<!-- EJERCICIO AR-09 -->
+
+<div class="ejercicio-card">
+
+    <div class="ejercicio-header">
+        <h3>Ejercicio AR-09</h3>
+        <span>INNER JOIN + SUBCONSULTA</span>
+    </div>
+
+    <div class="ejercicio-contenido">
+
+        <h4>Enunciado</h4>
+        <p>
+            Mostrar el nombre y la duración de partida de los juegos
+            de mesa que pertenezcan a la categoría "Estrategia" o cuya
+            duración sea superior al promedio de todos los juegos.
+            Ordenar el resultado de forma descendente por duración.
+        </p>
+
+        <h4>Álgebra relacional</h4>
+        <pre><code><escape>π_</escape>{'{'}<escape>nombre, duracion_partida</escape>{'}'}<escape> (σ_</escape>{'{'}<escape>categoria = 'Estrategia' ∨ duracion_partida > promedio</escape>{'}'}<escape> (JUEGO_MESA ⋈ CATEGORIA))</escape></code></pre>
+
+        <h4>Consulta SQL equivalente</h4>
+        <pre><code><escape>SELECT J.nombre, J.duracion_partida
+FROM JUEGO_MESA J
+INNER JOIN CATEGORIA C
+    ON J.num_serie = C.num_serie
+WHERE C.categoria = 'Estrategia'
+   OR J.duracion_partida > (SELECT AVG(duracion_partida)
+   FROM JUEGO_MESA)
+ORDER BY J.duracion_partida DESC;</escape></code></pre>
+
+    </div>
+</div>
+
+<div class="ejercicio-card">
+    <div class="ejercicio-header">
+        <h3>Ejercicio AR-10</h3>
+        <span>INNER JOIN + SUBCONSULTA + FETCH FIRST</span>
+    </div>
+
+    <div class="ejercicio-contenido">
+        <h4>Enunciado</h4>
+        <p>
+            Mostrar el nombre y el documento de los 3 clientes que hayan realizado
+            más préstamos. Ordenar el resultado de forma descendente por cantidad
+            de préstamos.
+        </p>
+
+        <h4>Álgebra relacional</h4>
+        <pre><code><escape>π_</escape>{'{'}<escape>primer_nombre, documento_cliente</escape>{'}'}<escape> (τ_</escape>{'{'}<escape>total_prestamos DESC</escape>{'}'}<escape> (𝒢_</escape>{'{'}<escape>documento_cliente, primer_nombre, COUNT(id_prestamo) → total_prestamos</escape>{'}'}<escape> (CLIENTE ⋈_</escape>{'{'}<escape>CLIENTE.documento_cliente = PRESTAMO.documento_cliente</escape>{'}'}<escape> PRESTAMO)))</escape></code></pre>
+
+        <h4>Consulta SQL equivalente</h4>
+        <pre><code><escape>USE proyecto_db1;
+
+SELECT C.primer_nombre, C.documento_cliente,
+       COUNT(P.id_prestamo) AS total_prestamos
+FROM CLIENTE C
+INNER JOIN PRESTAMO P
+    ON C.documento_cliente = P.documento_cliente
+GROUP BY C.primer_nombre, C.documento_cliente
+ORDER BY total_prestamos DESC
+FETCH FIRST 3 ROWS ONLY;</escape></code></pre>
+    </div>
+</div>
+
+
+
+
+<!-- EJERCICIO AR-12 -->
+
+<div class="ejercicio-card">
+    <div class="ejercicio-header">
+        <h3>Ejercicio AR-12</h3>
+        <span>Proyección + Selección + Unión</span>
+    </div>
+
+    <div class="ejercicio-contenido">
+        <h4>Enunciado</h4>
+        <p>
+            Mostrar el nombre de los juegos de mesa de la categoría "Estrategia"
+            junto con el nombre de los juegos de la categoría "Familiar".
+            Unir ambos conjuntos en un solo resultado.
+        </p>
+
+        <h4>Álgebra relacional</h4>
+        <pre><code>
+            π_{'{'}nombre{'}'} (σ_{'{'}categoria = 'Estrategia'{'}'} (JUEGO_MESA ⋈_{'{'}JUEGO_MESA.num_serie = CATEGORIA.num_serie{'}'} CATEGORIA))
+
+            ∪
+            π_{'{'}nombre{'}'} (σ_{'{'}categoria = 'Familiar'{'}'} (JUEGO_MESA ⋈_{'{'}JUEGO_MESA.num_serie = CATEGORIA.num_serie{'}'} CATEGORIA))
+        </code></pre>
+
+
+        <h4>Consulta SQL equivalente</h4>
+        <pre><code><escape>USE proyecto_db1;
+
+            SELECT J.nombre
+            FROM JUEGO_MESA J
+            INNER JOIN CATEGORIA C
+            ON J.num_serie = C.num_serie
+            WHERE C.categoria = 'Estrategia'
+
+            UNION
+
+            SELECT J.nombre
+            FROM JUEGO_MESA J
+            INNER JOIN CATEGORIA C
+            ON J.num_serie = C.num_serie
+            WHERE C.categoria = 'Familiar';
+        </escape></code></pre>
+    </div>
+</div>
+
+<!-- EJERCICIO AR-13 -->
+
+<div class="ejercicio-card">
+
+    <div class="ejercicio-header">
+        <h3>Ejercicio AR-13</h3>
+        <span>Proyección + Selección + Intersección</span>
+    </div>
+
+    <div class="ejercicio-contenido">
+
+        <h4>Enunciado</h4>
+        <p>
+            Mostrar el nombre de los juegos de mesa de la categoría "Estrategia"
+            que también hayan sido prestados al menos una vez.
+        </p>
+
+        <h4>Álgebra relacional</h4>
+        <pre><code><escape>π_</escape>{'{'}<escape>nombre</escape>{'}'}<escape> (σ_</escape>{'{'}<escape>categoria = 'Estrategia'</escape>{'}'}<escape> (JUEGO_MESA ⋈_</escape>{'{'}<escape>JUEGO_MESA.num_serie = CATEGORIA.num_serie</escape>{'}'}<escape> CATEGORIA))
+
+∩
+
+π_{'{'}nombre{'}'} (JUEGO_MESA ⋈_{'{'}JUEGO_MESA.num_serie = PRESTAMO_UNIDAD_JUEGO.num_serie{'}'} PRESTAMO_UNIDAD_JUEGO)</escape></code></pre>
+
+        <h4>Consulta SQL equivalente</h4>
+        <pre><code><escape>USE proyecto_db1;
+
+SELECT J.nombre
+FROM JUEGO_MESA J
+INNER JOIN CATEGORIA C
+    ON J.num_serie = C.num_serie
+WHERE C.categoria = 'Estrategia'
+  AND J.num_serie IN (
+      SELECT DISTINCT num_serie
+      FROM PRESTAMO_UNIDAD_JUEGO
+  );</escape></code></pre>
+
+    </div>
+</div>
+
+<!-- EJERCICIO AR-14 -->
+
+<div class="ejercicio-card">
+
+    <div class="ejercicio-header">
+        <h3>Ejercicio AR-14</h3>
+        <span>Producto cartesiano</span>
+    </div>
+
+    <div class="ejercicio-contenido">
+
+        <h4>Enunciado</h4>
+        <p>
+            Mostrar todas las combinaciones posibles entre los juegos de mesa
+            y las categorías existentes (producto cartesiano entre ambas tablas).
+        </p>
+
+        <h4>Álgebra relacional</h4>
+        <pre><code><escape>JUEGO_MESA × CATEGORIA</escape></code></pre>
+
+        <h4>Consulta SQL equivalente</h4>
+        <pre><code><escape>USE proyecto_db1;
+
+SELECT *
+FROM JUEGO_MESA, CATEGORIA;</escape></code></pre>
+
+    </div>
+</div>
+
+<!-- EJERCICIO AR-15 -->
+
+<div class="ejercicio-card">
+
+    <div class="ejercicio-header">
+        <h3>Ejercicio AR-15</h3>
+        <span>Producto cartesiano + Selección + Proyección</span>
+    </div>
+
+    <div class="ejercicio-contenido">
+
+        <h4>Enunciado</h4>
+        <p>
+            Mostrar el nombre y la duración de partida de los juegos de mesa
+            que pertenezcan a la categoría "Estrategia".
+        </p>
+
+        <h4>Álgebra relacional</h4>
+        <pre><code><escape>π_</escape>{'{'}<escape>nombre, duracion_partida</escape>{'}'}<escape> (σ_</escape>{'{'}<escape>categoria = 'Estrategia' ∧ JUEGO_MESA.num_serie = CATEGORIA.num_serie</escape>{'}'}<escape> (JUEGO_MESA × CATEGORIA))</escape></code></pre>
+
+        <h4>Consulta SQL equivalente</h4>
+        <pre><code><escape>USE proyecto_db1;
+
+SELECT J.nombre, J.duracion_partida
+FROM JUEGO_MESA J, CATEGORIA C
+WHERE J.num_serie = C.num_serie
+  AND C.categoria = 'Estrategia';</escape></code></pre>
+
+    </div>
+</div>
+
+<!-- EJERCICIO AR-16 -->
+
+<div class="ejercicio-card">
+
+    <div class="ejercicio-header">
+        <h3>Ejercicio AR-16</h3>
+        <span>Selección + Proyección</span>
+    </div>
+
+    <div class="ejercicio-contenido">
+
+        <h4>Enunciado</h4>
+        <p>
+            Mostrar el nombre y la duración de partida de los juegos de mesa
+            cuya duración sea mayor a 45 minutos.
+        </p>
+
+        <h4>Álgebra relacional</h4>
+        <pre><code><escape>π_</escape>{'{'}<escape>nombre, duracion_partida</escape>{'}'}<escape> (σ_</escape>{'{'}<escape>duracion_partida > 45</escape>{'}'}<escape> (JUEGO_MESA))</escape></code></pre>
+
+        <h4>Consulta SQL equivalente</h4>
+        <pre><code><escape>USE proyecto_db1;
+
+SELECT nombre, duracion_partida
+FROM JUEGO_MESA
+WHERE duracion_partida > 45;</escape></code></pre>
+
+    </div>
+</div>
+
+<!-- EJERCICIO AR-18 -->
+
+<div class="ejercicio-card">
+
+    <div class="ejercicio-header">
+        <h3>Ejercicio AR-17</h3>
+        <span>Selección + Proyección + Ordenamiento</span>
+    </div>
+
+    <div class="ejercicio-contenido">
+
+        <h4>Enunciado</h4>
+        <p>
+            Mostrar el nombre y la edad mínima recomendada de los juegos de mesa
+            que sean aptos para niños de 8 años o menos, ordenados de forma
+            ascendente por edad mínima.
+        </p>
+
+        <h4>Álgebra relacional</h4>
+        <pre><code><escape>τ_</escape>{'{'}<escape>edad_minima ASC</escape>{'}'}<escape> (π_</escape>{'{'}<escape>nombre, edad_minima</escape>{'}'}<escape> (σ_</escape>{'{'}<escape>edad_minima <= 8</escape>{'}'}<escape> (JUEGO_MESA)))</escape></code></pre>
+
+        <h4>Consulta SQL equivalente</h4>
+        <pre><code><escape>USE proyecto_db1;
+
+SELECT nombre, edad_minima
+FROM JUEGO_MESA
+WHERE edad_minima <= 8
+ORDER BY edad_minima ASC;</escape></code></pre>
+
+    </div>
+</div>
+
+<div class="modelo__ejercicios">
+    <h2>Esquema relacional a trabajar </h2>
+    <img
+    src="evidencias/modelado/MR.png"
+    alt="Modelo relacional de la base de datos"
+    class="imagen-modelo"
+/>
+</div>
+
+
+<!-- TARJETA DE EJERCICIOS VARIOS -->
+
+<div class="ejercicio-card">
+
+    <div class="ejercicio-header">
+        <h3>Ejercicios varios de SQL</h3>
+        <span>Consultas, operadores, JOIN y funciones de agregación</span>
+    </div>
+
+    <div class="ejercicio-contenido">
+
+        <!-- 1. SELECCIONES -->
+
+        <h4>1. Selecciones (WHERE)</h4>
+        <p>Consultar registros aplicando diferentes condiciones.</p>
+
+        <pre><code><escape>USE proyecto_db1;
+
+-- 1. Consultar todos los registros
+SELECT *
+FROM HR.EMPLOYEES;
+
+-- 2. Buscar por nombre
+SELECT *
+FROM HR.EMPLOYEES
+WHERE first_name = 'Steven';
+
+-- 3. Buscar por apellido
+SELECT *
+FROM HR.EMPLOYEES
+WHERE last_name = 'King';
+
+-- 4. Salario mayor que 10000
+SELECT *
+FROM HR.EMPLOYEES
+WHERE salary > 10000;
+
+-- 5. Empleados del departamento 90
+SELECT *
+FROM HR.EMPLOYEES
+WHERE department_id = 90;
+
+-- 6. Empleados con cargo IT_PROG
+SELECT *
+FROM HR.EMPLOYEES
+WHERE job_id = 'IT_PROG';
+
+-- 7. Empleados cuyo jefe tiene ID 103
+SELECT *
+FROM HR.EMPLOYEES
+WHERE manager_id = 103;
+
+-- 8. Salario menor que 5000
+SELECT *
+FROM HR.EMPLOYEES
+WHERE salary < 5000;
+
+-- 9. Empleados con cargo FI_ACCOUNT
+SELECT last_name, salary, job_id
+FROM HR.EMPLOYEES
+WHERE job_id = 'FI_ACCOUNT';
+
+-- 10. Empleados contratados después del 1 de enero de 2015
+SELECT *
+FROM HR.EMPLOYEES
+WHERE hire_date > DATE '2015-01-01';
+
+-- 11. Comisión diferente de 0.2
+SELECT *
+FROM HR.EMPLOYEES
+WHERE commission_pct != 0.2;
+
+-- 12. Salarios entre 8000 y 12000
+SELECT *
+FROM HR.EMPLOYEES
+WHERE salary >= 8000 AND salary <= 12000;
+
+-- 13. Departamento 100 y salario mayor que 10000
+SELECT *
+FROM HR.EMPLOYEES
+WHERE department_id = 100 AND salary > 10000;</escape></code></pre>
+
+
+        <!-- 2. VALORES NULOS -->
+
+        <h4>2. Valores nulos (NULL)</h4>
+        <p>Consultar empleados que tienen o no tienen comisión.</p>
+
+        <pre><code><escape>-- 1. Empleados sin comisión
+SELECT *
+FROM HR.EMPLOYEES
+WHERE commission_pct IS NULL;
+
+-- 2. Empleados con comisión
+SELECT *
+FROM HR.EMPLOYEES
+WHERE commission_pct IS NOT NULL;
+
+-- 3. Utilizando NOT
+SELECT *
+FROM HR.EMPLOYEES
+WHERE NOT (commission_pct IS NULL);</escape></code></pre>
+
+
+        <!-- 3. DISTINCT -->
+
+        <h4>3. DISTINCT (Eliminar duplicados)</h4>
+        <p>Consultar departamentos sin repetir nombres.</p>
+
+        <pre><code><escape>SELECT DISTINCT department_name
+FROM HR.DEPARTMENTS;</escape></code></pre>
+
+
+        <!-- 4. PROYECCIONES -->
+
+        <h4>4. Proyecciones (SELECT)</h4>
+        <p>Seleccionar columnas específicas de la tabla EMPLOYEES.</p>
+
+        <pre><code><escape>-- 1. Mostrar nombres y apellidos
+SELECT first_name, last_name
+FROM HR.EMPLOYEES;
+
+-- 2. Mostrar correos electrónicos
+SELECT email
+FROM HR.EMPLOYEES;
+
+-- 3. Nombres, apellidos y departamento 50
+SELECT first_name, last_name, department_id
+FROM HR.EMPLOYEES
+WHERE department_id = 50;
+
+-- 4. Cambiar nombres de columnas con AS
+SELECT first_name AS nombre, last_name AS apellido
+FROM HR.EMPLOYEES;
+
+-- 5. Proyección con selección y alias
+SELECT employee_id AS id_emp,
+       hire_date AS fecha_contratacion,
+       job_id
+FROM HR.EMPLOYEES
+WHERE job_id = 'IT_PROG';
+
+-- 6. Nombres, apellidos y correo
+SELECT first_name, last_name, email
+FROM HR.EMPLOYEES;
+
+-- 7. Apellidos y fechas de contratación
+SELECT last_name, hire_date
+FROM HR.EMPLOYEES;
+
+-- 8. Identificador, apellido y cargo
+SELECT employee_id, last_name, job_id
+FROM HR.EMPLOYEES;
+
+-- 9. Apellidos y salarios del departamento 60
+SELECT last_name, salary
+FROM HR.EMPLOYEES
+WHERE department_id = 60;
+
+-- 10. Nombres y correos de empleados IT_PROG
+SELECT first_name, email
+FROM HR.EMPLOYEES
+WHERE job_id = 'IT_PROG';
+
+-- 11. Apellidos y fechas de empleados con salario mayor a 10000
+SELECT last_name, hire_date
+FROM HR.EMPLOYEES
+WHERE salary > 10000;</escape></code></pre>
+
+
+        <!-- 5. OPERADORES NOT -->
+
+        <h4>5. Operador NOT y negaciones</h4>
+        <p>Aplicar condiciones negadas a los registros.</p>
+
+        <pre><code><escape>-- 1. Apellido y salario de empleados que no son IT_PROG
+SELECT last_name, salary
+FROM HR.EMPLOYEES
+WHERE NOT (job_id = 'IT_PROG');
+
+-- 2. Apellidos de empleados que no tienen comisión
+SELECT last_name
+FROM HR.EMPLOYEES
+WHERE NOT (commission_pct IS NULL);
+
+-- Forma equivalente
+SELECT last_name
+FROM HR.EMPLOYEES
+WHERE commission_pct IS NOT NULL;
+
+-- 3. Empleados que no son IT_PROG ni pertenecen al departamento 100
+SELECT last_name, job_id
+FROM HR.EMPLOYEES
+WHERE NOT (job_id = 'IT_PROG')
+AND NOT (department_id = 100);
+
+-- 4. Negación de una condición compuesta
+SELECT last_name, job_id
+FROM HR.EMPLOYEES
+WHERE NOT (job_id = 'IT_PROG' AND salary > 5000);
+
+-- 5. Empleados que no son IT_PROG y ganan 5000 o menos
+SELECT last_name, job_id
+FROM HR.EMPLOYEES
+WHERE job_id != 'IT_PROG'
+AND salary <= 5000;</escape></code></pre>
+
+
+        <!-- 6. INTERSECCIÓN -->
+
+        <h4>6. Intersección (INTERSECT)</h4>
+        <p>Consultar registros que cumplen simultáneamente dos condiciones o pertenecen a ambos conjuntos.</p>
+
+        <pre><code><escape>-- 1. Empleados IT_PROG del departamento 60
+SELECT last_name, job_id
+FROM HR.EMPLOYEES
+WHERE job_id = 'IT_PROG'
+AND department_id = 60;
+
+-- 2. Apellidos de empleados que tienen comisión y ganan más de 10000
+SELECT last_name
+FROM HR.EMPLOYEES
+WHERE commission_pct IS NOT NULL
+INTERSECT
+SELECT last_name
+FROM HR.EMPLOYEES
+WHERE salary > 10000;
+
+-- Forma equivalente utilizando AND
+SELECT last_name
+FROM HR.EMPLOYEES
+WHERE commission_pct IS NOT NULL
+AND salary > 10000;
+
+-- 3. Apellido y departamento de empleados que ganan más de 10000
+-- y pertenecen al departamento 100
+SELECT last_name, department_id
+FROM HR.EMPLOYEES
+WHERE salary > 10000
+INTERSECT
+SELECT last_name, department_id
+FROM HR.EMPLOYEES
+WHERE department_id = 100;
+
+-- Forma equivalente utilizando AND
+SELECT last_name, department_id
+FROM HR.EMPLOYEES
+WHERE salary > 10000
+AND department_id = 100;</escape></code></pre>
+
+
+        <!-- 7. COMBINACIONES -->
+
+        <h4>7. Combinaciones de condiciones (AND y OR)</h4>
+        <p>Combinar varias condiciones utilizando operadores lógicos.</p>
+
+        <pre><code><escape>-- 1. Empleados que ganan más de 10000 o tienen comisión,
+-- pero que no son IT_PROG
+SELECT last_name, salary
+FROM HR.EMPLOYEES
+WHERE (salary > 10000 OR commission_pct IS NOT NULL)
+AND job_id != 'IT_PROG';
+
+-- 2. Empleados IT_PROG o del departamento 100,
+-- que no tienen comisión
+SELECT last_name
+FROM HR.EMPLOYEES
+WHERE (job_id = 'IT_PROG' OR department_id = 100)
+AND commission_pct IS NULL;</escape></code></pre>
+
+
+        <!-- 8. CONCATENACIÓN -->
+
+        <h4>8. Concatenación de cadenas</h4>
+        <p>Unir diferentes valores de texto utilizando el operador ||.</p>
+
+        <pre><code><escape>-- 1. Apellido y cargo del empleado
+SELECT last_name || ' is a ' || job_id AS "Employee Details"
+FROM HR.EMPLOYEES;
+
+-- 2. Nombre completo
+SELECT last_name || ', ' || first_name AS nombre_completo
+FROM HR.EMPLOYEES;
+
+-- 3. Concatenación utilizando comillas simples escapadas
+SELECT 'El empleado O''Connell gana ' || salary AS detalle
+FROM HR.EMPLOYEES
+WHERE employee_id = 198;
+
+-- 4. Concatenación utilizando q-quote
+SELECT q'[El empleado O'Connell gana ]' || salary AS detalle
+FROM HR.EMPLOYEES
+WHERE employee_id = 198;</escape></code></pre>
+
+
+        <!-- 9. PATRONES -->
+
+        <h4>9. Patrones y caracteres (LIKE)</h4>
+        <p>
+            Mostrar el apellido, el puesto y el salario de los empleados cuyo apellido
+            contenga una "a", que ganen más de 4000, ordenados por salario de mayor a menor.
+        </p>
+
+        <pre><code><escape>SELECT last_name, job_id, salary
+FROM HR.EMPLOYEES
+WHERE last_name LIKE '%A%'
+AND salary > 4000
+ORDER BY salary DESC;</escape></code></pre>
+
+
+        <!-- 10. OPERACIONES DE CONJUNTOS -->
+
+        <h4>10. Operaciones de conjuntos (UNION, INTERSECT y MINUS)</h4>
+        <p>Combinar resultados, encontrar coincidencias y obtener diferencias entre conjuntos.</p>
+
+        <pre><code><escape>-- 1. Departamentos que aparecen en EMPLOYEES o DEPARTMENTS
+SELECT department_id
+FROM HR.EMPLOYEES
+UNION
+SELECT department_id
+FROM HR.DEPARTMENTS;
+
+-- 2. Departamentos existentes en DEPARTMENTS que tienen empleados
+SELECT department_id
+FROM HR.DEPARTMENTS
+INTERSECT
+SELECT department_id
+FROM HR.EMPLOYEES;
+
+-- 3. Departamentos que existen pero no tienen empleados
+SELECT department_id
+FROM HR.DEPARTMENTS
+MINUS
+SELECT department_id
+FROM HR.EMPLOYEES;
+
+-- 4. Lista de ciudades y países sin repetir valores
+SELECT country_name
+FROM HR.COUNTRIES
+UNION
+SELECT city
+FROM HR.LOCATIONS;</escape></code></pre>
+
+
+        <!-- 11. JOIN -->
+
+        <h4>11. JOIN</h4>
+        <p>Unir tablas utilizando las columnas que tienen el mismo nombre.</p>
+
+        <pre><code><escape>SELECT department_name, last_name
+FROM HR.DEPARTMENTS
+NATURAL JOIN HR.EMPLOYEES;</escape></code></pre>
+
+
+        <!-- 12. EQUIJOIN -->
+
+        <h4>12. Equijoin</h4>
+        <p>Unir tablas mediante una condición de igualdad explícita.</p>
+
+        <pre><code><escape>SELECT d.department_name, e.last_name
+FROM HR.DEPARTMENTS d
+JOIN HR.EMPLOYEES e
+    ON d.department_id = e.department_id;</escape></code></pre>
+
+
+        <!-- 13. THETA JOIN -->
+
+        <h4>13. Theta-join</h4>
+        <p>Unir tablas utilizando condiciones de comparación distintas de la igualdad.</p>
+
+        <pre><code><escape>SELECT e.last_name, e.salary, j.job_title, j.min_salary
+FROM HR.EMPLOYEES e
+JOIN HR.JOBS j
+    ON e.salary > j.min_salary;</escape></code></pre>
+
+
+        <!-- 14. FUNCIONES DE AGREGACIÓN -->
+
+        <h4>14. Funciones de agregación</h4>
+        <p>Calcular valores estadísticos a partir de los salarios de los empleados.</p>
+
+        <pre><code><escape>-- SUM(salary): suma de salarios, ignora valores nulos
+-- AVG(salary): promedio de salarios no nulos
+-- STDDEV(salary): desviación estándar muestral
+-- COUNT(*): número total de filas
+-- MIN(salary): salario más bajo
+-- MAX(salary): salario más alto
+
+SELECT SUM(salary) AS total,
+       AVG(salary) AS promedio,
+       STDDEV(salary) AS desviacion,
+       COUNT(*) AS cuantos,
+       MIN(salary) AS minimo,
+       MAX(salary) AS maximo
+FROM HR.EMPLOYEES;</escape></code></pre>
+
+
+        <!-- 15. PRODUCTO CARTESIANO -->
+
+        <h4>15. Producto cartesiano</h4>
+        <p>Generar todas las combinaciones posibles entre los registros de dos tablas.</p>
+
+        <pre><code><escape>-- 1. Empleados y departamentos
+SELECT E.first_name, D.department_name
+FROM HR.EMPLOYEES E
+CROSS JOIN HR.DEPARTMENTS D;
+
+-- 2. Empleados y países
+SELECT E.first_name, C.country_name
+FROM HR.EMPLOYEES E
+CROSS JOIN HR.COUNTRIES C;</escape></code></pre>
+
+
+        <!-- 16. CONSULTA Y CREACIÓN DE TABLA -->
+
+        <h4>16. Consulta y creación de tablas</h4>
+        <p>Consultar los registros de LOCATIONS y crear una copia de la tabla.</p>
+
+        <pre><code><escape>-- 1. Consultar todos los registros
+SELECT *
+FROM HR.LOCATIONS;
+
+-- 2. Crear una copia de LOCATIONS
+CREATE TABLE LOCATIONS_C AS
+SELECT *
+FROM HR.LOCATIONS;</escape></code></pre>
+
+    </div>
+</div>
+
+
+<div class="ejercicio-card">
+    <div class="ejercicio-header">
+        <h3>Ejercicios SQL - Creación de tablas y consultas avanzadas</h3>
+        <span>DDL, DML, ordenamiento, paginación y JOIN</span>
+    </div>
+
+    <div class="ejercicio-contenido">
+
+        <h4>1. Creación de tablas con NUMERIC (precisión, escala)</h4>
+        <pre><code><escape>CREATE TABLE JOBS_COPI(
+    JOB_ID VARCHAR2(10),
+    JOB_TITLE VARCHAR2(35) NOT NULL,
+    MIN_SALARY NUMERIC(6,0) NOT NULL,
+    MAX_SALARY NUMERIC(6,0) NOT NULL
+);</escape></code></pre>
+
+        <h4>2. Borrar tablas</h4>
+        <pre><code><escape>DROP TABLE JOBS_COPIA;</escape></code></pre>
+
+        <h4>3. Insertar datos</h4>
+        <pre><code><escape>INSERT INTO JOBS_COPI(job_id, job_title, min_salary, max_salary)
+VALUES ('AD_PRES', 'President', 20080, 40000);</escape></code></pre>
+
+        <h4>4. Insertar varios elementos al tiempo</h4>
+        <pre><code><escape>INSERT ALL
+    INTO JOBS_COPI(job_id, job_title, min_salary, max_salary)
+    VALUES ('AD_VP', 'Administration Vice President', 15000, 30000)
+    INTO JOBS_COPI(job_id, job_title, min_salary, max_salary)
+    VALUES ('ADD_ASST', 'Administration Assistant', 3000, 6000)
+    INTO JOBS_COPI(job_id, job_title, min_salary, max_salary)
+    VALUES ('FI_MGR', 'Finance Manager', 8200, 16000)
+    INTO JOBS_COPI(job_id, job_title, min_salary, max_salary)
+    VALUES ('FI_ACCOUNT', 'Account', 4200, 9000)
+SELECT * FROM dual;</escape></code></pre>
+
+        <h4>5. Eliminar tabla</h4>
+        <pre><code><escape>DROP TABLE JOBS_COPI;</escape></code></pre>
+
+        <h4>6. Ordenar la tabla en forma descendente</h4>
+        <pre><code><escape>SELECT *
+FROM HR.EMPLOYEES
+ORDER BY first_name DESC;</escape></code></pre>
+
+        <h4>7. Seleccionar las primeras 10 filas</h4>
+        <pre><code><escape>SELECT *
+FROM HR.EMPLOYEES
+FETCH FIRST 10 ROWS ONLY;</escape></code></pre>
+
+        <h4>8. Seleccionar filas después de las primeras 5</h4>
+        <pre><code><escape>SELECT *
+FROM HR.EMPLOYEES
+OFFSET 5 ROWS FETCH NEXT 10 ROWS ONLY;</escape></code></pre>
+
+        <h4>9. Nombre y apellido de los empleados del departamento Finance</h4>
+        <pre><code><escape>SELECT E.first_name, E.last_name
+FROM HR.EMPLOYEES E
+INNER JOIN HR.DEPARTMENTS D
+    ON E.department_id = D.department_id
+WHERE D.department_name = 'Finance';</escape></code></pre>
+
+        <h4>10. Producto cartesiano</h4>
+        <pre><code><escape>SELECT *
+FROM HR.EMPLOYEES, HR.JOBS;</escape></code></pre>
+
+        <h4>11. Equijoin entre empleados y trabajos</h4>
+        <pre><code><escape>SELECT E.employee_id, E.first_name, E.last_name, E.email,
+       E.phone_number, E.hire_date, E.salary, E.commission_pct,
+       E.manager_id, E.department_id,
+       J.job_id, J.job_title, J.min_salary, J.max_salary
+FROM HR.EMPLOYEES E, HR.JOBS J
+WHERE E.job_id = J.job_id;</escape></code></pre>
+
+        <h4>12. Equijoin: empleados y trabajos con salario máximo menor a 40000</h4>
+        <pre><code><escape>SELECT E.employee_id, E.first_name, E.last_name, E.email,
+       E.phone_number, E.hire_date, E.salary, E.commission_pct,
+       E.manager_id, E.department_id,
+       J.job_id, J.job_title, J.min_salary, J.max_salary
+FROM HR.EMPLOYEES E, HR.JOBS J
+WHERE E.job_id = J.job_id
+AND J.max_salary < 40000;</escape></code></pre>
+
+        <h4>13. Lineamientos básicos para una operación JOIN por comas</h4>
+        <ul>
+            <li><strong>FROM:</strong> especifica todos los nombres de las tablas.</li>
+            <li><strong>WHERE:</strong> define la condición de unión para evitar el producto cartesiano.</li>
+            <li>Las referencias a columnas deben cualificarse cuando los nombres de las columnas sean equivalentes.</li>
+            <li>No se utiliza <strong>AS</strong> para declarar alias de tablas en Oracle.</li>
+        </ul>
+
+        <h4>14. Empleados por país</h4>
+        <p>
+            Lista el nombre del empleado, su cargo, el departamento y el país donde
+            está ubicado su departamento, para los empleados contratados después
+            del año 2005. Ordena por país y luego por apellido.
+        </p>
+        <pre><code><escape>SELECT E.first_name, E.last_name, J.job_title,
+       D.department_name, C.country_name
+FROM HR.EMPLOYEES E, HR.JOBS J, HR.LOCATIONS L,
+     HR.COUNTRIES C, HR.DEPARTMENTS D
+WHERE E.job_id = J.job_id
+AND E.department_id = D.department_id
+AND D.location_id = L.location_id
+AND L.country_id = C.country_id
+AND E.hire_date >= DATE '2006-01-01'
+ORDER BY C.country_name, E.last_name;</escape></code></pre>
+
+        <h4>15. Departamentos sin empleados</h4>
+        <p>
+            Muestra el nombre del departamento y la ciudad de su ubicación,
+            incluyendo los departamentos que no tienen ningún empleado asignado.
+            Indica cuántos empleados tiene cada uno, contando cero cuando no tenga.
+        </p>
+        <pre><code><escape>SELECT D.department_name, L.city,
+       COUNT(E.employee_id) AS empleados
+FROM HR.DEPARTMENTS D
+INNER JOIN HR.LOCATIONS L
+    ON D.location_id = L.location_id
+LEFT JOIN HR.EMPLOYEES E
+    ON D.department_id = E.department_id
+GROUP BY D.department_name, L.city
+ORDER BY D.department_name;</escape></code></pre>
+
+    </div>
+</div>
+
+</div>
