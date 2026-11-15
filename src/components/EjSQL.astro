@@ -502,7 +502,7 @@ WHERE duracion_partida > 45;</escape></code></pre>
     </div>
 </div>
 
-<!-- EJERCICIO AR-18 -->
+<!-- EJERCICIO AR-17 -->
 
 <div class="ejercicio-card">
 
@@ -535,12 +535,13 @@ ORDER BY edad_minima ASC;</escape></code></pre>
 </div>
 
 <div class="modelo__ejercicios">
-    <h2>Esquema relacional a trabajar </h2>
+    <h2>Esquema relacional a trabajar</h2>
+
     <img
-    src="evidencias/modelado/MR.png"
-    alt="Modelo relacional de la base de datos"
-    class="imagen-modelo"
-/>
+        src="/evidencias/modelado/MR.png"
+        alt="Modelo relacional de la base de datos"
+        class="imagen-modelo"
+    />
 </div>
 
 
@@ -1057,12 +1058,22 @@ WHERE E.job_id = J.job_id
 AND J.max_salary < 40000;</escape></code></pre>
 
         <h4>13. Lineamientos básicos para una operación JOIN por comas</h4>
-        <ul>
-            <li><strong>FROM:</strong> especifica todos los nombres de las tablas.</li>
-            <li><strong>WHERE:</strong> define la condición de unión para evitar el producto cartesiano.</li>
-            <li>Las referencias a columnas deben cualificarse cuando los nombres de las columnas sean equivalentes.</li>
-            <li>No se utiliza <strong>AS</strong> para declarar alias de tablas en Oracle.</li>
-        </ul>
+    
+  <p>
+            <strong>FROM.</strong>
+            Especifica todas las tablas que participan en la consulta.<br><br>
+       
+            <strong>WHERE.</strong>
+            Define las condiciones de unión entre las tablas para evitar
+            generar un producto cartesiano.<br><br>
+    
+            Las referencias a columnas deben cualificarse utilizando
+            el alias o nombre de la tabla cuando sea necesario.<br><br>
+      
+            En Oracle, no se utiliza <strong>AS</strong> para declarar
+            alias de tablas.<br><br>
+</p>
+
 
         <h4>14. Empleados por país</h4>
         <p>
